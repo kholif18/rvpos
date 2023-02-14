@@ -1,0 +1,14 @@
+.bg-count {
+  background-color: bisque;
+}
+
+.count {
+  min-height: 250px; 
+  height: 250px; 
+  max-height: 250px; 
+  max-width: 100%;
+}
+
+.count h3 {
+  font-size: 7em;
+}
