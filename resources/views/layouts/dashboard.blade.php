@@ -228,6 +228,7 @@
 				data: areaChartData,
 				options: areaChartOptions
 			})
+		})
 </script>
 
 @endpush
