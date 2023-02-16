@@ -24,3 +24,7 @@ Route::get('login', function() {
 Route::get('user', function() {
     return view('user/user');
 });
+
+Route::get('/supplier', function() {
+    return view('supplier/suppliers');
+});
