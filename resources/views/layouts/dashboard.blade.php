@@ -171,7 +171,7 @@
 								<th>Name Items</th>
 								<th>Status</th>
 								<th>Kategory</th>
-								<th>Stock</th>
+								<th style="width: 90px">Stock</th>
 							</tr>
 							</thead>
 							<tbody>
@@ -181,7 +181,7 @@
 								<td>Kertas A4</td>
 								<td>Pkg</td>
 								<td>ATK</td>
-								<td class="bg-danger text-bold text-lg-center">5</td>
+								<td class="badge bg-danger">5</td>
 							</tr>
 							<tr>
 								<td>RV006</td>
@@ -189,7 +189,7 @@
 								<td>Map kertas</td>
 								<td>Pcs</td>
 								<td>ATK</td>
-								<td class="bg-danger text-bold text-lg-center">2</td>
+								<td class="badge bg-danger text-lg-center text-bold">2</td>
 							</tr>
 							<tr>
 								<td>RV016</td>
@@ -197,7 +197,7 @@
 								<td>Sampul</td>
 								<td>Pcs</td>
 								<td>ATK</td>
-								<td class="bg-danger text-bold text-lg-center">2</td>
+								<td class="badge bg-danger text-lg-center text-bold">2</td>
 							</tr>
 							<tr>
 								<td>RV065</td>
@@ -205,7 +205,7 @@
 								<td>Pensil Steadler</td>
 								<td>Pcs</td>
 								<td>ATK</td>
-								<td class="bg-danger text-bold text-lg-center">1</td>
+								<td class="badge bg-danger text-lg-center text-bold">1</td>
 							</tr>
 							<tr>
 								<td>RV085</td>
@@ -213,7 +213,7 @@
 								<td>Penghapus Joyko Besar</td>
 								<td>Pcs</td>
 								<td>ATK</td>
-								<td class="bg-danger text-bold text-lg-center">3</td>
+								<td class="badge bg-danger text-lg-center text-bold">3</td>
 							</tr>
 							<tr>
 								<td>RV077</td>
@@ -221,7 +221,7 @@
 								<td>Mika Transparan</td>
 								<td>Pcs</td>
 								<td>ATK</td>
-								<td class="bg-danger text-bold text-lg-center">3</td>
+								<td class="badge bg-danger text-lg-center text-bold">3</td>
 							</tr>
 							<tr>
 								<td>RV068</td>
@@ -229,7 +229,7 @@
 								<td>Map Kancing Biru</td>
 								<td>Pcs</td>
 								<td>ATK</td>
-								<td class="bg-danger text-bold text-lg-center">4</td>
+								<td class="badge bg-danger text-lg-center text-bold">4</td>
 							</tr>
 							<tr>
 								<td>RV006</td>
@@ -237,7 +237,7 @@
 								<td>Bolpoin Snowman V1</td>
 								<td>Pcs</td>
 								<td>ATK</td>
-								<td class="bg-danger text-bold text-lg-center">5</td>
+								<td class="badge bg-danger text-lg-center text-bold">5</td>
 							</tr>
 							</tbody>
 						</table>
