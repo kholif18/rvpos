@@ -6,7 +6,7 @@
 
 @section('breadcrumb')
     @parent
-    <li class="active">Debt</li>
+    <li class="active">Transaction / Debt</li>
 @endsection
 
 @section('content')
@@ -30,62 +30,70 @@
                                 <tr>
                                     <th style="width: 15px">Invoice</th>
                                     <th>Customers Name</th>
-                                    <th>Tgl Piutang</th>
+                                    <th>Tgl. Piutang</th>
                                     <th>Jatuh Tempo</th>
                                     <th>Jml. Piutang</th>
                                     <th>Jml. Bayar</th>
-                                    <th>sisa</th>
-                                    <th>status</th>
-                                    <th style="width: 300px">Option</th>
+                                    <th>Sisa</th>
+                                    <th>Status</th>
+                                    <th style="width: 45px">Option</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>2009293</td>
+                                    <td>13022023009</td>
                                     <td>Bambang</td>
-                                    <td>12-02-2023</td>
+                                    <td>12-02-2023 | 19:24:12</td>
                                     <td>28-02-2023</td>
                                     <td>Rp 250.000</td>
                                     <td>Rp 200.000</td>
                                     <td>Rp 50.000</td>
-                                    <td>Hutang</td>
-                                    <td class="bg-danger text-bold">Rp 50.000</td>
+                                    <td><span class="badge bg-danger" style="padding: 8px; font-size: 10pt">Belum Lunas</span></td>
+                                    <td><button type="button" class="btn btn-success"><i class="fas fa-check"></i> Payment</button></td>
                                 </tr>
                                 <tr>
-                                    <td>CS003</td>
+                                    <td>15022023005</td>
                                     <td>Bu Win</td>
-                                    <td>082233344556</td>
-                                    <td>example@mail.com</td>
-                                    <td>Gondang, Nganjuk</td>
-                                    <td>Pelanggan</td>
-                                    <td class="bg-danger text-bold">Rp 100.000</td>
+                                    <td>31-01-2023 | 19:24:12</td>
+                                    <td>15-02-2023</td>
+                                    <td>Rp 300.000</td>
+                                    <td>Rp 300.000</td>
+                                    <td>Rp -</td>
+                                    <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span></td>
+                                    <td><button type="button" class="btn btn-info"><i class="fas fa-search-plus"></i> Detail Pembayaran</button></td>
                                 </tr>
                                 <tr>
-                                    <td>CS004</td>
+                                    <td>120120230023</td>
                                     <td>Neneng</td>
-                                    <td>082233344556</td>
-                                    <td>example@mail.com</td>
-                                    <td>Gondang, Nganjuk</td>
-                                    <td>Pelanggan</td>
-                                    <td class="bg-danger text-bold">Rp 100.000</td>
+                                    <td>15-02-2023 | 19:24:12</td>
+                                    <td>17-02-2023</td>
+                                    <td>Rp 52000</td>
+                                    <td>Rp -</td>
+                                    <td>Rp 52000</td>
+                                    <td><span class="badge bg-danger" style="padding: 8px; font-size: 10pt">Belum Lunas</span></td>
+                                    <td><button type="button" class="btn btn-success"><i class="fas fa-check"></i> Payment</button></td>
                                 </tr>
                                 <tr>
-                                    <td>CS005</td>
+                                    <td>17022023002</td>
                                     <td>Alexandro</td>
-                                    <td>082233344556</td>
-                                    <td>example@mail.com</td>
-                                    <td>Gondang, Nganjuk</td>
-                                    <td>Pelanggan</td>
-                                    <td class="bg-danger text-bold">Rp 100.000</td>
+                                    <td>12-02-2023 | 19:24:12</td>
+                                    <td>27-02-2023</td>
+                                    <td>Rp 205.000</td>
+                                    <td>Rp -</td>
+                                    <td>Rp 205.000</td>
+                                    <td><span class="badge bg-danger" style="padding: 8px; font-size: 10pt">Belum Lunas</span></td>
+                                    <td><button type="button" class="btn btn-success"><i class="fas fa-check"></i> Payment</button></td>
                                 </tr>
                                 <tr>
-                                    <td>CS001</td>
+                                    <td>01022023016</td>
                                     <td>Bambang</td>
-                                    <td>082233344556</td>
-                                    <td>example@mail.com</td>
-                                    <td>Gondang, Nganjuk</td>
-                                    <td>Pelanggan</td>
-                                    <td class="bg-danger text-bold">Rp 100.000</td>
+                                    <td>01-02-2023 | 19:24:12</td>
+                                    <td>20-02-2023</td>
+                                    <td>Rp 15.0000</td>
+                                    <td>Rp 15.000</td>
+                                    <td>Rp -</td>
+                                    <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span></td>
+                                    <td><button type="button" class="btn btn-info"><i class="fas fa-search-plus"></i> Detail Pembayaran</button></td>
                                 </tr>
                             </tbody>
                         </table>

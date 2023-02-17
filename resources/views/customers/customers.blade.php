@@ -24,7 +24,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-12">
-                    <div class="card-body table-responsive p-0" style="height: 77vh;">
+                    <div class="card-body table-responsive p-0" style="height: 69vh;">
                         <table class="table table-head-fixed text-nowrap">
                             <thead>
                                 <tr>

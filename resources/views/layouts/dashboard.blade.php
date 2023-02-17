@@ -17,12 +17,12 @@
 			<div class="small-box bg-info">
 				<div class="inner">
 				<h3>150</h3>
-				<p>Orders Today</p>
+				<p>Total Sales</p>
 				</div>
 				<div class="icon">
 				<i class="fas fa-shopping-bag"></i>
 				</div>
-				<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+				<a href="{{ url('sales') }}" class="small-box-footer">POS <i class="fas fa-arrow-circle-right"></i></a>
 			</div>
 		</div>
 		<!-- ./col -->
@@ -30,7 +30,7 @@
 		<!-- small box -->
 			<div class="small-box bg-success">
 				<div class="inner">
-				<h3>53<sup style="font-size: 20px">%</sup></h3>
+				<h3>53</h3>
 				<p>Items</p>
 				</div>
 				<div class="icon">
@@ -189,7 +189,7 @@
 								<td>Map kertas</td>
 								<td>Pcs</td>
 								<td>ATK</td>
-								<td class="badge bg-danger text-lg-center text-bold">2</td>
+								<td class="badge bg-danger">2</td>
 							</tr>
 							<tr>
 								<td>RV016</td>
@@ -197,7 +197,7 @@
 								<td>Sampul</td>
 								<td>Pcs</td>
 								<td>ATK</td>
-								<td class="badge bg-danger text-lg-center text-bold">2</td>
+								<td class="badge bg-danger">2</td>
 							</tr>
 							<tr>
 								<td>RV065</td>
@@ -205,7 +205,7 @@
 								<td>Pensil Steadler</td>
 								<td>Pcs</td>
 								<td>ATK</td>
-								<td class="badge bg-danger text-lg-center text-bold">1</td>
+								<td class="badge bg-danger">1</td>
 							</tr>
 							<tr>
 								<td>RV085</td>
@@ -213,7 +213,7 @@
 								<td>Penghapus Joyko Besar</td>
 								<td>Pcs</td>
 								<td>ATK</td>
-								<td class="badge bg-danger text-lg-center text-bold">3</td>
+								<td class="badge bg-danger">3</td>
 							</tr>
 							<tr>
 								<td>RV077</td>
@@ -221,7 +221,7 @@
 								<td>Mika Transparan</td>
 								<td>Pcs</td>
 								<td>ATK</td>
-								<td class="badge bg-danger text-lg-center text-bold">3</td>
+								<td class="badge bg-danger">3</td>
 							</tr>
 							<tr>
 								<td>RV068</td>
@@ -229,7 +229,7 @@
 								<td>Map Kancing Biru</td>
 								<td>Pcs</td>
 								<td>ATK</td>
-								<td class="badge bg-danger text-lg-center text-bold">4</td>
+								<td class="badge bg-danger">4</td>
 							</tr>
 							<tr>
 								<td>RV006</td>
@@ -237,7 +237,7 @@
 								<td>Bolpoin Snowman V1</td>
 								<td>Pcs</td>
 								<td>ATK</td>
-								<td class="badge bg-danger text-lg-center text-bold">5</td>
+								<td class="badge bg-danger">5</td>
 							</tr>
 							</tbody>
 						</table>

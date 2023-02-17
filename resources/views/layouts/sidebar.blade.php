@@ -42,33 +42,33 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ url('sales') }}" class="nav-link">
                         <i class="nav-icon fas fa-shopping-cart"></i>
+                        <p>Sales</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-exchange-alt"></i>
                         <p>Transaction<i class="fas fa-angle-left right"></i></p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon far fa-circle text-info"></i>
-                                <p>Sales</p>
+                                <i class="nav-icon far fa-circle"></i>
+                                <p>List POS</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Stock In / Purchases</p>
+                                <i class="nav-icon far fa-circle"></i>
+                                <p>Purchases</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Stock Out</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Stock Opname</p>
+                                <i class="nav-icon far fa-circle"></i>
+                                <p>List Purchases</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -93,6 +93,12 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="#" class="nav-link">
+                            <i class="nav-icon far fa-circle text-info"></i>
+                            <p>Items</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Categories</p>
                             </a>
@@ -105,8 +111,20 @@
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                            <i class="nav-icon far fa-circle text-info"></i>
-                            <p>Items</p>
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Stock In</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Stock Out</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Stock Opname</p>
                             </a>
                         </li>
                     </ul>
@@ -139,6 +157,12 @@
                             <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Stock In/Out</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Profit & Loss</p>
                             </a>
                         </li>
                     </ul>

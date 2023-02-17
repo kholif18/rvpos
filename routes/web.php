@@ -36,3 +36,7 @@ Route::get('/customers', function() {
 Route::get('/debt', function() {
     return view('transactions/debt');
 });
+
+Route::get('/sales', function() {
+    return view('sales/sales');
+});
