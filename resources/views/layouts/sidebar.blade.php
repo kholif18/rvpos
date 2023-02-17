@@ -77,6 +77,12 @@
                                 <p>Item Return</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ asset('debt') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Debt</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item">

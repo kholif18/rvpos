@@ -32,3 +32,7 @@ Route::get('/supplier', function() {
 Route::get('/customers', function() {
     return view('customers/customers');
 });
+
+Route::get('/debt', function() {
+    return view('transactions/debt');
+});
