@@ -51,7 +51,7 @@
 			<div class="icon">
 			<i class="fas fa-users"></i>
 			</div>
-			<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+			<a href="{{ url('customers') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 		</div>
 		</div>
 		<!-- ./col -->
@@ -162,7 +162,7 @@
 		<div class="card-body">
 			<div class="row">
 				<div class="col-12">
-					<div class="card-body table-responsive p-0" style="height: 300px;">
+					<div class="card-body table-responsive p-0" style="height: 200px;">
 						<table class="table table-head-fixed text-nowrap">
 							<thead>
 							<tr>

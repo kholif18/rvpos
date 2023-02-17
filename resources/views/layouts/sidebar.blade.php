@@ -42,44 +42,6 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('supplier') }}" class="nav-link">
-                        <i class="nav-icon fas fa-truck"></i>
-                        <p>Suppliers</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url('customers') }}" class="nav-link">
-                        <i class="nav-icon fas fa-users"></i>
-                        <p>Customers</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-archive"></i>
-                        <p>Products<i class="fas fa-angle-left right"></i></p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Categories</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Units</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                            <i class="nav-icon far fa-circle text-info"></i>
-                            <p>Items</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-shopping-cart"></i>
                         <p>Transaction<i class="fas fa-angle-left right"></i></p>
@@ -116,6 +78,44 @@
                             </a>
                         </li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-archive"></i>
+                        <p>Products<i class="fas fa-angle-left right"></i></p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Categories</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Units</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                            <i class="nav-icon far fa-circle text-info"></i>
+                            <p>Items</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('supplier') }}" class="nav-link">
+                        <i class="nav-icon fas fa-truck"></i>
+                        <p>Suppliers</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('customers') }}" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>Customers</p>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
