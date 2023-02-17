@@ -135,7 +135,7 @@
 				<div class="card-body">
 					<div class="count">
 						<h3 class="text-bold text-lg-center">Total Rp </h3>
-						<h1 class="text-bold text-lg-center" style="font-size: 6em">150 K</h1>
+						<h1 class="text-bold text-lg-center" style="font-size: 5em">150 K</h1>
 					</div>
 				</div>
 				<!-- /.card-body -->
