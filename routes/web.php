@@ -28,3 +28,7 @@ Route::get('/user', function() {
 Route::get('/supplier', function() {
     return view('supplier/suppliers');
 });
+
+Route::get('/customers', function() {
+    return view('customers/customers');
+});

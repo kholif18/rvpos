@@ -48,7 +48,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ url('customers') }}" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
                         <p>Customers</p>
                     </a>

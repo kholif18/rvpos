@@ -123,7 +123,7 @@
 		<!-- /.card -->
 		</div>
 		<div class="col-lg-3 col-12">
-			<div class="card card-primary card-outline">
+			<div class="card card-info bg-info">
 				<div class="card-header">
 					<h3 class="card-title">Total sales</h3>
 					<div class="card-tools">
@@ -132,10 +132,10 @@
 						</button>
 					</div>
 				</div>
-				<div class="card-body bg-count">
+				<div class="card-body">
 					<div class="count">
-						<h1 class="text-bold text-lg-center">Total Rp </h1>
-						<h1 class="text-bold text-lg-center" style="font-size: 6em">150,000</h1>
+						<h3 class="text-bold text-lg-center">Total Rp </h3>
+						<h1 class="text-bold text-lg-center" style="font-size: 6em">150 K</h1>
 					</div>
 				</div>
 				<!-- /.card-body -->
@@ -143,27 +143,112 @@
 		</div>
 	</div>	
 	<!-- Default box -->
-	<div class="card">
+	<div class="card card-warning">
 		<div class="card-header">
-		<h3 class="card-title">Title</h3>
-
-		<div class="card-tools">
-			<button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-			<i class="fas fa-minus"></i>
-			</button>
-			<button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-			<i class="fas fa-times"></i>
-			</button>
+			<h3 class="card-title">Low Stock Items</h3>
+			<div class="card-tools">
+				<div class="input-group input-group-sm" style="width: 300px;">
+					<input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+					<div class="input-group-append">
+					<button type="submit" class="btn btn-default">
+						<i class="fas fa-search"></i>
+					</button>
+					</div>
+					<button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse"><i class="fas fa-minus"></i></button>
+				</div>
+			</div>
 		</div>
-		</div>
+		<!-- /.card-header -->
 		<div class="card-body">
-		Start creating your amazing application!
+			<div class="row">
+				<div class="col-12">
+					<div class="card-body table-responsive p-0" style="height: 300px;">
+						<table class="table table-head-fixed text-nowrap">
+							<thead>
+							<tr>
+								<th>Kode Items</th>
+								<th>Barcode</th>
+								<th>Name Items</th>
+								<th>Status</th>
+								<th>Kategory</th>
+								<th>Stock</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>RV001</td>
+								<td>78909867578</td>
+								<td>Kertas A4</td>
+								<td>Pkg</td>
+								<td>ATK</td>
+								<td class="bg-danger text-bold text-lg-center">5</td>
+							</tr>
+							<tr>
+								<td>RV006</td>
+								<td>78909523230</td>
+								<td>Map kertas</td>
+								<td>Pcs</td>
+								<td>ATK</td>
+								<td class="bg-danger text-bold text-lg-center">2</td>
+							</tr>
+							<tr>
+								<td>RV016</td>
+								<td>45846548465</td>
+								<td>Sampul</td>
+								<td>Pcs</td>
+								<td>ATK</td>
+								<td class="bg-danger text-bold text-lg-center">2</td>
+							</tr>
+							<tr>
+								<td>RV065</td>
+								<td>54784654568254</td>
+								<td>Pensil Steadler</td>
+								<td>Pcs</td>
+								<td>ATK</td>
+								<td class="bg-danger text-bold text-lg-center">1</td>
+							</tr>
+							<tr>
+								<td>RV085</td>
+								<td>5146546544</td>
+								<td>Penghapus Joyko Besar</td>
+								<td>Pcs</td>
+								<td>ATK</td>
+								<td class="bg-danger text-bold text-lg-center">3</td>
+							</tr>
+							<tr>
+								<td>RV077</td>
+								<td>454654654</td>
+								<td>Mika Transparan</td>
+								<td>Pcs</td>
+								<td>ATK</td>
+								<td class="bg-danger text-bold text-lg-center">3</td>
+							</tr>
+							<tr>
+								<td>RV068</td>
+								<td>546548654</td>
+								<td>Map Kancing Biru</td>
+								<td>Pcs</td>
+								<td>ATK</td>
+								<td class="bg-danger text-bold text-lg-center">4</td>
+							</tr>
+							<tr>
+								<td>RV006</td>
+								<td>489846542</td>
+								<td>Bolpoin Snowman V1</td>
+								<td>Pcs</td>
+								<td>ATK</td>
+								<td class="bg-danger text-bold text-lg-center">5</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- /.card-body -->
+				</div>
+				<!-- /.card -->
+			</div>
+			<!-- /.row -->
 		</div>
 		<!-- /.card-body -->
-		<div class="card-footer">
-		Footer
-		</div>
-		<!-- /.card-footer-->
 	</div>
 	<!-- /.card -->
 

@@ -52,7 +52,7 @@
                                     <td>kasir</td>
                                     <td>kasir</td>
                                     <td>Ngluyu, Nganjuk</td>
-                                    <td><button type="button" class="btn btn-info"><i class="fas fa-edit"></i> Update</button><button type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</button></td>
+                                    <td><button type="button" class="btn btn-info"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</button></td>
                                 </tr>
                                 <tr>
                                     <td>3.</td>
@@ -60,7 +60,7 @@
                                     <td>kasir</td>
                                     <td>kasir2</td>
                                     <td>Gondang, Nganjuk</td>
-                                    <td><button type="button" class="btn btn-info"><i class="fas fa-edit"></i> Update</button><button type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</button></td>
+                                    <td><button type="button" class="btn btn-info"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -73,7 +73,6 @@
         <!-- /.container-fluid -->
 @endsection
 
-</div>
     {{-- <script>
     $(function () {
         $("#example1").DataTable({
@@ -91,5 +90,3 @@
         });
     });
     </script> --}}
-</body>
-</html>
