@@ -8,3 +8,7 @@
   max-height: 250px; 
   max-width: 100%;
 }
+
+.bayar ::placeholder {
+  color: black;
+}

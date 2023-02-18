@@ -37,6 +37,11 @@ Route::get('/debt', function() {
     return view('transactions/debt');
 });
 
+Route::get('/listpos', function() {
+    return view('transactions/listpos');
+});
+
 Route::get('/sales', function() {
     return view('sales/sales');
 });
+

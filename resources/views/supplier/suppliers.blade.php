@@ -13,10 +13,10 @@
 @section('content')
 <div class="card card-primary card-outline">
     <div class="card-header">
-        <h3 class="card-title">Customers</h3>
+        <h3 class="card-title">Suppliers</h3>
         <div class="card-tools">
             <button type="button" class="btn btn-success">
-            <i class="fas fa-plus-circle"></i> Add Customer
+            <i class="fas fa-plus-circle"></i> Add Supplier
             </button>
         </div>
     </div>
