@@ -15,7 +15,7 @@
     <div class="card-header">
         <h3 class="card-title">Suppliers</h3>
         <div class="card-tools">
-            <button type="button" class="btn btn-success">
+            <button type="button" class="btn btn-success btn-sm">
             <i class="fas fa-plus-circle"></i> Add Supplier
             </button>
         </div>
@@ -25,17 +25,17 @@
         <div class="row">
             <div class="col-12">
                 <div class="card-body table-responsive p-0" style="height: 69vh;">
-                    <table class="table table-head-fixed text-nowrap">
+                    <table id="example2" class="table table-head-fixed text-nowrap table-striped table-sm">
                         <thead>
                             <tr>
-                                <th style="width: 15px">Kode</th>
+                                <th style="width: 100px">Kode</th>
                                 <th>Supplier Name</th>
                                 <th>Telp</th>
                                 <th>email</th>
                                 <th>Bank</th>
                                 <th>No. Rek</th>
                                 <th>Address</th>
-                                <th style="width: 300px">Actions</th>
+                                <th style="width: 200px">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -47,7 +47,7 @@
                                 <td>-</td>
                                 <td>-</td>
                                 <td>Nganjuk</td>
-                                <td><button type="button" class="btn btn-info"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</button></td>
+                                <td><button type="button" class="btn btn-info  btn-sm"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button></td>
                             </tr>
                             <tr>
                                 <td>CS002</td>
@@ -57,7 +57,7 @@
                                 <td>-</td>
                                 <td>-</td>
                                 <td>Nganjuk</td>
-                                <td><button type="button" class="btn btn-info"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</button></td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button></td>
                             </tr>
                             <tr>
                                 <td>CS003</td>
@@ -67,7 +67,7 @@
                                 <td>-</td>
                                 <td>-</td>
                                 <td>Nganjuk</td>
-                                <td><button type="button" class="btn btn-info"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</button></td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button></td>
                             </tr>
                             <tr>
                                 <td>CS004</td>
@@ -77,7 +77,7 @@
                                 <td>-</td>
                                 <td>-</td>
                                 <td>Pasar Pahing, Ngluyu</td>
-                                <td><button type="button" class="btn btn-info"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</button></td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button></td>
                             </tr>
                             <tr>
                                 <td>CS005</td>
@@ -87,7 +87,7 @@
                                 <td>-</td>
                                 <td>-</td>
                                 <td>Pasar Pahing, Ngluyu</td>
-                                <td><button type="button" class="btn btn-info"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</button></td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button></td>
                             </tr>
                             <tr>
                                 <td>CS006</td>
@@ -97,7 +97,7 @@
                                 <td>-</td>
                                 <td>-</td>
                                 <td>-</td>
-                                <td><button type="button" class="btn btn-info"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</button></td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -108,3 +108,19 @@
     <!-- /.card-body -->
     </div>
 @endsection
+
+@push('scripts')
+<script>
+    $(function () {
+    $('#example2').DataTable({
+        "paging": false,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": false,
+        "autoWidth": true,
+        "responsive": false,
+    });
+    });
+</script>
+@endpush

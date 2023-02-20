@@ -58,7 +58,7 @@
                         <h1 class="text-bold">Total (Rp)</h1>
                     </div>
                     <div class="col-md-7 col-sm-12 col-xs-12">
-                        <h1 style="text-align: right; font-size: 3.6em" class="text-bold"> 500,000</h1>
+                        <h1 style="text-align: right; font-size: 3.6em" class="text-bold"> 63,000</h1>
                     </div>
                 </div>
             </div>
@@ -66,12 +66,25 @@
     </div>
 </div>
 <div class="row">
+    <div class="col-md-2 col-sm-12 col-xs-12">
+        <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-2 col-form-label col-form-label-sm">Layanan</label>
+            <div class="col-sm-10">
+                <div class="input-group input-group-sm">
+                    <select name="jenis" class="form-control select2" required>
+                        <option value="Produk" >Produk</option>
+                        <option value="Servis">Servis</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="col-md-4 col-sm-12 col-xs-12">
         <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label col-form-label-sm">Kode Item</label>
             <div class="col-sm-10">
                 <div class="input-group input-group-sm">
-                    <input type="text" class="form-control">
+                    <input type="text" autofocus class="form-control">
                     <span class="input-group-append">
                         <button type="button" class="btn btn-info btn-flat"><i class="fas fa-search"></i></button>
                     </span>
@@ -84,23 +97,13 @@
             <label for="inputPassword3" class="col-sm-4 col-form-label col-form-label-sm">Qty</label>
             <div class="col-sm-8">
                 <div class="input-group input-group-sm">
-                    <input type="number" class="form-control" placeholder="1">
+                    <input type="number" class="form-control" value="1">
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-md-3 col-sm-12 col-xs-12">
-        <div class="form-group row">
-            <label for="inputPassword3" class="col-sm-2 col-form-label col-form-label-sm">Layanan</label>
-            <div class="col-sm-10">
-                <div class="input-group input-group-sm">
-                    <select name="jenis" class="form-control select2" required>
-                        <option value="Produk">Produk</option>
-                        <option value="Servis">Servis</option>
-                    </select>
-                </div>
-            </div>
-        </div>
+    <div class="col-md-1 col-sm-12 col-xs-12">
+        <button type="submit" class="btn btn-block btn-success btn-sm"><i class="fas fa-shopping-cart"></i>  Add To Cart</button>
     </div>
     <div class="col-md-4 col-sm-12 col-xs-12">
     </div>
@@ -113,7 +116,7 @@
                     <table class="table table-head-fixed text-nowrap table-sm">
                         <thead>
                             <tr>
-                                <th style="width: 50px;">Kode Items</th>
+                                <th style="width: 100px;">Code Items</th>
                                 <th>Barcode</th>
                                 <th>Name Items</th>
                                 <th>Harga</th>
@@ -130,10 +133,25 @@
                                 <td>0845621584654</td>
                                 <td>Kertas A4</td>
                                 <td>Rp 48.000</td>
-                                <td>1</td>
+                                <td><div class="input-group input-group-sm" style="width: 50px">
+                                    <input type="number" class="form-control" value="1">
+                                </div></td>
                                 <td>Pkg</td>
                                 <td>0%</td>
                                 <td>Rp 48.000</td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>RV006</td>
+                                <td>0845621584654</td>
+                                <td>Map Snail Biru</td>
+                                <td>Rp 3.000</td>
+                                <td><div class="input-group input-group-sm" style="width: 50px">
+                                    <input type="number" class="form-control" value="5">
+                                </div></td>
+                                <td>Pcs</td>
+                                <td>0%</td>
+                                <td>Rp 15.000</td>
                                 <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button></td>
                             </tr>
                         </tbody>
@@ -154,7 +172,7 @@
                     <label class="col-sm-4 col-form-label col-form-label-sm" readonly>Total</label>
                     <div class="col-sm-8">
                         <div class="input-group input-group-sm">
-                            <input type="number" class="form-control" readonly placeholder="Rp 0">
+                            <input type="number" class="form-control text-bold bg-warning" readonly value="63.000">
                         </div>
                     </div>
                 </div>
@@ -162,7 +180,7 @@
                     <label class="col-sm-4 col-form-label col-form-label-sm" readonly>Discount</label>
                     <div class="col-sm-8">
                         <div class="input-group input-group-sm">
-                            <input type="number" class="form-control" placeholder="0%">
+                            <input type="number" class="form-control text-bold" value="0">
                         </div>
                     </div>
                 </div>

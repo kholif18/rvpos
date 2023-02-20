@@ -32,7 +32,6 @@
     <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <li class="nav-header">MAIN MENU</li>
                 <!-- Add icons to the links using the .nav-icon class
                     with font-awesome or any other icon font library -->
                 <li class="nav-item">
@@ -41,6 +40,7 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
+                <li class="nav-header">MAIN MENU</li>
                 <li class="nav-item">
                     <a href="{{ url('sales') }}" class="nav-link">
                         <i class="nav-icon fas fa-shopping-cart"></i>
@@ -54,7 +54,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ url('listpos') }}" class="nav-link">
+                            <a href="{{ url('list-pos') }}" class="nav-link">
                                 <i class="nav-icon far fa-circle"></i>
                                 <p>List POS</p>
                             </a>
@@ -66,7 +66,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ url('list-purchases') }}" class="nav-link">
                                 <i class="nav-icon far fa-circle"></i>
                                 <p>List Purchases</p>
                             </a>
@@ -92,21 +92,15 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ url('items') }}" class="nav-link">
                             <i class="nav-icon far fa-circle text-info"></i>
                             <p>Items</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="category-unit" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Categories</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Units</p>
+                            <p>Categories / Units</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -116,7 +110,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ url('stockout') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Stock Out</p>
                             </a>

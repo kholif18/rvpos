@@ -18,22 +18,23 @@
                     <div class="card-header">
                         <h3 class="card-title">Data Users</h3>
                         <div class="card-tools">
-                            <button type="button" class="btn btn-success">
+                            <button type="button" class="btn btn-success btn-sm">
                             <i class="fas fa-plus-circle"></i> Add User
                             </button>
                         </div>
                     </div>
                     <!-- /.card-header -->
+                    <div class="card-body">
                     <div class="card-body table-responsive p-0">
-                        <table class="table table-bordered table-striped">
+                        <table class="table table-head-fixed text-nowrap table-striped table-sm">
                             <thead>
                                 <tr>
-                                    <th style="width: 15px">No</th>
+                                    <th style="width: 50px">No</th>
                                     <th>Name</th>
                                     <th>Level</th>
                                     <th>Username</th>
                                     <th>Address</th>
-                                    <th style="width: 300px">Actions</th>
+                                    <th style="width: 200px">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -44,7 +45,7 @@
                                     <td>Admin</td>
                                     <td>admin</td>
                                     <td>Ngluyu, Nganjuk</td>
-                                    <td><button type="button" class="btn btn-info"><i class="fas fa-edit"></i> Update</button></td>
+                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i> Update</button></td>
                                 </tr>
                                 <tr>
                                     <td>2.</td>
@@ -52,7 +53,7 @@
                                     <td>kasir</td>
                                     <td>kasir</td>
                                     <td>Ngluyu, Nganjuk</td>
-                                    <td><button type="button" class="btn btn-info"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</button></td>
+                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button></td>
                                 </tr>
                                 <tr>
                                     <td>3.</td>
@@ -60,10 +61,11 @@
                                     <td>kasir</td>
                                     <td>kasir2</td>
                                     <td>Gondang, Nganjuk</td>
-                                    <td><button type="button" class="btn btn-info"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</button></td>
+                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button></td>
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
                     </div>
                     <!-- /.card-body -->
                 </div>

@@ -33,15 +33,30 @@ Route::get('/customers', function() {
     return view('customers/customers');
 });
 
+Route::get('/list-purchases', function() {
+    return view('transactions/list-purchases');
+});
+
 Route::get('/debt', function() {
     return view('transactions/debt');
 });
 
-Route::get('/listpos', function() {
-    return view('transactions/listpos');
+Route::get('/list-pos', function() {
+    return view('transactions/list-pos');
 });
 
 Route::get('/sales', function() {
     return view('sales/sales');
 });
 
+Route::get('/items', function() {
+    return view('products/items');
+});
+
+Route::get('/category-unit', function() {
+    return view('products/category-unit');
+});
+
+Route::get('/stockout', function() {
+    return view('products/stockout');
+});

@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card-body table-responsive p-0" style="height: 77vh;">
-                        <table class="table table-head-fixed text-nowrap">
+                        <table id="example2" class="table table-head-fixed text-nowrap table-striped table-sm">
                             <thead>
                                 <tr>
                                     <th style="width: 15px">Invoice</th>
@@ -49,7 +49,7 @@
                                     <td>Rp 200.000</td>
                                     <td>Rp 50.000</td>
                                     <td><span class="badge bg-danger" style="padding: 8px; font-size: 10pt">Belum Lunas</span></td>
-                                    <td><button type="button" class="btn btn-success"><i class="fas fa-check"></i> Payment</button></td>
+                                    <td><button type="button" class="btn btn-success btn-sm"><i class="fas fa-check"></i> Payment</button></td>
                                 </tr>
                                 <tr>
                                     <td>15022023005</td>
@@ -60,7 +60,7 @@
                                     <td>Rp 300.000</td>
                                     <td>Rp -</td>
                                     <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span></td>
-                                    <td><button type="button" class="btn btn-info"><i class="fas fa-search-plus"></i> Detail Pembayaran</button></td>
+                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-search-plus"></i> Detail Pembayaran</button></td>
                                 </tr>
                                 <tr>
                                     <td>120120230023</td>
@@ -71,7 +71,7 @@
                                     <td>Rp -</td>
                                     <td>Rp 52000</td>
                                     <td><span class="badge bg-danger" style="padding: 8px; font-size: 10pt">Belum Lunas</span></td>
-                                    <td><button type="button" class="btn btn-success"><i class="fas fa-check"></i> Payment</button></td>
+                                    <td><button type="button" class="btn btn-success btn-sm"><i class="fas fa-check"></i> Payment</button></td>
                                 </tr>
                                 <tr>
                                     <td>17022023002</td>
@@ -82,7 +82,7 @@
                                     <td>Rp -</td>
                                     <td>Rp 205.000</td>
                                     <td><span class="badge bg-danger" style="padding: 8px; font-size: 10pt">Belum Lunas</span></td>
-                                    <td><button type="button" class="btn btn-success"><i class="fas fa-check"></i> Payment</button></td>
+                                    <td><button type="button" class="btn btn-success btn-sm"><i class="fas fa-check"></i> Payment</button></td>
                                 </tr>
                                 <tr>
                                     <td>01022023016</td>
@@ -93,7 +93,7 @@
                                     <td>Rp 15.000</td>
                                     <td>Rp -</td>
                                     <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span></td>
-                                    <td><button type="button" class="btn btn-info"><i class="fas fa-search-plus"></i> Detail Pembayaran</button></td>
+                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-search-plus"></i> Detail Pembayaran</button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -105,3 +105,19 @@
     </div>
     <!-- /.card -->
 @endsection
+
+@push('scripts')
+<script>
+    $(function () {
+    $('#example2').DataTable({
+        "paging": false,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": false,
+        "autoWidth": true,
+        "responsive": false,
+    });
+    });
+</script>
+@endpush
