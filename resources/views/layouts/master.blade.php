@@ -83,6 +83,8 @@
 	<script src="{{ asset('template/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
 	<script src="{{ asset('template/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
 	<script src="{{ asset('template/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+	<!-- bs-custom-file-input -->
+	<script src="{{ asset('template/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
 	<!-- Page specific script -->
 
 	<script>

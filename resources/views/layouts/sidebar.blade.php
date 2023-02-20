@@ -60,7 +60,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ url('purchases') }}" class="nav-link">
                                 <i class="nav-icon far fa-circle"></i>
                                 <p>Purchases</p>
                             </a>

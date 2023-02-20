@@ -97,7 +97,7 @@
             <label for="inputPassword3" class="col-sm-4 col-form-label col-form-label-sm">Qty</label>
             <div class="col-sm-8">
                 <div class="input-group input-group-sm">
-                    <input type="number" class="form-control" value="1">
+                    <input type="number" class="form-control" min="1" value="1">
                 </div>
             </div>
         </div>
@@ -118,13 +118,13 @@
                             <tr>
                                 <th style="width: 100px;">Code Items</th>
                                 <th>Barcode</th>
-                                <th>Name Items</th>
-                                <th>Harga</th>
+                                <th>Product Items</th>
+                                <th>Price</th>
                                 <th>Qty</th>
                                 <th>Unit</th>
                                 <th>Disc / Item</th>
                                 <th>Total</th>
-                                <th style="width: 90px">Opsi</th>
+                                <th style="width: 90px">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -134,7 +134,7 @@
                                 <td>Kertas A4</td>
                                 <td>Rp 48.000</td>
                                 <td><div class="input-group input-group-sm" style="width: 50px">
-                                    <input type="number" class="form-control" value="1">
+                                    <input type="number" class="form-control" min="1" value="1">
                                 </div></td>
                                 <td>Pkg</td>
                                 <td>0%</td>
@@ -147,7 +147,7 @@
                                 <td>Map Snail Biru</td>
                                 <td>Rp 3.000</td>
                                 <td><div class="input-group input-group-sm" style="width: 50px">
-                                    <input type="number" class="form-control" value="5">
+                                    <input type="number" class="form-control" min="1"  value="5">
                                 </div></td>
                                 <td>Pcs</td>
                                 <td>0%</td>
@@ -180,20 +180,20 @@
                     <label class="col-sm-4 col-form-label col-form-label-sm" readonly>Discount</label>
                     <div class="col-sm-8">
                         <div class="input-group input-group-sm">
-                            <input type="number" class="form-control text-bold" value="0">
+                            <input type="number" class="form-control text-bold" min="0" value="0">
                         </div>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-4 col-form-label" readonly>Bayar</label>
+                    <label class="col-sm-4 col-form-label" readonly>Pay</label>
                     <div class="col-sm-8">
                         <div class="input-group">
-                            <input type="number" class="form-control bg-primary text-bold" placeholder="Rp 0">
+                            <input type="number" class="form-control bg-primary text-bold" min="0" placeholder="Rp 0">
                         </div>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-4 col-form-label col-form-label-sm" readonly>Kembali</label>
+                    <label class="col-sm-4 col-form-label col-form-label-sm" readonly>Change</label>
                     <div class="col-sm-8">
                         <div class="input-group input-group-sm">
                             <input type="number" class="form-control bg-teal text-bold" readonly placeholder="Rp 0">

@@ -45,6 +45,10 @@ Route::get('/list-pos', function() {
     return view('transactions/list-pos');
 });
 
+Route::get('/purchases', function() {
+    return view('transactions/purchases');
+});
+
 Route::get('/sales', function() {
     return view('sales/sales');
 });
