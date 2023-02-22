@@ -53,8 +53,8 @@ Route::get('/sales', function() {
     return view('sales/sales');
 });
 
-Route::get('/items', function() {
-    return view('products/items');
+Route::get('/products', function() {
+    return view('products/products');
 });
 
 Route::get('/category-unit', function() {
@@ -62,5 +62,17 @@ Route::get('/category-unit', function() {
 });
 
 Route::get('/stockout', function() {
-    return view('products/stockout');
+return view('products/stockout');
+});
+
+// Route::get('/stockin', function() {
+//     return view('products/stockin');
+// });
+
+Route::get('/stock-opname', function() {
+    return view('products/stock-opname');
+});
+
+Route::get('/setting', function() {
+    return view('setting/setting');
 });

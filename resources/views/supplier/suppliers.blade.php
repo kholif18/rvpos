@@ -28,7 +28,7 @@
                     <table id="example2" class="table table-head-fixed text-nowrap table-striped table-sm">
                         <thead>
                             <tr>
-                                <th style="width: 100px">Kode</th>
+                                <th style="width: 100px">Code</th>
                                 <th>Supplier Name</th>
                                 <th>Telp</th>
                                 <th>email</th>

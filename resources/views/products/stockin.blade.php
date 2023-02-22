@@ -1,12 +1,15 @@
+{{-- Sementara page ini tidak di gunakan --}}
+
+
 @extends('layouts.master')
 
 @section('title')
-    Stock Out
+    Stock In
 @endsection
 
 @section('breadcrumb')
     @parent
-    <li class="active">Products / Stock Out</li>
+    <li class="active">Products / Stock In</li>
 @endsection
 
 @section('content')
@@ -15,7 +18,7 @@
         <h3 class="card-title">Stock out</h3>
         <div class="card-tools">
             <button type="button" class="btn btn-success  btn-sm">
-            <i class="fas fa-plus-circle"></i> Add Stock Out
+            <i class="fas fa-plus-circle"></i> Add Stock In
             </button>
         </div>
     </div>
@@ -29,7 +32,7 @@
                             <tr>
                                 <th style="width: 160px">Product Code</th>
                                 <th>Barcode</th>
-                                <th>Products Name</th>
+                                <th>Product Name</th>
                                 <th>Category</th>
                                 <th>Qty</th>
                                 <th>Detail</th>

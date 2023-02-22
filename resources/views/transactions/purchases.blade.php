@@ -23,10 +23,26 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                                     </div>
-                                    <input type="text" required autofocus class="form-control">
+                                    <input type="text" required class="form-control" value="Citra Stationary">
                                     <span class="input-group-append">
                                         <button type="button" class="btn btn-info btn-flat"><i class="fas fa-plus-circle"></i></button>
                                     </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <h6>Address</h6>
+                            <p>Ganung, Kab. Nganjuk<br>
+                                0822-3337-7661 <br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label col-form-label-sm" >Invoice</label>
+                            <div class="col-sm-9">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" autofocus class="form-control form-control-sm">
                                 </div>
                             </div>
                         </div>
@@ -41,43 +57,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label col-form-label-sm" >Invoice</label>
-                            <div class="col-sm-9">
-                                <div class="input-group input-group-sm">
-                                    <input type="text" class="form-control form-control-sm">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label col-form-label-sm text-sm-right" >Code Item</label>
-                            <div class="col-sm-9">
-                                <div class="input-group input-group-sm">
-                                    <input type="text" class="form-control">
-                                    <span class="input-group-append">
-                                        <button type="button" class="btn btn-info btn-flat"><i class="fas fa-search"></i></button>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label col-form-label-sm text-sm-right" >Product Name</label>
-                            <div class="col-sm-9">
-                                <div class="input-group input-group-sm">
-                                    <input type="text" readonly class="form-control">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label col-form-label-sm text-sm-right" >Qty</label>
-                            <div class="col-sm-9">
-                                <div class="input-group input-group-sm">
-                                    <input type="number" min="1" class="form-control" value="1">
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group row">
@@ -88,34 +67,37 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label col-form-label-sm text-sm-right" >Cost Price</label>
-                            <div class="col-sm-9">
-                                <div class="input-group input-group-sm">
-                                    <input type="text" class="form-control" placeholder="Rp 0">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label col-form-label-sm text-sm-right" >Selling Price</label>
-                            <div class="col-sm-9">
-                                <div class="input-group input-group-sm">
-                                    <input type="text" class="form-control" placeholder="Rp 0">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-xl-8 col-lg-6 col-md-12 col-sm-12 col-xs-12"></div>
-                            <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                <button type="submit" class="btn btn-block btn-success btn-sm"><i class="fas fa-shopping-cart"></i>  Add To Cart</button>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="card card-primary card-outline">
+        <div class="card-header row">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label col-form-label-sm text-sm-right" >Product Code</label>
+                    <div class="col-sm-9">
+                        <div class="input-group input-group-sm">
+                            <input type="text" class="form-control">
+                            <span class="input-group-append">
+                                <button type="button" class="btn btn-info btn-flat"><i class="fas fa-search"></i></button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group row">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12"></div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                        <button type="submit" class="btn btn-block btn-success btn-sm"><i class="fas fa-plus-circle"></i> Add New Product</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="card-body">
         <div class="row">
             <div class="col-12">
@@ -123,13 +105,13 @@
                     <table id="example2" class="table table-head-fixed text-nowrap table-sm">
                         <thead>
                             <tr>
-                                <th style="width: 130px">Code Items</th>
+                                <th style="width: 130px">Product Code</th>
                                 <th>Barcode</th>
-                                <th>Name Items</th>
-                                <th>Category</th>
+                                <th>Product Name</th>
                                 <th>Qty</th>
                                 <th>Cost Price</th>
-                                <th>Selling Price</th>
+                                <th>Markup %</th>
+                                <th>Sele Price</th>
                                 <th>Total</th>
                                 <th style="width: 130px">Actions</th>
                             </tr>
@@ -139,11 +121,19 @@
                                 <td>RV0015</td>
                                 <td>0651454789546</td>
                                 <td>Kartas F4 70 Gsm</td>
-                                <td>ATK</td>
-                                <td>20</td>
-                                <td>Rp 52.000</td>
-                                <td>Rp 56.000</td>
-                                <td>Rp 1040000</td>
+                                <td><div class="input-group input-group-sm" style="width: 60px">
+                                    <input type="number" class="form-control" min="1" value="20">
+                                </div></td>
+                                <td><div class="input-group input-group-sm" style="width: 120px">
+                                    <input type="number" class="form-control" min="1" value="52.000">
+                                </div></td>
+                                <td><div class="input-group input-group-sm" style="width: 60px">
+                                    <input type="number" class="form-control" min="1" value="7.7">
+                                </div></td>
+                                <td><div class="input-group input-group-sm" style="width: 120px">
+                                    <input type="number" class="form-control" min="1" value="56.000">
+                                </div></td>
+                                <td>Rp 1.120.000</td>
                                 <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
                                     <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
                                 </td>
@@ -152,11 +142,19 @@
                                 <td>RV0015</td>
                                 <td>8754654324153</td>
                                 <td>Isolasi Hitam National </td>
-                                <td>ATK</td>
-                                <td>50</td>
-                                <td>Rp 5.800</td>
-                                <td>Rp 7.500</td>
-                                <td>Rp 425.000</td>
+                                <td><div class="input-group input-group-sm" style="width: 60px">
+                                    <input type="number" class="form-control" min="1" value="50">
+                                </div></td>
+                                <td><div class="input-group input-group-sm" style="width: 120px">
+                                    <input type="number" class="form-control" min="1" value="5.800">
+                                </div></td>
+                                <td><div class="input-group input-group-sm" style="width: 60px">
+                                    <input type="number" class="form-control" min="1" value="30">
+                                </div></td>
+                                <td><div class="input-group input-group-sm" style="width: 120px">
+                                    <input type="number" class="form-control" min="1" value="7.500">
+                                </div></td>
+                                <td>Rp 375.000</td>
                                 <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
                                     <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
                                 </td>
@@ -165,11 +163,19 @@
                                 <td>RV0015</td>
                                 <td>0651454789546</td>
                                 <td>Tipe-x Joyko CF-5221</td>
-                                <td>ATK</td>
-                                <td>6</td>
-                                <td>Rp 3.500</td>
-                                <td>Rp 4.000</td>
-                                <td>Rp 21.000</td>
+                                <td><div class="input-group input-group-sm" style="width: 60px">
+                                    <input type="number" class="form-control" min="1" value="6">
+                                </div></td>
+                                <td><div class="input-group input-group-sm" style="width: 120px">
+                                    <input type="number" class="form-control" min="1" value="3.500">
+                                </div></td>
+                                <td><div class="input-group input-group-sm" style="width: 60px">
+                                    <input type="number" class="form-control" min="1" value="15">
+                                </div></td>
+                                <td><div class="input-group input-group-sm" style="width: 120px">
+                                    <input type="number" class="form-control" min="1" value="4.000">
+                                </div></td>
+                                <td>Rp 24.000</td>
                                 <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
                                     <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
                                 </td>
@@ -178,11 +184,19 @@
                                 <td>RV0015</td>
                                 <td>546843241585</td>
                                 <td>Buku HC Folio isi 100</td>
-                                <td>ATK</td>
-                                <td>7</td>
-                                <td>Rp 20.000</td>
-                                <td>Rp 23.000</td>
-                                <td>Rp 140.000</td>
+                                <td><div class="input-group input-group-sm" style="width: 60px">
+                                    <input type="number" class="form-control" min="1" value="7">
+                                </div></td>
+                                <td><div class="input-group input-group-sm" style="width: 120px">
+                                    <input type="number" class="form-control" min="1" value="20.000">
+                                </div></td>
+                                <td><div class="input-group input-group-sm" style="width: 60px">
+                                    <input type="number" class="form-control" min="1" value="15">
+                                </div></td>
+                                <td><div class="input-group input-group-sm" style="width: 120px">
+                                    <input type="number" class="form-control" min="1" value="23.000">
+                                </div></td>
+                                <td>Rp 161.000</td>
                                 <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
                                     <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
                                 </td>

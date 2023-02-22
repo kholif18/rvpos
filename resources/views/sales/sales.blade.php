@@ -116,9 +116,9 @@
                     <table class="table table-head-fixed text-nowrap table-sm">
                         <thead>
                             <tr>
-                                <th style="width: 100px;">Code Items</th>
+                                <th style="width: 100px;">Product Code</th>
                                 <th>Barcode</th>
-                                <th>Product Items</th>
+                                <th>Products Name</th>
                                 <th>Price</th>
                                 <th>Qty</th>
                                 <th>Unit</th>

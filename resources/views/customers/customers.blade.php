@@ -34,7 +34,8 @@
                                     <th>email</th>
                                     <th>Address</th>
                                     <th>Status</th>
-                                    <th style="width: 200px">Actions</th>
+                                    <th style="width: 120px">Member Disc.</th>
+                                    <th style="width: 90px">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -45,7 +46,8 @@
                                     <td>Umum</td>
                                     <td>Umum</td>
                                     <td>Umum</td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i> Update</button></td>
+                                    <td>0%</td>
+                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button></td>
                                 </tr>
                                 <tr>
                                     <td>CS002</td>
@@ -54,7 +56,8 @@
                                     <td>example@mail.com</td>
                                     <td>Ngluyu, Nganjuk</td>
                                     <td>Agent</td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button></td>
+                                    <td>10%</td>
+                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button></td>
                                 </tr>
                                 <tr>
                                     <td>CS003</td>
@@ -63,7 +66,8 @@
                                     <td>example@mail.com</td>
                                     <td>Gondang, Nganjuk</td>
                                     <td>Pelanggan</td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button></td>
+                                    <td>5%</td>
+                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button></td>
                                 </tr>
                                 <tr>
                                     <td>CS004</td>
@@ -72,7 +76,8 @@
                                     <td>example@mail.com</td>
                                     <td>Gondang, Nganjuk</td>
                                     <td>Pelanggan</td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button></td>
+                                    <td>0%</td>
+                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button></td>
                                 </tr>
                                 <tr>
                                     <td>CS005</td>
@@ -81,7 +86,8 @@
                                     <td>example@mail.com</td>
                                     <td>Gondang, Nganjuk</td>
                                     <td>Pelanggan</td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button></td>
+                                    <td>0%</td>
+                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button></td>
                                 </tr>
                                 <tr>
                                     <td>CS006</td>
@@ -90,7 +96,8 @@
                                     <td>example@mail.com</td>
                                     <td>Gondang, Nganjuk</td>
                                     <td>Pelanggan</td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button></td>
+                                    <td>0%</td>
+                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button></td>
                                 </tr>
                             </tbody>
                         </table>

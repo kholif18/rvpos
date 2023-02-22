@@ -92,9 +92,9 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ url('items') }}" class="nav-link">
+                            <a href="{{ url('products') }}" class="nav-link">
                             <i class="nav-icon far fa-circle text-info"></i>
-                            <p>Items</p>
+                            <p>Products</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -103,12 +103,12 @@
                             <p>Categories / Units</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
+                        {{-- <li class="nav-item">
+                            <a href="{{ url('stockin') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Stock In</p>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a href="{{ url('stockout') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -116,7 +116,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ url('stock-opname') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Stock Opname</p>
                             </a>
@@ -169,9 +169,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ url('setting') }}" class="nav-link">
                         <i class="nav-icon fas fa-cog"></i>
-                        <p>Configuration</p>
+                        <p>Setting</p>
                     </a>
                 </li>
             </ul>

@@ -31,8 +31,6 @@
                                     <th>Invoice</th>
                                     <th>Date</th>
                                     <th>Supplier</th>
-                                    <th>Disc.</th>
-                                    <th>Qty</th>
                                     <th>Total</th>
                                     <th>Payment Status</th>
                                     <th>Added By</th>
@@ -44,8 +42,6 @@
                                     <td>13022023009</td>
                                     <td>19/02/2023</td>
                                     <td>Citra Stationary</td>
-                                    <td>0</td>
-                                    <td>20</td>
                                     <td>Rp 523.000</td>
                                     <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span></td>
                                     <td>Admin</td>
@@ -60,8 +56,6 @@
                                     <td>4568462186521</td>
                                     <td>19/02/2023</td>
                                     <td>Karunia Photo</td>
-                                    <td>0</td>
-                                    <td>6</td>
                                     <td>Rp 56.000</td>
                                     <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span></td>
                                     <td>Admin</td>
@@ -76,8 +70,6 @@
                                     <td>87655465</td>
                                     <td>19/02/2023</td>
                                     <td>Praktika</td>
-                                    <td>0</td>
-                                    <td>1000</td>
                                     <td>Rp 220.000</td>
                                     <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span></td>
                                     <td>Admin</td>

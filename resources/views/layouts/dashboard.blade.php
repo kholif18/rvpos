@@ -31,7 +31,7 @@
 			<div class="small-box bg-success">
 				<div class="inner">
 				<h3>53</h3>
-				<p>Items</p>
+				<p>Products</p>
 				</div>
 				<div class="icon">
 				{{-- <i class="ion ion-stats-bars"></i> --}}
@@ -145,7 +145,7 @@
 	<!-- Default box -->
 	<div class="card card-warning">
 		<div class="card-header">
-			<h3 class="card-title">Low Stock Items</h3>
+			<h3 class="card-title">Low Stock Products</h3>
 			<div class="card-tools">
 				<div class="input-group input-group-sm" style="width: 300px;">
 					<input type="text" name="table_search" class="form-control float-right" placeholder="Search">
@@ -163,12 +163,12 @@
 			<div class="row">
 				<div class="col-12">
 					<div class="card-body table-responsive p-0" style="height: 200px;">
-						<table class="table table-head-fixed text-nowrap">
+						<table class="table table-head-fixed text-nowrap table-sm">
 							<thead>
 							<tr>
-								<th>Kode Items</th>
+								<th>Kode Products</th>
 								<th>Barcode</th>
-								<th>Name Items</th>
+								<th>Name Products</th>
 								<th>Status</th>
 								<th>Kategory</th>
 								<th style="width: 90px">Stock</th>
