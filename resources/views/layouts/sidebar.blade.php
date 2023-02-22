@@ -35,14 +35,14 @@
                 <!-- Add icons to the links using the .nav-icon class
                     with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="{{ url('/') }}" class="nav-link">
+                    <a href="{{ url('/') }}" class="nav-link {{ Request::is('/') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li class="nav-header">MAIN MENU</li>
                 <li class="nav-item">
-                    <a href="{{ url('sales') }}" class="nav-link">
+                    <a href="{{ url('sales') }}" class="nav-link {{ Request::is('sales') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-shopping-cart"></i>
                         <p>Sales</p>
                     </a>
@@ -54,31 +54,31 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ url('list-pos') }}" class="nav-link">
+                            <a href="{{ url('list-pos') }}" class="nav-link {{ Request::is('list-pos') ? 'active' : '' }}">
                                 <i class="nav-icon far fa-circle"></i>
                                 <p>List POS</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('purchases') }}" class="nav-link">
+                            <a href="{{ url('purchases') }}" class="nav-link {{ Request::is('purchases') ? 'active' : '' }}">
                                 <i class="nav-icon far fa-circle"></i>
                                 <p>Purchases</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('list-purchases') }}" class="nav-link">
+                            <a href="{{ url('list-purchases') }}" class="nav-link {{ Request::is('list-purchases') ? 'active' : '' }}">
                                 <i class="nav-icon far fa-circle"></i>
                                 <p>List Purchases</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="#" class="nav-link {{ Request::is('#') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Item Return</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ asset('debt') }}" class="nav-link">
+                            <a href="{{ asset('debt') }}" class="nav-link {{ Request::is('debt') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Debt</p>
                             </a>

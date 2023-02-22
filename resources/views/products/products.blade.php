@@ -30,7 +30,7 @@
     <!-- /.card-header -->
     <div class="card-body">
         <form action="enhanced-results.html">
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label>Filter by Category:</label>
                 <select class="select2" multiple="multiple" data-placeholder="All" style="width: 400px;">
                     <option value="all">All</option>
@@ -39,7 +39,7 @@
                     <option value="jasa">Jasa</option>
                 </select>
                 <button type="button" class="btn btn-success"><i class="fas fa-print"></i></button>
-            </div>
+            </div> --}}
         </form>
         <div class="row">
             <div class="col-12">
@@ -111,6 +111,253 @@
                                     <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
                                 </td>
                             </tr>
+                            <tr>
+                                <td>RV0015</td>
+                                <td>546843241585</td>
+                                <td>Buku HC Folio isi 100</td>
+                                <td>ATK</td>
+                                <td>Pcs</td>
+                                <td>Rp 20.000</td>
+                                <td>Rp 23.000</td>
+                                <td>12</td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+                                    <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV0015</td>
+                                <td>546843241585</td>
+                                <td>Buku HC Folio isi 100</td>
+                                <td>ATK</td>
+                                <td>Pcs</td>
+                                <td>Rp 20.000</td>
+                                <td>Rp 23.000</td>
+                                <td>12</td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+                                    <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV0015</td>
+                                <td>546843241585</td>
+                                <td>Buku HC Folio isi 100</td>
+                                <td>ATK</td>
+                                <td>Pcs</td>
+                                <td>Rp 20.000</td>
+                                <td>Rp 23.000</td>
+                                <td>12</td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+                                    <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV0015</td>
+                                <td>546843241585</td>
+                                <td>Buku HC Folio isi 100</td>
+                                <td>ATK</td>
+                                <td>Pcs</td>
+                                <td>Rp 20.000</td>
+                                <td>Rp 23.000</td>
+                                <td>12</td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+                                    <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV0015</td>
+                                <td>546843241585</td>
+                                <td>Buku HC Folio isi 100</td>
+                                <td>ATK</td>
+                                <td>Pcs</td>
+                                <td>Rp 20.000</td>
+                                <td>Rp 23.000</td>
+                                <td>12</td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+                                    <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV0015</td>
+                                <td>546843241585</td>
+                                <td>Buku HC Folio isi 100</td>
+                                <td>ATK</td>
+                                <td>Pcs</td>
+                                <td>Rp 20.000</td>
+                                <td>Rp 23.000</td>
+                                <td>12</td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+                                    <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV0015</td>
+                                <td>546843241585</td>
+                                <td>Buku HC Folio isi 100</td>
+                                <td>ATK</td>
+                                <td>Pcs</td>
+                                <td>Rp 20.000</td>
+                                <td>Rp 23.000</td>
+                                <td>12</td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+                                    <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV0015</td>
+                                <td>546843241585</td>
+                                <td>Buku HC Folio isi 100</td>
+                                <td>ATK</td>
+                                <td>Pcs</td>
+                                <td>Rp 20.000</td>
+                                <td>Rp 23.000</td>
+                                <td>12</td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+                                    <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV0015</td>
+                                <td>546843241585</td>
+                                <td>Buku HC Folio isi 100</td>
+                                <td>Print</td>
+                                <td>Pcs</td>
+                                <td>Rp 20.000</td>
+                                <td>Rp 23.000</td>
+                                <td>12</td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+                                    <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV0015</td>
+                                <td>546843241585</td>
+                                <td>Buku HC Folio isi 100</td>
+                                <td>ATK</td>
+                                <td>Pcs</td>
+                                <td>Rp 20.000</td>
+                                <td>Rp 23.000</td>
+                                <td>12</td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+                                    <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV0015</td>
+                                <td>546843241585</td>
+                                <td>Buku HC Folio isi 100</td>
+                                <td>Print</td>
+                                <td>Pcs</td>
+                                <td>Rp 20.000</td>
+                                <td>Rp 23.000</td>
+                                <td>12</td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+                                    <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV0015</td>
+                                <td>546843241585</td>
+                                <td>Buku HC Folio isi 100</td>
+                                <td>ATK</td>
+                                <td>Pcs</td>
+                                <td>Rp 20.000</td>
+                                <td>Rp 23.000</td>
+                                <td>12</td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+                                    <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV0015</td>
+                                <td>546843241585</td>
+                                <td>Buku HC Folio isi 100</td>
+                                <td>Print</td>
+                                <td>Pcs</td>
+                                <td>Rp 20.000</td>
+                                <td>Rp 23.000</td>
+                                <td>12</td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+                                    <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV0015</td>
+                                <td>546843241585</td>
+                                <td>Buku HC Folio isi 100</td>
+                                <td>ATK</td>
+                                <td>Pcs</td>
+                                <td>Rp 20.000</td>
+                                <td>Rp 23.000</td>
+                                <td>12</td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+                                    <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV0015</td>
+                                <td>546843241585</td>
+                                <td>Buku HC Folio isi 100</td>
+                                <td>Print</td>
+                                <td>Pcs</td>
+                                <td>Rp 20.000</td>
+                                <td>Rp 23.000</td>
+                                <td>12</td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+                                    <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV0015</td>
+                                <td>546843241585</td>
+                                <td>Buku HC Folio isi 100</td>
+                                <td>Print</td>
+                                <td>Pcs</td>
+                                <td>Rp 20.000</td>
+                                <td>Rp 23.000</td>
+                                <td>12</td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+                                    <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV0015</td>
+                                <td>546843241585</td>
+                                <td>Buku HC Folio isi 100</td>
+                                <td>Ice Cream</td>
+                                <td>Pcs</td>
+                                <td>Rp 20.000</td>
+                                <td>Rp 23.000</td>
+                                <td>12</td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+                                    <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV0015</td>
+                                <td>546843241585</td>
+                                <td>Buku HC Folio isi 100</td>
+                                <td>Ice Cream</td>
+                                <td>Pcs</td>
+                                <td>Rp 20.000</td>
+                                <td>Rp 23.000</td>
+                                <td>12</td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+                                    <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV0015</td>
+                                <td>546843241585</td>
+                                <td>Buku HC Folio isi 100</td>
+                                <td>Ice Cream</td>
+                                <td>Pcs</td>
+                                <td>Rp 20.000</td>
+                                <td>Rp 23.000</td>
+                                <td>12</td>
+                                <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+                                    <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -131,20 +378,16 @@
 toggle between hiding and showing the dropdown content --}}
 
 <script>
-
     $(function () {
-        $('.select2').select2()
-    });
-
-    $('#example2').DataTable({
+    $("#example1").DataTable({
         "paging": false,
-        "lengthChange": false,
-        "searching": false,
         "ordering": true,
         "info": false,
-        "autoWidth": true,
-        "responsive": false,
-    });
-
+        "responsive": true, 
+        "lengthChange": false, 
+        "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+});
 </script>
 @endpush

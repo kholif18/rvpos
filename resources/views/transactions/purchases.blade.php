@@ -53,7 +53,8 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-calendar"></i></span>
                                     </div>
-                                    <input type="date" class="form-control form-control-sm">
+                                    {{-- <input type="date" class="form-control form-control-sm" id="dt"> --}}
+                                    <input type="date" id="tgl" class="form-control form-control-sm">
                                 </div>
                             </div>
                         </div>
@@ -268,5 +269,6 @@
         "responsive": false,
 
     });
-    </script>
+
+    document.getElementById('tgl').valueAsDate = new Date();
 @endpush
