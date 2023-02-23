@@ -162,13 +162,8 @@
     </div>
 </div>
 <div class="row">
-<<<<<<< HEAD
-    <div class="col-md-8 col-sm-12 col-xs-12">
-        <div class="card"></div>
-=======
     <div class="col-md-7 col-sm-12 col-xs-12">
-        <div style="background-color: aqua"></div>
->>>>>>> 6e375cb (SALES PAGE)
+        <div></div>
     </div>
     <div class="col-md-5 col-sm-12 col-xs-12">
         <div class="card card-primary card-outline">
