@@ -113,7 +113,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="card-body table-responsive p-0" style="height: 200px;">
-                    <table class="table table-head-fixed text-nowrap table-sm">
+                    <table id="example2" class="table table-head-fixed text-nowrap table-sm">
                         <thead>
                             <tr>
                                 <th style="width: 100px;">Product Code</th>
@@ -163,15 +163,18 @@
 </div>
 <div class="row">
     <div class="col-md-8 col-sm-12 col-xs-12">
-        <div style="background-color: aqua"></div>
+        <div class="card"></div>
     </div>
     <div class="col-md-4 col-sm-12 col-xs-12">
         <div class="card card-primary card-outline">
             <div class="card-body">
                 <div class="form-group row">
-                    <label class="col-sm-4 col-form-label col-form-label-sm" readonly>Total</label>
+                    <label class="col-sm-4 col-form-label col-form-label-sm" readonly>Sub Total</label>
                     <div class="col-sm-8">
                         <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="width: 40px">Rp </span>
+                            </div>
                             <input type="number" class="form-control text-bold bg-warning" readonly value="63.000">
                         </div>
                     </div>
@@ -188,6 +191,9 @@
                     <label class="col-sm-4 col-form-label" readonly>Pay</label>
                     <div class="col-sm-8">
                         <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="width: 40px">Rp </span>
+                            </div>
                             <input type="number" class="form-control bg-primary text-bold" min="0" placeholder="Rp 0">
                         </div>
                     </div>
@@ -196,6 +202,9 @@
                     <label class="col-sm-4 col-form-label col-form-label-sm" readonly>Change</label>
                     <div class="col-sm-8">
                         <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="width: 40px">Rp </span>
+                            </div>
                             <input type="number" class="form-control bg-teal text-bold" readonly placeholder="Rp 0">
                         </div>
                     </div>
@@ -253,3 +262,19 @@
         </div> --}}
 
 @endsection
+
+@push('scripts')
+<script>
+    $(function () {
+        $('#example2').DataTable({
+        "paging": false,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": false,
+        "autoWidth": false,
+        "responsive": true,
+        });
+    });
+</script>
+@endpush

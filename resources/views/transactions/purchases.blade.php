@@ -54,7 +54,8 @@
                                         <span class="input-group-text"><i class="fas fa-calendar"></i></span>
                                     </div>
                                     {{-- <input type="date" class="form-control form-control-sm" id="dt"> --}}
-                                    <input type="date" id="tgl" class="form-control form-control-sm">
+                                    
+                                    <input type="date" id="tgl" name="tgl" class="form-control form-control-sm">
                                 </div>
                             </div>
                         </div>
@@ -257,7 +258,9 @@
         bsCustomFileInput.init();
     });
 
-    $('.select2').select2()
+    $('.select2').select2();
+
+    document.getElementById('tgl').value = (new Date()).format("m/dd/yy");
 
     $('#example2').DataTable({
         "paging": false,
@@ -269,6 +272,5 @@
         "responsive": false,
 
     });
-
-    document.getElementById('tgl').valueAsDate = new Date();
+</script>
 @endpush
