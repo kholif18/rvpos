@@ -76,7 +76,7 @@
     </div>
     <div class="card card-primary card-outline">
         <div class="card-header row">
-            <div class="col-sm-3">
+            <div class="col-sm-2">
             </div>
             <div class="col-sm-6">
                 <div class="form-group row">
@@ -91,7 +91,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-4">
                 <div class="form-group row">
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12"></div>
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
@@ -236,15 +236,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <div class="col-xl-8 col-lg-8 col-md-4 col-sm-12 col-xs-12"></div>
-                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-12 col-xs-12">
-                            <button type="submit" class="btn btn-block btn-success btn-sm"><i class="fas fa-paper-plane"></i> Save</button>
-                        </div>
-                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-12 col-xs-12">
-                            <button type="submit" class="btn btn-block btn-danger btn-sm"><i class="fas fa-trash"></i> Cancel</button>
-                        </div>
-                    </div>
+                    <table class="table text-center">
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td><button type="submit" class="btn btn-block btn-success btn-sm"><i class="fas fa-paper-plane"></i> Save</button></td>
+                                <td><button type="submit" class="btn btn-block btn-danger btn-sm"><i class="fas fa-trash"></i> Cancel</button></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
