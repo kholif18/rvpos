@@ -71,12 +71,12 @@
                                 <p>List Purchases</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="#" class="nav-link {{ Request::is('#') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Item Return</p>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a href="{{ asset('debt') }}" class="nav-link {{ Request::is('debt') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
@@ -142,21 +142,27 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ url('sales-report') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Sales</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ url('stockin-out') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Stock In/Out</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ url('profit-loss') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Profit & Loss</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('debt-report') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Debt Report</p>
                             </a>
                         </li>
                     </ul>

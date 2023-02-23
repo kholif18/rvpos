@@ -15,7 +15,7 @@
             <div class="card-title">Company Profile</div>
         </div>
         <div class="card-body row">
-            <div class="col-5 text-center d-flex align-items-center justify-content-center">
+            <div class=" col-md-5 col-sm-12 col-xs-12 text-center d-flex align-items-center justify-content-center">
                 <div class="">
                     <div class="">
                         <img src="{{ asset('img/logo.png') }}" alt="" style="width: 150px; margin-bottom: 20px">
@@ -28,9 +28,9 @@
                     </p>
                 </div>
             </div>
-            <div class="col-7">
+            <div class="col-md-7 col-sm-12 col-xs-12">
                 <div class="form-group">
-                    <label class="form-group-sm" >Company Name</label>
+                    <label class="form-group-sm">Company Name</label>
                     <div class="input-group input-group-sm">
                         <div class="input-group-prepend">
                             <span class="input-group-text" style="width: 30px"><i class="fas fa-landmark"></i></span>

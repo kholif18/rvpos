@@ -76,3 +76,19 @@ Route::get('/stock-opname', function() {
 Route::get('/setting', function() {
     return view('setting/setting');
 });
+
+Route::get('/sales-report', function() {
+    return view('report/sales-report');
+});
+
+Route::get('/stockin-out', function() {
+    return view('report/stockin-out');
+});
+
+Route::get('/profit-loss', function() {
+    return view('report/report-profit-loss');
+});
+
+Route::get('/debt-report', function() {
+    return view('report/debt-report');
+});
