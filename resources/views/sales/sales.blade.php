@@ -66,10 +66,10 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-2 col-sm-12 col-xs-12">
+    <div class="col-md-3 col-sm-12 col-xs-12">
         <div class="form-group row">
-            <label for="inputPassword3" class="col-sm-2 col-form-label col-form-label-sm">Layanan</label>
-            <div class="col-sm-10">
+            <label for="inputPassword3" class="col-sm-4 col-form-label col-form-label-sm">Layanan</label>
+            <div class="col-sm-8">
                 <div class="input-group input-group-sm">
                     <select name="jenis" class="form-control select2" required>
                         <option value="Produk" >Produk</option>
@@ -81,8 +81,8 @@
     </div>
     <div class="col-md-4 col-sm-12 col-xs-12">
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label col-form-label-sm">Kode Item</label>
-            <div class="col-sm-10">
+            <label for="inputEmail3" class="col-sm-3 col-form-label col-form-label-sm">Kode Item</label>
+            <div class="col-sm-9">
                 <div class="input-group input-group-sm">
                     <input type="text" autofocus class="form-control">
                     <span class="input-group-append">
@@ -92,7 +92,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-1 col-sm-12 col-xs-12">
+    <div class="col-md-2 col-sm-12 col-xs-12">
         <div class="form-group row">
             <label for="inputPassword3" class="col-sm-4 col-form-label col-form-label-sm">Qty</label>
             <div class="col-sm-8">
@@ -102,10 +102,10 @@
             </div>
         </div>
     </div>
-    <div class="col-md-1 col-sm-12 col-xs-12">
+    <div class="col-md-2 col-sm-12 col-xs-12">
         <button type="submit" class="btn btn-block btn-success btn-sm"><i class="fas fa-shopping-cart"></i>  Add To Cart</button>
     </div>
-    <div class="col-md-4 col-sm-12 col-xs-12">
+    <div class="col-md-1 col-sm-12 col-xs-12">
     </div>
 </div>
 <div class="card card-primary card-outline">
@@ -162,10 +162,15 @@
     </div>
 </div>
 <div class="row">
+<<<<<<< HEAD
     <div class="col-md-8 col-sm-12 col-xs-12">
         <div class="card"></div>
+=======
+    <div class="col-md-7 col-sm-12 col-xs-12">
+        <div style="background-color: aqua"></div>
+>>>>>>> 6e375cb (SALES PAGE)
     </div>
-    <div class="col-md-4 col-sm-12 col-xs-12">
+    <div class="col-md-5 col-sm-12 col-xs-12">
         <div class="card card-primary card-outline">
             <div class="card-body">
                 <div class="form-group row">
