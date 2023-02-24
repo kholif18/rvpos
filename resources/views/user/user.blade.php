@@ -44,7 +44,7 @@
                                     <td>Admin</td>
                                     <td>admin</td>
                                     <td></td>
-                                    <td></td>
+                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit-admin"><i class="fas fa-edit"></i> Update</button></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
@@ -108,6 +108,14 @@
                         <div class="input-group input-group-sm">
                             <input type="text" class="form-control">
                         </div>
+                        <label class="col-form-label col-form-label-sm text-sm-right" >Password</label>
+                        <div class="input-group input-group-sm">
+                            <input type="password" class="form-control">
+                        </div>
+                        <label class="col-form-label col-form-label-sm text-sm-right" >Confirm Password</label>
+                        <div class="input-group input-group-sm">
+                            <input type="password" class="form-control">
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer justify-content-between">
@@ -125,7 +133,7 @@
             <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
-                <h4 class="modal-title">Add User</h4>
+                <h4 class="modal-title">Edit User</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -144,16 +152,68 @@
                         <div class="input-group input-group-sm">
                             <input type="text" class="form-control" value="kholif18">
                         </div>
-                        <label class="col-form-label col-form-label-sm text-sm-right" >Level</label>
+                        {{-- <label class="col-form-label col-form-label-sm text-sm-right" >Level</label>
                         <div class="input-group input-group-sm">
                             <select name="jenis" class="form-control select2" required>
                                 <option value="Produk">Admin</option>
                                 <option value="Servis" selected>Kasir</option>
                             </select>
-                        </div>
+                        </div> --}}
                         <label class="col-form-label col-form-label-sm text-sm-right">Address</label>
                         <div class="input-group input-group-sm">
                             <input type="text" class="form-control" value="Ngluyu, Nganjuk">
+                        </div>
+                        <label class="col-form-label col-form-label-sm text-sm-right" >Password</label>
+                        <div class="input-group input-group-sm">
+                            <input type="password" class="form-control">
+                        </div>
+                        <label class="col-form-label col-form-label-sm text-sm-right" >Confirm Password</label>
+                        <div class="input-group input-group-sm">
+                            <input type="password" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-paper-plane"></i> Save</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        {{-- Modal Update--}}
+        <div class="modal fade" id="modal-edit-admin">
+            <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h4 class="modal-title">Edit User</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="col-form-label col-form-label-sm text-sm-right" >No.</label>
+                        <div class="input-group input-group-sm">
+                            <input type="number" class="form-control" readonly value="1">
+                        </div>
+                        <label class="col-form-label col-form-label-sm text-sm-right">Name</label>
+                        <div class="input-group input-group-sm">
+                            <input type="text" class="form-control" readonly value="Administrator">
+                        </div>
+                        <label class="col-form-label col-form-label-sm text-sm-right" >Username</label>
+                        <div class="input-group input-group-sm">
+                            <input type="text" class="form-control" readonly value="Admin">
+                        </div>
+                        <label class="col-form-label col-form-label-sm text-sm-right" >Password</label>
+                        <div class="input-group input-group-sm">
+                            <input type="password" class="form-control">
+                        </div>
+                        <label class="col-form-label col-form-label-sm text-sm-right" >Confirm Password</label>
+                        <div class="input-group input-group-sm">
+                            <input type="password" class="form-control">
                         </div>
                     </div>
                 </div>
