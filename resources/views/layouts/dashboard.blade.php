@@ -147,15 +147,7 @@
 		<div class="card-header">
 			<h3 class="card-title">Low Stock Products</h3>
 			<div class="card-tools">
-				<div class="input-group input-group-sm" style="width: 300px;">
-					<input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-					<div class="input-group-append">
-					<button type="submit" class="btn btn-default">
-						<i class="fas fa-search"></i>
-					</button>
-					</div>
-					<button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse"><i class="fas fa-minus"></i></button>
-				</div>
+				<button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse"><i class="fas fa-minus"></i></button>
 			</div>
 		</div>
 		<!-- /.card-header -->

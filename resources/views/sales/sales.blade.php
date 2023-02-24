@@ -212,6 +212,7 @@
                 <table class="table text-center">
                     <tbody>
                         <tr>
+                            <td><button type="button" class="btn btn-block btn-primary btn-sm"><i class="fas fa-save"></i> Save</button></td>
                             <td><button type="button" class="btn btn-block btn-success btn-sm"><i class="fas fa-paper-plane"></i> Cash</button></td>
                             <td><button type="button" class="btn btn-block btn-info btn-sm"><i class="fas fa-credit-card"></i> Credit</button></td>
                             <td><button type="button" class="btn btn-block btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Cancel</button></td>

@@ -16,7 +16,7 @@
             <div class="card-header">
                 <h3 class="card-title">Category</h3>
                 <div class="card-tools">
-                    <button type="button" class="btn btn-success  btn-sm">
+                    <button type="button" class="btn btn-success  btn-sm" data-toggle="modal" data-target="#modal-1">
                     <i class="fas fa-plus-circle"></i> Add Category
                     </button>
                 </div>
@@ -38,7 +38,7 @@
                                     <tr>
                                         <td>1</td>
                                         <td>ATK</td>
-                                        <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+                                        <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-atk"><i class="fas fa-edit"></i></button>
                                             <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
                                         </td>
                                     </tr>
@@ -78,7 +78,7 @@
             <div class="card-header">
                 <h3 class="card-title">Units</h3>
                 <div class="card-tools">
-                    <button type="button" class="btn btn-success  btn-sm">
+                    <button type="button" class="btn btn-success  btn-sm" data-toggle="modal" data-target="#modal-2">
                     <i class="fas fa-plus-circle"></i> Add Unit
                     </button>
                 </div>
@@ -100,7 +100,7 @@
                                     <tr>
                                         <td>1</td>
                                         <td>Pcs</td>
-                                        <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+                                        <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-pcs"><i class="fas fa-edit"></i></button>
                                             <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
                                         </td>
                                     </tr>
@@ -136,4 +136,118 @@
         <!-- /.card -->
     </div>
 </div>
+
+
+{{-- Modal --}}
+    <div class="modal fade" id="modal-1">
+        <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h4 class="modal-title">Add Category</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-sm text-sm-right" >Category Name</label>
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-paper-plane"></i> Save</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <div class="modal fade" id="modal-2">
+        <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h4 class="modal-title">Add Unit</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-sm text-sm-right" >Unit Name</label>
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-paper-plane"></i> Save</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    {{-- menu edit category  --}}
+    <div class="modal fade" id="modal-atk">
+        <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h4 class="modal-title">Edit Category</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-sm text-sm-right" >Category Name</label>
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control" value="ATK">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-paper-plane"></i> Save</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    {{-- edit unit --}}
+    <div class="modal fade" id="modal-pcs">
+        <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h4 class="modal-title">Edit Unit</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-sm text-sm-right" >Unit Name</label>
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control" value="Pcs">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-paper-plane"></i> Save</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+{{-- modal end --}}
 @endsection
