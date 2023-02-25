@@ -42,19 +42,20 @@
                 </li>
                 <li class="nav-header">MAIN MENU</li>
                 <li class="nav-item">
-                    <a href="{{ url('sales') }}" class="nav-link {{ Request::is('sales') ? 'active' : '' }}">
+                    <a href="{{ url('sales') }}" class="nav-link {{ Request::is('/sales') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-shopping-cart"></i>
                         <p>Sales</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <!-- TODO: Set active -->
+                    <a href="#" class="nav-link {{ Request::is('/transactions*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-exchange-alt"></i>
                         <p>Transaction<i class="fas fa-angle-left right"></i></p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ url('list-pos') }}" class="nav-link {{ Request::is('list-pos') ? 'active' : '' }}">
+                            <a href="{{ url('/transactions/list-pos') }}" class="nav-link {{ Request::is('/transactions/list-pos') ? 'active' : '' }}">
                                 <i class="nav-icon far fa-circle"></i>
                                 <p>List POS</p>
                             </a>

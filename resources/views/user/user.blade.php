@@ -29,37 +29,37 @@
                         <table class="table table-head-fixed text-nowrap table-striped table-sm">
                             <thead>
                                 <tr>
-                                    <th style="width: 50px">No</th>
+                                    <th style="width: 50px">Username</th>
                                     <th>Name</th>
-                                    <th>Username</th>
+                                    <th>Email</th>
                                     <th>Level</th>
-                                    <th>Address</th>
+                                    <th>No. Telp</th>
                                     <th style="width: 200px">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>1</td>
+                                    <td>admin</td>
                                     <td>Administrator</td>
-                                    <td>Admin</td>
+                                    <td>admin@gmail.com</td>
                                     <td>admin</td>
                                     <td></td>
                                     <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit-admin"><i class="fas fa-edit"></i> Update</button></td>
                                 </tr>
                                 <tr>
-                                    <td>2</td>
-                                    <td>kholif</td>
                                     <td>kholif18</td>
+                                    <td>kholif</td>
+                                    <td>rahmadnur.kholifatur@gmail.com</td>
                                     <td>kasir</td>
-                                    <td>Ngluyu, Nganjuk</td>
+                                    <td>0822-3337-7661</td>
                                     <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button></td>
                                 </tr>
                                 <tr>
-                                    <td>3</td>
-                                    <td>Kasir 2</td>
                                     <td>kasir2</td>
+                                    <td>Kasir 2</td>
+                                    <td>kasir2@gmail.com</td>
                                     <td>kasir</td>
-                                    <td>Gondang, Nganjuk</td>
+                                    <td>-</td>
                                     <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button></td>
                                 </tr>
                             </tbody>
@@ -85,28 +85,28 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label class="col-form-label col-form-label-sm text-sm-right" >No.</label>
+                        <label class="col-form-label col-form-label-sm text-sm-right" >Username</label>
                         <div class="input-group input-group-sm">
-                            <input type="number" class="form-control" readonly value="4">
+                            <input type="number" class="form-control">
                         </div>
                         <label class="col-form-label col-form-label-sm text-sm-right">Name</label>
                         <div class="input-group input-group-sm">
                             <input type="text" class="form-control">
                         </div>
-                        <label class="col-form-label col-form-label-sm text-sm-right" >Username</label>
+                        <label class="col-form-label col-form-label-sm text-sm-right">Email</label>
                         <div class="input-group input-group-sm">
                             <input type="text" class="form-control">
                         </div>
-                        <label class="col-form-label col-form-label-sm text-sm-right" >Level</label>
+                        <label class="col-form-label col-form-label-sm text-sm-right">Level</label>
                         <div class="input-group input-group-sm">
                             <select name="jenis" class="form-control select2" required>
                                 <option value="Produk" >Admin</option>
                                 <option value="Servis">Kasir</option>
                             </select>
                         </div>
-                        <label class="col-form-label col-form-label-sm text-sm-right" >Address</label>
+                        <label class="col-form-label col-form-label-sm text-sm-right" >No. Telp</label>
                         <div class="input-group input-group-sm">
-                            <input type="text" class="form-control">
+                            <input type="number" class="form-control" min="0">
                         </div>
                         <label class="col-form-label col-form-label-sm text-sm-right" >Password</label>
                         <div class="input-group input-group-sm">
@@ -140,15 +140,15 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label class="col-form-label col-form-label-sm text-sm-right" >No.</label>
+                        <label class="col-form-label col-form-label-sm text-sm-right" >Username</label>
                         <div class="input-group input-group-sm">
-                            <input type="number" class="form-control" readonly value="2">
+                            <input type="number" class="form-control" readonly value="kholif18">
                         </div>
                         <label class="col-form-label col-form-label-sm text-sm-right">Name</label>
                         <div class="input-group input-group-sm">
                             <input type="text" class="form-control" value="Kholif">
                         </div>
-                        <label class="col-form-label col-form-label-sm text-sm-right" >Username</label>
+                        <label class="col-form-label col-form-label-sm text-sm-right" >Email</label>
                         <div class="input-group input-group-sm">
                             <input type="text" class="form-control" value="kholif18">
                         </div>
@@ -159,7 +159,7 @@
                                 <option value="Servis" selected>Kasir</option>
                             </select>
                         </div> --}}
-                        <label class="col-form-label col-form-label-sm text-sm-right">Address</label>
+                        <label class="col-form-label col-form-label-sm text-sm-right">No. Telp</label>
                         <div class="input-group input-group-sm">
                             <input type="text" class="form-control" value="Ngluyu, Nganjuk">
                         </div>
@@ -195,17 +195,17 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label class="col-form-label col-form-label-sm text-sm-right" >No.</label>
+                        <label class="col-form-label col-form-label-sm text-sm-right" >Username</label>
                         <div class="input-group input-group-sm">
-                            <input type="number" class="form-control" readonly value="1">
+                            <input type="text" class="form-control" readonly value="admin">
                         </div>
                         <label class="col-form-label col-form-label-sm text-sm-right">Name</label>
                         <div class="input-group input-group-sm">
                             <input type="text" class="form-control" readonly value="Administrator">
                         </div>
-                        <label class="col-form-label col-form-label-sm text-sm-right" >Username</label>
+                        <label class="col-form-label col-form-label-sm text-sm-right" >Email</label>
                         <div class="input-group input-group-sm">
-                            <input type="text" class="form-control" readonly value="Admin">
+                            <input type="email" class="form-control" readonly value="admin@gmail.com">
                         </div>
                         <label class="col-form-label col-form-label-sm text-sm-right" >Password</label>
                         <div class="input-group input-group-sm">
