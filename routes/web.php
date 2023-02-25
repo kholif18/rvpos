@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Login\LoginController;
 use App\Http\Controllers\Product\Category\StoreController;
-use App\Http\Controllers\Sale\SaleController;
+use App\Http\Controllers\Sales\SalesController;
+use App\Http\Controllers\Transaction\Debt\DebtController;
+use App\Http\Controllers\Transaction\ListPost\ListPostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [DashboardController::class, 'index']);
 
-Route::get('login', function () {
-    return view('auth/login');
-});
+Route::get('login', [LoginController::class, 'index']);
 
 Route::get('/user', function () {
     return view('user/user');
@@ -34,35 +35,31 @@ Route::get('/customers', function () {
     return view('customers/customers');
 });
 
-Route::get('/list-purchases', function () {
-    return view('transactions/list-purchases');
+Route::get('/purchases/list-purchases', function () {
+    return view('purchases/list-purchases');
 });
 
-Route::get('/debt', function () {
-    return view('transactions/debt');
+Route::get('/purchases/purchase', function () {
+    return view('purchases/purchase');
 });
 
-Route::get('/transactions/list-pos', function () {
-    return view('transactions/list-pos');
-});
+Route::get('/transactions/list-pos', [ListPostController::class, 'index']);
 
-Route::get('/purchases', function () {
-    return view('transactions/purchases');
-});
+Route::get('/transactions/debt', [DebtController::class, 'index']);
 
-Route::get('/sales', [SaleController::class, 'index']);
+Route::get('/sales', [SalesController::class, 'index']);
 
-Route::get('/products', function () {
+Route::get('/products/products', function () {
     return view('products/products');
 });
 
-Route::get('/category-unit', function () {
+Route::get('/products/category-unit', function () {
     return view('products/category-unit');
 });
 
 Route::post('/products/category', [StoreController::class, 'index']);
 
-Route::get('/stockout', function () {
+Route::get('/products/stockout', function () {
     return view('products/stockout');
 });
 
@@ -70,7 +67,7 @@ Route::get('/stockout', function () {
 //     return view('products/stockin');
 // });
 
-Route::get('/stock-opname', function () {
+Route::get('/products/stock-opname', function () {
     return view('products/stock-opname');
 });
 
@@ -78,18 +75,18 @@ Route::get('/setting', function () {
     return view('setting/setting');
 });
 
-Route::get('/sales-report', function () {
+Route::get('/report/sales-report', function () {
     return view('report/sales-report');
 });
 
-Route::get('/stockin-out', function () {
+Route::get('/report/stockin-out', function () {
     return view('report/stockin-out');
 });
 
-Route::get('/profit-loss', function () {
+Route::get('/report/profit-loss', function () {
     return view('report/report-profit-loss');
 });
 
-Route::get('/debt-report', function () {
+Route::get('/report/debt-report', function () {
     return view('report/debt-report');
 });
