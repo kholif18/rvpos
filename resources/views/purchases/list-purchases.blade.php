@@ -15,8 +15,8 @@
         <div class="card-header">
             <h3 class="card-title">List Purchases</h3>
             <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                <i class="fas fa-minus"></i>
+                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
                 </button>
             </div>
         </div>
@@ -43,13 +43,17 @@
                                     <td>19/02/2023</td>
                                     <td>Citra Stationary</td>
                                     <td>Rp 523.000</td>
-                                    <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span></td>
+                                    <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span>
+                                    </td>
                                     <td>Admin</td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></button>
-                                        <button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
-                                        <button type="button" class="btn btn-info btn-sm"><i class="fas fa-undo"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm"><i class="fas fa-print"></i></button>
-                                        <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                                    <td><button type="button" class="btn btn-info btn-sm"><i
+                                                class="fas fa-eye"></i></button>
+                                        <button type="button" class="btn btn-info btn-sm"><i
+                                                class="fas fa-edit"></i></button>
+                                        <button type="button" class="btn btn-success btn-sm"><i
+                                                class="fas fa-print"></i></button>
+                                        <button type="button" class="btn btn-danger btn-sm"><i
+                                                class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -57,13 +61,17 @@
                                     <td>19/02/2023</td>
                                     <td>Karunia Photo</td>
                                     <td>Rp 56.000</td>
-                                    <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span></td>
+                                    <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span>
+                                    </td>
                                     <td>Admin</td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></button>
-                                        <button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
-                                        <button type="button" class="btn btn-info btn-sm"><i class="fas fa-undo"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm"><i class="fas fa-print"></i></button>
-                                        <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                                    <td><button type="button" class="btn btn-info btn-sm"><i
+                                                class="fas fa-eye"></i></button>
+                                        <button type="button" class="btn btn-info btn-sm"><i
+                                                class="fas fa-edit"></i></button>
+                                        <button type="button" class="btn btn-success btn-sm"><i
+                                                class="fas fa-print"></i></button>
+                                        <button type="button" class="btn btn-danger btn-sm"><i
+                                                class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -71,13 +79,17 @@
                                     <td>19/02/2023</td>
                                     <td>Praktika</td>
                                     <td>Rp 220.000</td>
-                                    <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span></td>
+                                    <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span>
+                                    </td>
                                     <td>Admin</td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></button>
-                                        <button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
-                                        <button type="button" class="btn btn-info btn-sm"><i class="fas fa-undo"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm"><i class="fas fa-print"></i></button>
-                                        <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                                    <td><button type="button" class="btn btn-info btn-sm"><i
+                                                class="fas fa-eye"></i></button>
+                                        <button type="button" class="btn btn-info btn-sm"><i
+                                                class="fas fa-edit"></i></button>
+                                        <button type="button" class="btn btn-success btn-sm"><i
+                                                class="fas fa-print"></i></button>
+                                        <button type="button" class="btn btn-danger btn-sm"><i
+                                                class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -92,17 +104,17 @@
 @endsection
 
 @push('scripts')
-<script>
-    $(function () {
-    $('#example2').DataTable({
-        "paging": false,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": false,
-        "autoWidth": true,
-        "responsive": false,
-    });
-    });
-</script>
+    <script>
+        $(function() {
+            $('#example2').DataTable({
+                "paging": false,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": false,
+                "autoWidth": true,
+                "responsive": false,
+            });
+        });
+    </script>
 @endpush

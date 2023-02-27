@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Product\Category;
+namespace App\Http\Controllers\Products\Category;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -11,6 +11,6 @@ class StoreController extends Controller
     {
         $name = $request->input('name');
 
-        return response()->json(['status' => 'success', 'name' => $name, 'input' => $request->input()]);
+        return response()->json(['status' => 'success', 'name' => $name, 'input' => $request->input($name)]);
     }
 }

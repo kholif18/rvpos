@@ -23,6 +23,7 @@
                     </div>
                 </div>
                 <!-- /.card-header -->
+                {{-- Card Category --}}
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12">
@@ -32,6 +33,7 @@
                                         <tr>
                                             <th style="width: 60px">No.</th>
                                             <th>Categories</th>
+                                            <th>Prefix</th>
                                             <th style="width: 130px">Actions</th>
                                         </tr>
                                     </thead>
@@ -39,6 +41,7 @@
                                         <tr>
                                             <td>1</td>
                                             <td>ATK</td>
+                                            <td>AT</td>
                                             <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
                                                     data-target="#modal-atk"><i class="fas fa-edit"></i></button>
                                                 <button style="margin-left: 20px" type="button"
@@ -48,6 +51,7 @@
                                         <tr>
                                             <td>2</td>
                                             <td>Print</td>
+                                            <td>PR</td>
                                             <td><button type="button" class="btn btn-info btn-sm"><i
                                                         class="fas fa-edit"></i></button>
                                                 <button style="margin-left: 20px" type="button"
@@ -56,7 +60,8 @@
                                         </tr>
                                         <tr>
                                             <td>3</td>
-                                            <td>Jajan</td>
+                                            <td>Snack</td>
+                                            <td>SN</td>
                                             <td>
                                                 <button type="button" class="btn btn-info btn-sm">
                                                     <i class="fas fa-edit"></i>
@@ -70,6 +75,7 @@
                                         <tr>
                                             <td>4</td>
                                             <td>Ice Cream</td>
+                                            <td>IC</td>
                                             <td><button type="button" class="btn btn-info btn-sm"><i
                                                         class="fas fa-edit"></i></button>
                                                 <button style="margin-left: 20px" type="button"
@@ -86,6 +92,8 @@
             </div>
             <!-- /.card -->
         </div>
+        {{-- Card Category End --}}
+        {{-- Card Unit --}}
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="card card-primary card-outline">
                 <div class="card-header">
@@ -158,9 +166,9 @@
             <!-- /.card -->
         </div>
     </div>
+    {{-- Card Unit End --}}
 
-
-    {{-- Modal --}}
+    {{-- Modal Category --}}
     <div class="modal fade" id="modal-add-category">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
@@ -202,6 +210,8 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
+
+    <!-- Modal Unit -->
     @include('products._form-unit')
 
     {{-- menu edit category  --}}

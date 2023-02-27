@@ -1,11 +1,26 @@
 <?php
 
+use App\Http\Controllers\Customers\CustomersController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Login\LoginController;
-use App\Http\Controllers\Product\Category\StoreController;
+use App\Http\Controllers\Products\Category\CategoryController;
+use App\Http\Controllers\Products\Category\StoreController as CategoryStoreController;
+use App\Http\Controllers\Products\Products\ProductsController;
+use App\Http\Controllers\Products\StockOpname\StockOpnameController;
+use App\Http\Controllers\Products\StockOut\StockOutController;
+use App\Http\Controllers\Purchases\ListPurchases\ListPurchasesController;
+use App\Http\Controllers\Purchases\Purchase\PurchaseController;
+use App\Http\Controllers\Report\DebtReport\DebtReportController;
+use App\Http\Controllers\Report\ProfitLoss\ProfitLossController;
+use App\Http\Controllers\Report\SalesReport\SalesReportController;
+use App\Http\Controllers\Report\StockInOut\StockInOutController;
 use App\Http\Controllers\Sales\SalesController;
+use App\Http\Controllers\Setting\SettingController;
+use App\Http\Controllers\Supplier\SuppliersController;
 use App\Http\Controllers\Transaction\Debt\DebtController;
+use App\Http\Controllers\Transaction\Debt\DebtPayController;
 use App\Http\Controllers\Transaction\ListPost\ListPostController;
+use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,68 +40,60 @@ Route::get('/', [DashboardController::class, 'index']);
 
 Route::get('/sales', [SalesController::class, 'index']);
 
+// Transaction -----------------------------------------------------------------------
+
 Route::get('/transactions/list-pos', [ListPostController::class, 'index']);
 
 Route::get('/transactions/debt', [DebtController::class, 'index']);
 
-Route::get('/purchases/purchase', function () {
-    return view('purchases/purchase');
-});
+Route::get('/transactions/debtpay', [DebtPayController::class, 'index']);
 
-Route::get('/purchases/list-purchases', function () {
-    return view('purchases/list-purchases');
-});
+//Purchases -----------------------------------------------------------------------
 
-Route::get('/products/products', function () {
-    return view('products/products');
-});
+Route::get('/purchases/purchase', [PurchaseController::class, 'index']);
 
-Route::get('/products/category-unit', function () {
-    return view('products/category-unit');
-});
+Route::get('/purchases/list-purchases', [ListPurchasesController::class, 'index']);
 
-Route::get('/products/stockout', function () {
-    return view('products/stockout');
-});
+//Products -----------------------------------------------------------------------
 
-Route::get('/products/stock-opname', function () {
-    return view('products/stock-opname');
-});
+Route::get('/products/products', [ProductsController::class, 'index']);
 
-Route::get('/supplier', function () {
-    return view('supplier/suppliers');
-});
+Route::get('/products/category-unit', [CategoryController::class, 'index']);
 
-Route::get('/customers', function () {
-    return view('customers/customers');
-});
+Route::post('/products/category', [CategoryStoreController::class, 'index']);
 
-Route::get('/report/sales-report', function () {
-    return view('report/sales-report');
-});
+Route::get('/products/stockout', [StockOutController::class, 'index']);
 
-Route::get('/report/stockin-out', function () {
-    return view('report/stockin-out');
-});
+Route::get('/products/stock-opname', [StockOpnameController::class, 'index']);
 
-Route::get('/report/profit-loss', function () {
-    return view('report/report-profit-loss');
-});
+//Supplier -----------------------------------------------------------------------
 
-Route::get('/report/debt-report', function () {
-    return view('report/debt-report');
-});
+Route::get('/supplier', [SuppliersController::class, 'index']);
 
-Route::get('/user', function () {
-    return view('user/user');
-});
+//Customer -----------------------------------------------------------------------
 
-// Route::post('/products/category', [StoreController::class, 'index']);
+Route::get('/customers', [CustomersController::class, 'index']);
+
+//Reposrt -----------------------------------------------------------------------
+
+Route::get('/report/sales-report', [SalesReportController::class, 'index']);
+
+Route::get('/report/stockin-out', [StockInOutController::class, 'index']);
+
+Route::get('/report/profit-loss', [ProfitLossController::class, 'index']);
+
+Route::get('/report/debt-report', [DebtReportController::class, 'index']);
+
+//User -----------------------------------------------------------------------
+
+Route::get('/user', [UserController::class, 'index']);
+
+
 
 // Route::get('/stockin', function() {
 //     return view('products/stockin');    
 // });
 
-Route::get('/setting', function () {
-    return view('setting/setting');
-});
+//Setting -----------------------------------------------------------------------
+
+Route::get('/setting', [SettingController::class, 'index']);
