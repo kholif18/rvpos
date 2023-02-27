@@ -19,35 +19,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [DashboardController::class, 'index']);
-
 Route::get('login', [LoginController::class, 'index']);
 
-Route::get('/user', function () {
-    return view('user/user');
-});
+Route::get('/', [DashboardController::class, 'index']);
 
-Route::get('/supplier', function () {
-    return view('supplier/suppliers');
-});
-
-Route::get('/customers', function () {
-    return view('customers/customers');
-});
-
-Route::get('/purchases/list-purchases', function () {
-    return view('purchases/list-purchases');
-});
-
-Route::get('/purchases/purchase', function () {
-    return view('purchases/purchase');
-});
+Route::get('/sales', [SalesController::class, 'index']);
 
 Route::get('/transactions/list-pos', [ListPostController::class, 'index']);
 
 Route::get('/transactions/debt', [DebtController::class, 'index']);
 
-Route::get('/sales', [SalesController::class, 'index']);
+Route::get('/purchases/purchase', function () {
+    return view('purchases/purchase');
+});
+
+Route::get('/purchases/list-purchases', function () {
+    return view('purchases/list-purchases');
+});
 
 Route::get('/products/products', function () {
     return view('products/products');
@@ -57,22 +45,20 @@ Route::get('/products/category-unit', function () {
     return view('products/category-unit');
 });
 
-Route::post('/products/category', [StoreController::class, 'index']);
-
 Route::get('/products/stockout', function () {
     return view('products/stockout');
 });
-
-// Route::get('/stockin', function() {
-//     return view('products/stockin');
-// });
 
 Route::get('/products/stock-opname', function () {
     return view('products/stock-opname');
 });
 
-Route::get('/setting', function () {
-    return view('setting/setting');
+Route::get('/supplier', function () {
+    return view('supplier/suppliers');
+});
+
+Route::get('/customers', function () {
+    return view('customers/customers');
 });
 
 Route::get('/report/sales-report', function () {
@@ -89,4 +75,18 @@ Route::get('/report/profit-loss', function () {
 
 Route::get('/report/debt-report', function () {
     return view('report/debt-report');
+});
+
+Route::get('/user', function () {
+    return view('user/user');
+});
+
+// Route::post('/products/category', [StoreController::class, 'index']);
+
+// Route::get('/stockin', function() {
+//     return view('products/stockin');    
+// });
+
+Route::get('/setting', function () {
+    return view('setting/setting');
 });
