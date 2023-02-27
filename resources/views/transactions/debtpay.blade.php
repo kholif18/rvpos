@@ -171,7 +171,7 @@
                             <tr>
                                 <td><button type="button" class="btn btn-block btn-success btn-sm"><i
                                             class="fas fa-paper-plane"></i> Pay</button></td>
-                                <td><button type="button" class="btn btn-block btn-danger btn-sm"><i
+                                <td><button type="button" class="btn btn-block btn-danger btn-sm cancel"><i
                                             class="fas fa-trash-alt"></i> Cancel</button></td>
                             </tr>
                         </tbody>
@@ -194,6 +194,17 @@
                 "info": false,
                 "autoWidth": true,
                 "responsive": false,
+            });
+        });
+        $('.cancel').click(function() {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, cancel it!'
             });
         });
     </script>

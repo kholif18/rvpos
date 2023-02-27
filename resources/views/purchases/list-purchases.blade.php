@@ -52,7 +52,7 @@
                                                 class="fas fa-edit"></i></button>
                                         <button type="button" class="btn btn-success btn-sm"><i
                                                 class="fas fa-print"></i></button>
-                                        <button type="button" class="btn btn-danger btn-sm"><i
+                                        <button type="button" class="btn btn-danger btn-sm delete"><i
                                                 class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>
@@ -70,7 +70,7 @@
                                                 class="fas fa-edit"></i></button>
                                         <button type="button" class="btn btn-success btn-sm"><i
                                                 class="fas fa-print"></i></button>
-                                        <button type="button" class="btn btn-danger btn-sm"><i
+                                        <button type="button" class="btn btn-danger btn-sm delete"><i
                                                 class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>
@@ -88,7 +88,7 @@
                                                 class="fas fa-edit"></i></button>
                                         <button type="button" class="btn btn-success btn-sm"><i
                                                 class="fas fa-print"></i></button>
-                                        <button type="button" class="btn btn-danger btn-sm"><i
+                                        <button type="button" class="btn btn-danger btn-sm delete"><i
                                                 class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>
@@ -114,6 +114,27 @@
                 "info": false,
                 "autoWidth": true,
                 "responsive": false,
+            });
+        });
+        $('.delete').click(function() {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Deleted!',
+                        text: "Your file has been deleted.",
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
             });
         });
     </script>

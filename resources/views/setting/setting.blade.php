@@ -44,7 +44,8 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" style="width: 30px"><i class="fas fa-map-marker-alt"></i></span>
                         </div>
-                        <input type="text" class="form-control form-control-sm" value="Gedong, Ds. Ngluyu, Kec. Ngluyu, Kab. Nganjuk">
+                        <input type="text" class="form-control form-control-sm"
+                            value="Gedong, Ds. Ngluyu, Kec. Ngluyu, Kab. Nganjuk">
                     </div>
                 </div>
                 <div class="form-group">
@@ -87,10 +88,46 @@
                     </div>
                 </div>
                 <div class="form-group text-center align-items-center justify-content-center">
-                <button type="submit" class="btn btn-success btn-sm" style="width: 150px"><i class="fas fa-paper-plane"></i> Save</button>
-                <button type="reset" class="btn btn-danger btn-sm" style="width: 150px; margin-left: 20px"><i class="fas fa-trash"></i> Cancel</button>
+                    <button type="submit" class="btn btn-success btn-sm save" style="width: 150px"><i
+                            class="fas fa-paper-plane"></i> Save</button>
+                    <button type="reset" class="btn btn-danger btn-sm cancel" style="width: 150px; margin-left: 20px"><i
+                            class="fas fa-trash"></i> Cancel</button>
                 </div>
             </div>
         </div>
     </div>
 @endsection
+
+
+@push('scripts')
+    <script>
+        $('.cancel').click(function() {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, cancel it!'
+            });
+        });
+        // error
+        //----------------------------
+        //         Swal.fire({
+        //   icon: 'error',
+        //   title: 'Oops...',
+        //   text: 'Something went wrong!',
+        //   footer: '<a href="">Why do I have this issue?</a>'
+        // })
+        $('.save').click(function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Saved!',
+                text: "Your change has been Saved.",
+                showConfirmButton: false,
+                timer: 1500
+            })
+        });
+    </script>
+@endpush

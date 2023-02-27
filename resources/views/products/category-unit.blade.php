@@ -45,7 +45,8 @@
                                             <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
                                                     data-target="#modal-atk"><i class="fas fa-edit"></i></button>
                                                 <button style="margin-left: 20px" type="button"
-                                                    class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                                    class="btn btn-danger btn-sm delete"><i
+                                                        class="fas fa-trash-alt"></i></button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -55,7 +56,8 @@
                                             <td><button type="button" class="btn btn-info btn-sm"><i
                                                         class="fas fa-edit"></i></button>
                                                 <button style="margin-left: 20px" type="button"
-                                                    class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                                    class="btn btn-danger btn-sm delete"><i
+                                                        class="fas fa-trash-alt"></i></button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -67,7 +69,7 @@
                                                     <i class="fas fa-edit"></i>
                                                 </button>
                                                 <button style="margin-left: 20px" type="button"
-                                                    class="btn btn-danger btn-sm">
+                                                    class="btn btn-danger btn-sm delete">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </button>
                                             </td>
@@ -79,7 +81,8 @@
                                             <td><button type="button" class="btn btn-info btn-sm"><i
                                                         class="fas fa-edit"></i></button>
                                                 <button style="margin-left: 20px" type="button"
-                                                    class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                                    class="btn btn-danger btn-sm delete"><i
+                                                        class="fas fa-trash-alt"></i></button>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -125,7 +128,8 @@
                                             <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
                                                     data-target="#modal-pcs"><i class="fas fa-edit"></i></button>
                                                 <button style="margin-left: 20px" type="button"
-                                                    class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                                    class="btn btn-danger btn-sm delete"><i
+                                                        class="fas fa-trash-alt"></i></button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -134,7 +138,8 @@
                                             <td><button type="button" class="btn btn-info btn-sm"><i
                                                         class="fas fa-edit"></i></button>
                                                 <button style="margin-left: 20px" type="button"
-                                                    class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                                    class="btn btn-danger btn-sm delete"><i
+                                                        class="fas fa-trash-alt"></i></button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -143,7 +148,8 @@
                                             <td><button type="button" class="btn btn-info btn-sm"><i
                                                         class="fas fa-edit"></i></button>
                                                 <button style="margin-left: 20px" type="button"
-                                                    class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                                    class="btn btn-danger btn-sm delete"><i
+                                                        class="fas fa-trash-alt"></i></button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -152,7 +158,8 @@
                                             <td><button type="button" class="btn btn-info btn-sm"><i
                                                         class="fas fa-edit"></i></button>
                                                 <button style="margin-left: 20px" type="button"
-                                                    class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                                    class="btn btn-danger btn-sm delete"><i
+                                                        class="fas fa-trash-alt"></i></button>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -274,3 +281,30 @@
     <!-- /.modal -->
     {{-- modal end --}}
 @endsection
+
+
+@push('scripts')
+    <script>
+        $('.delete').click(function() {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Deleted!',
+                        text: "Your file has been deleted.",
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            });
+        });
+    </script>
+@endpush

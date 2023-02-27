@@ -133,7 +133,7 @@
                                     <td>Rp 48.000</td>
                                     <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
                                             data-target="#modal-edit"><i class="fas fa-edit"></i></button><button
-                                            style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i
+                                            style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i
                                                 class="fas fa-trash-alt"></i></button></td>
                                 </tr>
                                 <tr>
@@ -159,7 +159,8 @@
                                     <td>Rp 15.000</td>
                                     <td><button type="button" class="btn btn-info btn-sm"><i
                                                 class="fas fa-edit"></i></button><button style="margin-left: 20px"
-                                            type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i>
+                                            type="button" class="btn btn-danger btn-sm delete"><i
+                                                class="fas fa-trash-alt"></i>
                                         </button>
                                     </td>
                                 </tr>
@@ -246,7 +247,7 @@
                                             class="fas fa-paper-plane"></i> Cash</button></td>
                                 <td><button type="button" class="btn btn-block btn-info btn-sm"><i
                                             class="fas fa-credit-card"></i> Credit</button></td>
-                                <td><button type="button" class="btn btn-block btn-danger btn-sm"><i
+                                <td><button type="button" class="btn btn-block btn-danger btn-sm cancel"><i
                                             class="fas fa-trash-alt"></i> Cancel</button></td>
                             </tr>
                         </tbody>
@@ -336,5 +337,35 @@
                 "responsive": true,
             });
         });
+        $('.delete').click(function() {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            });
+        });
+        $('.cancel').click(function() {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, cancel it!'
+            });
+        });
+        // error
+        //----------------------------
+        //         Swal.fire({
+        //   icon: 'error',
+        //   title: 'Oops...',
+        //   text: 'Something went wrong!',
+        //   footer: '<a href="">Why do I have this issue?</a>'
+        // })
     </script>
 @endpush

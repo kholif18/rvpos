@@ -148,8 +148,8 @@
                                     </td>
                                     <td>Rp 1.120.000</td>
                                     <td>
-                                        <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i
-                                                class="fas fa-trash-alt"></i></button>
+                                        <button style="margin-left: 20px" type="button"
+                                            class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -178,8 +178,8 @@
                                     </td>
                                     <td>Rp 375.000</td>
                                     <td>
-                                        <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i
-                                                class="fas fa-trash-alt"></i></button>
+                                        <button style="margin-left: 20px" type="button"
+                                            class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -208,8 +208,8 @@
                                     </td>
                                     <td>Rp 24.000</td>
                                     <td>
-                                        <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i
-                                                class="fas fa-trash-alt"></i></button>
+                                        <button style="margin-left: 20px" type="button"
+                                            class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -238,8 +238,8 @@
                                     </td>
                                     <td>Rp 161.000</td>
                                     <td>
-                                        <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm"><i
-                                                class="fas fa-trash-alt"></i></button>
+                                        <button style="margin-left: 20px" type="button"
+                                            class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -290,7 +290,7 @@
                                 <td></td>
                                 <td><button type="submit" class="btn btn-block btn-success btn-sm"><i
                                             class="fas fa-paper-plane"></i> Save</button></td>
-                                <td><button type="submit" class="btn btn-block btn-danger btn-sm"><i
+                                <td><button type="submit" class="btn btn-block btn-danger btn-sm cancel"><i
                                             class="fas fa-trash"></i> Cancel</button></td>
                                 <td></td>
                             </tr>
@@ -491,25 +491,39 @@
 @endsection
 
 
-{{-- @push('scripts')
-<script>
-    $(function () {
-        bsCustomFileInput.init();
-    });
+@push('scripts')
+    <script>
+        $('#example2').DataTable({
+            "paging": false,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": false,
+            "autoWidth": true,
+            "responsive": false,
 
-    $('.select2').select2();
-
-    document.getElementById('tgl').value = (new Date()).format("m/dd/yy");
-
-    $('#example2').DataTable({
-        "paging": false,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": false,
-        "autoWidth": true,
-        "responsive": false,
-
-    });
-</script>
-@endpush --}}
+        });
+        $('.delete').click(function() {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            });
+        });
+        $('.cancel').click(function() {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, cancel it!'
+            });
+        });
+    </script>
+@endpush
