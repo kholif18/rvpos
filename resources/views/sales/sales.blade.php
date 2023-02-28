@@ -203,7 +203,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" style="width: 40px">Rp </span>
                                 </div>
-                                <input type="number" class="form-control text-bold bg-warning" readonly value="63.000">
+                                <input type="text" class="form-control text-bold bg-warning" readonly value="63.000">
                             </div>
                         </div>
                     </div>
@@ -211,7 +211,7 @@
                         <label class="col-sm-4 col-form-label col-form-label-sm" readonly>Discount</label>
                         <div class="col-sm-8">
                             <div class="input-group input-group-sm">
-                                <input type="number" class="form-control text-bold" min="0" value="0">
+                                <input type="text" class="form-control text-bold" min="0" value="0">
                             </div>
                         </div>
                     </div>
@@ -222,7 +222,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" style="width: 40px">Rp </span>
                                 </div>
-                                <input type="number" class="form-control bg-primary text-bold" min="0"
+                                <input type="text" class="form-control bg-primary text-bold" min="0"
                                     placeholder="Rp 0">
                             </div>
                         </div>
@@ -234,7 +234,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" style="width: 40px">Rp </span>
                                 </div>
-                                <input type="number" class="form-control bg-teal text-bold" readonly placeholder="Rp 0">
+                                <input type="text" class="form-control bg-teal text-bold" readonly placeholder="Rp 0">
                             </div>
                         </div>
                     </div>

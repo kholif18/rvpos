@@ -46,10 +46,10 @@
                                     <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span>
                                     </td>
                                     <td>Admin</td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i
-                                                class="fas fa-eye"></i></button>
-                                        <button type="button" class="btn btn-info btn-sm"><i
-                                                class="fas fa-edit"></i></button>
+                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
+                                            data-target="#modal-view"><i class="fas fa-eye"></i></button>
+                                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
+                                            data-target="#modal-edit"><i class="fas fa-edit"></i></button>
                                         <button type="button" class="btn btn-success btn-sm"><i
                                                 class="fas fa-print"></i></button>
                                         <button type="button" class="btn btn-danger btn-sm delete"><i
@@ -64,10 +64,10 @@
                                     <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span>
                                     </td>
                                     <td>Admin</td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i
-                                                class="fas fa-eye"></i></button>
-                                        <button type="button" class="btn btn-info btn-sm"><i
-                                                class="fas fa-edit"></i></button>
+                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
+                                            data-target="#modal-view"><i class="fas fa-eye"></i></button>
+                                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
+                                            data-target="#modal-edit"><i class="fas fa-edit"></i></button>
                                         <button type="button" class="btn btn-success btn-sm"><i
                                                 class="fas fa-print"></i></button>
                                         <button type="button" class="btn btn-danger btn-sm delete"><i
@@ -78,14 +78,14 @@
                                     <td>87655465</td>
                                     <td>19/02/2023</td>
                                     <td>Praktika</td>
-                                    <td>Rp 220.000</td>
+                                    <td>Rp 63.000</td>
                                     <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span>
                                     </td>
                                     <td>Admin</td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i
-                                                class="fas fa-eye"></i></button>
-                                        <button type="button" class="btn btn-info btn-sm"><i
-                                                class="fas fa-edit"></i></button>
+                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
+                                            data-target="#modal-view"><i class="fas fa-eye"></i></button>
+                                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
+                                            data-target="#modal-edit"><i class="fas fa-edit"></i></button>
                                         <button type="button" class="btn btn-success btn-sm"><i
                                                 class="fas fa-print"></i></button>
                                         <button type="button" class="btn btn-danger btn-sm delete"><i
@@ -101,6 +101,9 @@
         <!-- /.card-body -->
     </div>
     <!-- /.card -->
+
+    <!-- Modal View -->
+    @include('purchases.modal')
 @endsection
 
 @push('scripts')

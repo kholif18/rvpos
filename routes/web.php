@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\Customers\CustomersController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Kas\KasController;
+use App\Http\Controllers\Kas\KasIn\KasInController;
+use App\Http\Controllers\Kas\KasOut\KasOutController;
 use App\Http\Controllers\Login\LoginController;
 use App\Http\Controllers\Products\Category\CategoryController;
 use App\Http\Controllers\Products\Category\StoreController as CategoryStoreController;
@@ -65,6 +68,10 @@ Route::post('/products/category', [CategoryStoreController::class, 'index']);
 Route::get('/products/stockout', [StockOutController::class, 'index']);
 
 Route::get('/products/stock-opname', [StockOpnameController::class, 'index']);
+
+//Kas In - Out -------------------------------------------------------------------
+
+Route::get('/kas', [KasController::class, 'index']);
 
 //Supplier -----------------------------------------------------------------------
 

@@ -275,7 +275,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row form-group-sm">
                         <label class="col-sm-3 col-form-label col-form-label-sm">Upload Image</label>
                         <div class="col-sm-9">
                             <div class="custom-file">

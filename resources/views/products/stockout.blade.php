@@ -14,7 +14,7 @@
         <div class="card-header">
             <h3 class="card-title">Stock out</h3>
             <div class="card-tools">
-                <button type="button" class="btn btn-success  btn-sm">
+                <button type="button" class="btn btn-success  btn-sm" data-toggle="modal" data-target="#modal-add">
                     <i class="fas fa-plus-circle"></i> Add Stock Out
                 </button>
             </div>
@@ -46,8 +46,8 @@
                                     <td>1</td>
                                     <td>Sobek</td>
                                     <td>12/02/2023</td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i
-                                                class="fas fa-edit"></i></button>
+                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
+                                            data-target="#modal-edit"><i class="fas fa-edit"></i></button>
                                         <button style="margin-left: 20px" type="button"
                                             class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
                                     </td>
@@ -60,8 +60,8 @@
                                     <td>1</td>
                                     <td>Hilang</td>
                                     <td>12/02/2023</td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i
-                                                class="fas fa-edit"></i></button>
+                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
+                                            data-target="#modal-edit"><i class="fas fa-edit"></i></button>
                                         <button style="margin-left: 20px" type="button"
                                             class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
                                     </td>
@@ -74,8 +74,8 @@
                                     <td>1</td>
                                     <td>Rusak</td>
                                     <td>12/02/2023</td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i
-                                                class="fas fa-edit"></i></button>
+                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
+                                            data-target="#modal-edit"><i class="fas fa-edit"></i></button>
                                         <button style="margin-left: 20px" type="button"
                                             class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
                                     </td>
@@ -88,8 +88,8 @@
                                     <td>1</td>
                                     <td>Rusak</td>
                                     <td>12/02/2023</td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i
-                                                class="fas fa-edit"></i></button>
+                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
+                                            data-target="#modal-edit"><i class="fas fa-edit"></i></button>
                                         <button style="margin-left: 20px" type="button"
                                             class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
                                     </td>
@@ -103,6 +103,9 @@
         <!-- /.card-body -->
     </div>
     <!-- /.card -->
+
+    {{-- modal page --}}
+    @include('products.modal')
 @endsection
 
 
