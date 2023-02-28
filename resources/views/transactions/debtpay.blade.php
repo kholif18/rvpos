@@ -112,7 +112,7 @@
             <div class="card card-primary card-outline">
                 <div class="card-body">
                     <div class="form-group row">
-                        <label class="col-sm-4 col-form-label col-form-label-sm" readonly>Merchandise Total</label>
+                        <label class="col-sm-4 col-form-label col-form-label-sm" readonly>Shopping Total</label>
                         <div class="col-sm-8">
                             <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">
@@ -123,7 +123,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-4 col-form-label col-form-label-sm" readonly>Payment Total</label>
+                        <label class="col-sm-4 col-form-label col-form-label-sm" readonly>Amount</label>
                         <div class="col-sm-8">
                             <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">
@@ -145,9 +145,9 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-4 col-form-label" readonly>Pay</label>
+                        <label class="col-sm-4 col-form-label col-form-label-sm" readonly>Payment</label>
                         <div class="col-sm-8">
-                            <div class="input-group">
+                            <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" style="width: 40px">Rp </span>
                                 </div>
@@ -156,7 +156,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-4 col-form-label col-form-label-sm" readonly>Sisa</label>
+                        <label class="col-sm-4 col-form-label col-form-label-sm" readonly>Residual</label>
                         <div class="col-sm-8">
                             <div class="input-group input-group-sm">
                                 <div class="input-group-prepend">

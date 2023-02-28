@@ -56,6 +56,8 @@
                                             data-target="#modal-view1"><i class="fas fa-search-plus"></i></button>
                                         <button type="button" class="btn btn-success btn-sm"><i
                                                 class="fas fa-print"></i></button>
+                                        <button type="button" class="btn btn-danger btn-sm delete"><i
+                                                class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -73,6 +75,8 @@
                                             data-target="#modal-view2"><i class="fas fa-search-plus"></i></button>
                                         <button type="button" class="btn btn-success btn-sm"><i
                                                 class="fas fa-print"></i></button>
+                                        <button type="button" class="btn btn-danger btn-sm delete"><i
+                                                class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -86,7 +90,8 @@
                                     <td>12-02-2023 | 19:24:12</td>
                                     <td><span class="badge bg-danger" style="padding: 8px; font-size: 10pt">Hutang</span>
                                     </td>
-                                    <td><a href="{{ url('/transactions/debtpay') }}" class="btn btn-success btn-sm">
+                                    <td><a href="{{ url('/transactions/debtpay') }}"
+                                            class="btn btn-success btn-block btn-sm">
                                             <i class="fas fa-paper-plane"></i> Payment
                                         </a></td>
                                 </tr>
@@ -101,7 +106,7 @@
                                     <td>12-02-2023 | 19:24:12</td>
                                     <td><span class="badge bg-primary" style="padding: 8px; font-size: 10pt">Disimpan</span>
                                     </td>
-                                    <td><a href="{{ url('/sales') }}" class="btn btn-success btn-sm">
+                                    <td><a href="{{ url('/sales') }}" class="btn btn-success btn-block btn-sm">
                                             <i class="fas fa-paper-plane"></i> Payment
                                         </a></td>
                                 </tr>
@@ -239,6 +244,27 @@
                 "info": false,
                 "autoWidth": true,
                 "responsive": false,
+            });
+        });
+        $('.delete').click(function() {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Deleted!',
+                        text: "Your file has been deleted.",
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
             });
         });
     </script>
