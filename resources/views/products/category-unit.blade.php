@@ -43,7 +43,7 @@
                                             <td>ATK</td>
                                             <td>AT</td>
                                             <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                                    data-target="#modal-atk"><i class="fas fa-edit"></i></button>
+                                                    data-target="#modal-category-edit"><i class="fas fa-edit"></i></button>
                                                 <button style="margin-left: 20px" type="button"
                                                     class="btn btn-danger btn-sm delete"><i
                                                         class="fas fa-trash-alt"></i></button>
@@ -134,7 +134,7 @@
                                         </tr>
                                         <tr>
                                             <td>2</td>
-                                            <td>Pck</td>
+                                            <td>Pkg</td>
                                             <td><button type="button" class="btn btn-info btn-sm"><i
                                                         class="fas fa-edit"></i></button>
                                                 <button style="margin-left: 20px" type="button"
@@ -205,7 +205,7 @@
                         <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">
                             Close
                         </button>
-                        <button type="submit" class="btn btn-primary btn-sm">
+                        <button type="submit" class="btn btn-success btn-sm">
                             <i class="fas fa-paper-plane"></i>
                             Save
                         </button>
@@ -222,7 +222,7 @@
     @include('products._form-unit')
 
     {{-- menu edit category  --}}
-    <div class="modal fade" id="modal-atk">
+    <div class="modal fade" id="modal-category-edit">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
@@ -237,11 +237,15 @@
                         <div class="input-group input-group-sm">
                             <input type="text" class="form-control" value="ATK">
                         </div>
+                        <label class="col-form-label col-form-label-sm text-sm-right">Prefix</label>
+                        <div class="input-group input-group-sm">
+                            <input type="text" class="form-control" value="AT">
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-paper-plane"></i>
+                    <button type="button" class="btn btn-success btn-sm"><i class="fas fa-paper-plane"></i>
                         Save</button>
                 </div>
             </div>
@@ -270,7 +274,7 @@
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-paper-plane"></i>
+                    <button type="button" class="btn btn-success btn-sm"><i class="fas fa-paper-plane"></i>
                         Save</button>
                 </div>
             </div>

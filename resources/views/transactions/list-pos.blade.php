@@ -15,9 +15,16 @@
         <div class="card-header">
             <h3 class="card-title">List POS</h3>
             <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                </button>
+                <div class="card-tools">
+                    <div class="input-group input-group-sm" style="width: 250px;">
+                        <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-default">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- /.card-header -->
@@ -28,30 +35,30 @@
                         <table id="example2" class="table table-head-fixed text-nowrap table-striped table-sm">
                             <thead>
                                 <tr>
-                                    <th style="width: 15px">Invoice</th>
+                                    <th>Invoice</th>
+                                    <th>Time</th>
                                     <th>Kasir</th>
                                     <th>Customer</th>
                                     <th>Disc.</th>
-                                    <th>Total</th>
                                     <th>Payment Method</th>
                                     <th>Qty</th>
-                                    <th>Time</th>
                                     <th>Status</th>
+                                    <th>Total</th>
                                     <th style="width: 45px">Option</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>13022023009</td>
+                                    <td>12-02-2023 | 19:24:12</td>
                                     <td>Kasir</td>
                                     <td>Bambang</td>
                                     <td>0</td>
-                                    <td>Rp 250.000</td>
                                     <td>Cash</td>
                                     <td>5</td>
-                                    <td>12-02-2023 | 19:24:12</td>
                                     <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span>
                                     </td>
+                                    <td>Rp 250.000</td>
                                     <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
                                             data-target="#modal-view1"><i class="fas fa-search-plus"></i></button>
                                         <button type="button" class="btn btn-success btn-sm"><i
@@ -62,15 +69,15 @@
                                 </tr>
                                 <tr>
                                     <td>13022023009</td>
+                                    <td>12-02-2023 | 19:24:12</td>
                                     <td>Kasir</td>
                                     <td>Mbak Win</td>
                                     <td>0</td>
-                                    <td>Rp 103.000</td>
                                     <td>Cash</td>
                                     <td>1</td>
-                                    <td>12-02-2023 | 19:24:12</td>
                                     <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span>
                                     </td>
+                                    <td>Rp 103.000</td>
                                     <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
                                             data-target="#modal-view2"><i class="fas fa-search-plus"></i></button>
                                         <button type="button" class="btn btn-success btn-sm"><i
@@ -81,15 +88,15 @@
                                 </tr>
                                 <tr>
                                     <td>13022023009</td>
+                                    <td>12-02-2023 | 19:24:12</td>
                                     <td>Kasir</td>
                                     <td>Alexandro</td>
                                     <td>0</td>
-                                    <td>Rp 200.000</td>
                                     <td>Credit</td>
                                     <td>5</td>
-                                    <td>12-02-2023 | 19:24:12</td>
                                     <td><span class="badge bg-danger" style="padding: 8px; font-size: 10pt">Hutang</span>
                                     </td>
+                                    <td>Rp 200.000</td>
                                     <td><a href="{{ url('/transactions/debtpay') }}"
                                             class="btn btn-success btn-block btn-sm">
                                             <i class="fas fa-paper-plane"></i> Payment
@@ -97,15 +104,15 @@
                                 </tr>
                                 <tr>
                                     <td>13022023009</td>
+                                    <td>12-02-2023 | 19:24:12</td>
                                     <td>Kasir</td>
                                     <td>Alexandro</td>
                                     <td>0</td>
-                                    <td>Rp 200.000</td>
                                     <td>Credit</td>
                                     <td>5</td>
-                                    <td>12-02-2023 | 19:24:12</td>
                                     <td><span class="badge bg-primary" style="padding: 8px; font-size: 10pt">Disimpan</span>
                                     </td>
+                                    <td>Rp 200.000</td>
                                     <td><a href="{{ url('/sales') }}" class="btn btn-success btn-block btn-sm">
                                             <i class="fas fa-paper-plane"></i> Payment
                                         </a></td>

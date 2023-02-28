@@ -31,9 +31,9 @@
                                     <th>Invoice</th>
                                     <th>Date</th>
                                     <th>Supplier</th>
-                                    <th>Total</th>
                                     <th>Payment Status</th>
                                     <th>Added By</th>
+                                    <th>Total</th>
                                     <th style="width: 150px">Option</th>
                                 </tr>
                             </thead>
@@ -42,10 +42,10 @@
                                     <td>13022023009</td>
                                     <td>19/02/2023</td>
                                     <td>Citra Stationary</td>
-                                    <td>Rp 523.000</td>
                                     <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span>
                                     </td>
                                     <td>Admin</td>
+                                    <td>Rp 523.000</td>
                                     <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
                                             data-target="#modal-view"><i class="fas fa-eye"></i></button>
                                         <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
@@ -60,10 +60,10 @@
                                     <td>4568462186521</td>
                                     <td>19/02/2023</td>
                                     <td>Karunia Photo</td>
-                                    <td>Rp 56.000</td>
                                     <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span>
                                     </td>
                                     <td>Admin</td>
+                                    <td>Rp 56.000</td>
                                     <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
                                             data-target="#modal-view"><i class="fas fa-eye"></i></button>
                                         <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
@@ -78,10 +78,10 @@
                                     <td>87655465</td>
                                     <td>19/02/2023</td>
                                     <td>Praktika</td>
-                                    <td>Rp 63.000</td>
                                     <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span>
                                     </td>
                                     <td>Admin</td>
+                                    <td>Rp 63.000</td>
                                     <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
                                             data-target="#modal-view"><i class="fas fa-eye"></i></button>
                                         <button type="button" class="btn btn-info btn-sm" data-toggle="modal"

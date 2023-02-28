@@ -69,7 +69,7 @@ Route::get('/products/stockout', [StockOutController::class, 'index']);
 
 Route::get('/products/stock-opname', [StockOpnameController::class, 'index']);
 
-//Kas In - Out -------------------------------------------------------------------
+//Kas ----------------------------------------------------------------------------
 
 Route::get('/kas', [KasController::class, 'index']);
 

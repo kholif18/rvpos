@@ -196,7 +196,7 @@
                 <div class="modal-footer justify-content-between">
                     <button type="reset" class="btn btn-danger btn-sm" data-dismiss="modal"><i
                             class="fas fa-trash"></i> Cancel</button>
-                    <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-paper-plane"></i>
+                    <button type="button" class="btn btn-success btn-sm"><i class="fas fa-paper-plane"></i>
                         Save</button>
                 </div>
             </div>
@@ -276,7 +276,7 @@
                 <div class="modal-footer justify-content-between">
                     <button type="reset" class="btn btn-danger btn-sm" data-dismiss="modal"><i
                             class="fas fa-trash"></i> Cancel</button>
-                    <button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-paper-plane"></i>
+                    <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-paper-plane"></i>
                         Save</button>
                 </div>
             </div>

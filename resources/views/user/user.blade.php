@@ -128,7 +128,7 @@
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-paper-plane"></i> Save</button>
+                    <button type="button" class="btn btn-success btn-sm"><i class="fas fa-paper-plane"></i> Save</button>
                 </div>
             </div>
             <!-- /.modal-content -->
@@ -183,7 +183,7 @@
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-paper-plane"></i>
+                    <button type="button" class="btn btn-success btn-sm"><i class="fas fa-paper-plane"></i>
                         Save</button>
                 </div>
             </div>
@@ -228,7 +228,7 @@
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-paper-plane"></i>
+                    <button type="button" class="btn btn-success btn-sm"><i class="fas fa-paper-plane"></i>
                         Save</button>
                 </div>
             </div>
