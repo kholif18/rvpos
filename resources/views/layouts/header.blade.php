@@ -42,7 +42,7 @@
                 </li>
                 <li class="user-footer">
                     <div class="fa-pull-left">
-                        <a href="{{ url('profil') }}" class="btn btn-default btn-sm">Profile</a>
+                        <a href="{{ url('/user') }}" class="btn btn-default btn-sm">Profile</a>
                     </div>
                     <div class="fa-pull-right">
                         <a href="{{ url('login') }}" class="btn bg-red btn-sm">Sign Out</a>

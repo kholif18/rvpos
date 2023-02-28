@@ -95,7 +95,7 @@
                     <div class="form-group">
                         <label class="col-form-label col-form-label-sm text-sm-right">Username</label>
                         <div class="input-group input-group-sm">
-                            <input type="number" class="form-control">
+                            <input type="text" class="form-control">
                         </div>
                         <label class="col-form-label col-form-label-sm text-sm-right">Name</label>
                         <div class="input-group input-group-sm">
@@ -150,7 +150,7 @@
                     <div class="form-group">
                         <label class="col-form-label col-form-label-sm text-sm-right">Username</label>
                         <div class="input-group input-group-sm">
-                            <input type="number" class="form-control" readonly value="kholif18">
+                            <input type="text" class="form-control" readonly value="kholif18">
                         </div>
                         <label class="col-form-label col-form-label-sm text-sm-right">Name</label>
                         <div class="input-group input-group-sm">
@@ -158,24 +158,24 @@
                         </div>
                         <label class="col-form-label col-form-label-sm text-sm-right">Email</label>
                         <div class="input-group input-group-sm">
-                            <input type="text" class="form-control" value="kholif18">
+                            <input type="text" class="form-control" value="rahmadnur.kholifatur@gmail.com">
                         </div>
-                        {{-- <label class="col-form-label col-form-label-sm text-sm-right" >Level</label>
+                        <label class="col-form-label col-form-label-sm text-sm-right">Level</label>
                         <div class="input-group input-group-sm">
                             <select name="jenis" class="form-control select2" required>
                                 <option value="Produk">Admin</option>
                                 <option value="Servis" selected>Kasir</option>
                             </select>
-                        </div> --}}
+                        </div>
                         <label class="col-form-label col-form-label-sm text-sm-right">No. Telp</label>
                         <div class="input-group input-group-sm">
-                            <input type="text" class="form-control" value="Ngluyu, Nganjuk">
+                            <input type="text" class="form-control" value="0822-3337-7661">
                         </div>
-                        <label class="col-form-label col-form-label-sm text-sm-right">Password</label>
+                        <label class="col-form-label col-form-label-sm text-sm-right">New Password</label>
                         <div class="input-group input-group-sm">
                             <input type="password" class="form-control">
                         </div>
-                        <label class="col-form-label col-form-label-sm text-sm-right">Confirm Password</label>
+                        <label class="col-form-label col-form-label-sm text-sm-right">Confirm New Password</label>
                         <div class="input-group input-group-sm">
                             <input type="password" class="form-control">
                         </div>
@@ -216,11 +216,11 @@
                         <div class="input-group input-group-sm">
                             <input type="email" class="form-control" readonly value="admin@gmail.com">
                         </div>
-                        <label class="col-form-label col-form-label-sm text-sm-right">Password</label>
+                        <label class="col-form-label col-form-label-sm text-sm-right">New Password</label>
                         <div class="input-group input-group-sm">
                             <input type="password" class="form-control">
                         </div>
-                        <label class="col-form-label col-form-label-sm text-sm-right">Confirm Password</label>
+                        <label class="col-form-label col-form-label-sm text-sm-right">Confirm New Password</label>
                         <div class="input-group input-group-sm">
                             <input type="password" class="form-control">
                         </div>
