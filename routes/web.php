@@ -3,8 +3,6 @@
 use App\Http\Controllers\Customers\CustomersController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Kas\KasController;
-use App\Http\Controllers\Kas\KasIn\KasInController;
-use App\Http\Controllers\Kas\KasOut\KasOutController;
 use App\Http\Controllers\Login\LoginController;
 use App\Http\Controllers\Products\Category\CategoryController;
 use App\Http\Controllers\Products\Category\StoreController as CategoryStoreController;
@@ -17,6 +15,7 @@ use App\Http\Controllers\Report\DebtReport\DebtReportController;
 use App\Http\Controllers\Report\ProfitLoss\ProfitLossController;
 use App\Http\Controllers\Report\SalesReport\SalesReportController;
 use App\Http\Controllers\Report\StockInOut\StockInOutController;
+use App\Http\Controllers\Sale\StoreController;
 use App\Http\Controllers\Sales\SalesController;
 use App\Http\Controllers\Setting\SettingController;
 use App\Http\Controllers\Supplier\SuppliersController;
@@ -62,8 +61,8 @@ Route::get('/purchases/list-purchases', [ListPurchasesController::class, 'index'
 Route::get('/products/products', [ProductsController::class, 'index']);
 
 Route::get('/products/category-unit', [CategoryController::class, 'index']);
-
-Route::post('/products/category', [CategoryStoreController::class, 'index']);
+Route::post('/products/category-unit', [CategoryStoreController::class, 'addcategory']);
+Route::post('/products/category-unit', [CategoryStoreController::class, 'addunit']);
 
 Route::get('/products/stockout', [StockOutController::class, 'index']);
 
