@@ -56,10 +56,8 @@
                                     <td>2</td>
                                     <td>Rp 560.000</td>
                                     <td>Rusak</td>
-                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                            data-target="#modal-edit"><i class="fas fa-edit"></i></button>
-                                        <button style="margin-left: 20px" type="button"
-                                            class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
+                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></button>
+                                        <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -71,10 +69,8 @@
                                     <td>1</td>
                                     <td>Rp 60.000</td>
                                     <td>Ketlisut</td>
-                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                            data-target="#modal-edit"><i class="fas fa-edit"></i></button>
-                                        <button style="margin-left: 20px" type="button"
-                                            class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
+                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></button>
+                                        <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -86,10 +82,8 @@
                                     <td>1</td>
                                     <td>Rp 28.000</td>
                                     <td>Tidak di masukkan kasir</td>
-                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                            data-target="#modal-edit"><i class="fas fa-edit"></i></button>
-                                        <button style="margin-left: 20px" type="button"
-                                            class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
+                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></button>
+                                        <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -101,10 +95,8 @@
                                     <td>2</td>
                                     <td>Rp 69.000</td>
                                     <td>Dibuat sendiri</td>
-                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                            data-target="#modal-edit"><i class="fas fa-edit"></i></button>
-                                        <button style="margin-left: 20px" type="button"
-                                            class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
+                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></button>
+                                        <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -119,7 +111,7 @@
     <!-- /.card -->
 
     <!-- Modal Unit -->
-    @include('products.modal-stock-opname')
+    @include('products._modal-stock-opname')
 @endsection
 
 

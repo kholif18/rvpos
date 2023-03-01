@@ -15,7 +15,7 @@
         <div class="card-header">
             <h3 class="card-title">Suppliers</h3>
             <div class="card-tools">
-                <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modal-add">
+                <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modal-add-supplier">
                     <i class="fas fa-plus-circle"></i> Add Supplier
                 </button>
             </div>
@@ -47,10 +47,8 @@
                                     <td>-</td>
                                     <td>-</td>
                                     <td>Nganjuk</td>
-                                    <td><button type="button" class="btn btn-info  btn-sm" data-toggle="modal"
-                                            data-target="#modal-edit"><i class="fas fa-edit"></i> Update</button><button
-                                            style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i
-                                                class="fas fa-trash-alt"></i> Delete</button></td>
+                                    <td><button type="button" class="btn btn-info  btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px"
+                                            type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i> Delete</button></td>
                                 </tr>
                                 <tr>
                                     <td>CS002</td>
@@ -61,8 +59,7 @@
                                     <td>-</td>
                                     <td>Nganjuk</td>
                                     <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>
-                                            Update</button><button style="margin-left: 20px" type="button"
-                                            class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i>
+                                            Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i>
                                             Delete</button>
                                     </td>
                                 </tr>
@@ -75,8 +72,7 @@
                                     <td>-</td>
                                     <td>Nganjuk</td>
                                     <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>
-                                            Update</button><button style="margin-left: 20px" type="button"
-                                            class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i>
+                                            Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i>
                                             Delete</button>
                                     </td>
                                 </tr>
@@ -89,8 +85,7 @@
                                     <td>-</td>
                                     <td>Pasar Pahing, Ngluyu</td>
                                     <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>
-                                            Update</button><button style="margin-left: 20px" type="button"
-                                            class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i>
+                                            Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i>
                                             Delete</button>
                                     </td>
                                 </tr>
@@ -103,8 +98,7 @@
                                     <td>-</td>
                                     <td>Pasar Pahing, Ngluyu</td>
                                     <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>
-                                            Update</button><button style="margin-left: 20px" type="button"
-                                            class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i>
+                                            Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i>
                                             Delete</button>
                                     </td>
                                 </tr>
@@ -117,8 +111,7 @@
                                     <td>-</td>
                                     <td>-</td>
                                     <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>
-                                            Update</button><button style="margin-left: 20px" type="button"
-                                            class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i>
+                                            Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i>
                                             Delete</button>
                                     </td>
                                 </tr>
@@ -131,80 +124,9 @@
         <!-- /.card-body -->
     </div>
 
-    {{-- Modal --}}
-    <div class="modal fade" id="modal-add">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Add Supplier</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="">
-                        <div class="form-group row">
-                            <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Code</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control form-control-sm" readonly placeholder="CS007">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Supplier
-                                Name</label>
-                            <div class="col-sm-9">
-                                <input type="text" autofocus class="form-control form-control-sm">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label col-form-label-sm text-right">Telp</label>
-                            <div class="col-sm-9">
-                                <div class="input-group input-group-sm">
-                                    <input type="number" class="form-control text-bold" min="0">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Email</label>
-                            <div class="col-sm-9">
-                                <input type="email" class="form-control form-control-sm">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for=""
-                                class="col-sm-3 col-form-label col-form-label-sm text-right">Bank</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control form-control-sm">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">No.
-                                Rek</label>
-                            <div class="col-sm-9">
-                                <input type="number" class="form-control form-control-sm" min="0">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for=""
-                                class="col-sm-3 col-form-label col-form-label-sm text-right">Address</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control form-control-sm">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer justify-content-between">
-                    <button type="reset" class="btn btn-danger btn-sm" data-dismiss="modal"><i
-                            class="fas fa-trash"></i> Cancel</button>
-                    <button type="button" class="btn btn-success btn-sm"><i class="fas fa-paper-plane"></i>
-                        Save</button>
-                </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
+    {{-- modal Add Supplier --}}
+    @include('supplier.addsupplierform')
+
     {{-- modal update --}}
     <div class="modal fade" id="modal-edit">
         <div class="modal-dialog modal-lg">
@@ -218,8 +140,7 @@
                 <div class="modal-body">
                     <form action="">
                         <div class="form-group row">
-                            <label for=""
-                                class="col-sm-3 col-form-label col-form-label-sm text-right">Code</label>
+                            <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Code</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control form-control-sm" readonly placeholder="CS001">
                             </div>
@@ -228,30 +149,25 @@
                             <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Supplier
                                 Name</label>
                             <div class="col-sm-9">
-                                <input type="text" autofocus class="form-control form-control-sm"
-                                    value="Karunia Photo">
+                                <input type="text" autofocus class="form-control form-control-sm" value="Karunia Photo">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label col-form-label-sm text-right">Telp</label>
                             <div class="col-sm-9">
                                 <div class="input-group input-group-sm">
-                                    <input type="number" class="form-control text-bold" min="0"
-                                        value="081216569634">
+                                    <input type="number" class="form-control text-bold" min="0" value="081216569634">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for=""
-                                class="col-sm-3 col-form-label col-form-label-sm text-right">Email</label>
+                            <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Email</label>
                             <div class="col-sm-9">
-                                <input type="email" class="form-control form-control-sm"
-                                    value="karuniaphoto@gmail.com">
+                                <input type="email" class="form-control form-control-sm" value="karuniaphoto@gmail.com">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for=""
-                                class="col-sm-3 col-form-label col-form-label-sm text-right">Bank</label>
+                            <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Bank</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control form-control-sm" value="-">
                             </div>
@@ -260,13 +176,11 @@
                             <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">No.
                                 Rek</label>
                             <div class="col-sm-9">
-                                <input type="number" class="form-control form-control-sm" min="0"
-                                    value="-">
+                                <input type="number" class="form-control form-control-sm" min="0" value="-">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for=""
-                                class="col-sm-3 col-form-label col-form-label-sm text-right">Address</label>
+                            <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Address</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control form-control-sm" value="Nganjuk">
                             </div>
@@ -274,8 +188,7 @@
                     </form>
                 </div>
                 <div class="modal-footer justify-content-between">
-                    <button type="reset" class="btn btn-danger btn-sm" data-dismiss="modal"><i
-                            class="fas fa-trash"></i> Cancel</button>
+                    <button type="reset" class="btn btn-danger btn-sm" data-dismiss="modal"><i class="fas fa-trash"></i> Cancel</button>
                     <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-paper-plane"></i>
                         Save</button>
                 </div>

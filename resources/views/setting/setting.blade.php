@@ -44,8 +44,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" style="width: 30px"><i class="fas fa-map-marker-alt"></i></span>
                         </div>
-                        <input type="text" class="form-control form-control-sm"
-                            value="Gedong, Ds. Ngluyu, Kec. Ngluyu, Kab. Nganjuk">
+                        <input type="text" class="form-control form-control-sm" value="Gedong, Ds. Ngluyu, Kec. Ngluyu, Kab. Nganjuk">
                     </div>
                 </div>
                 <div class="form-group">
@@ -88,15 +87,15 @@
                     </div>
                 </div>
                 <div class="form-group text-center align-items-center justify-content-center">
-                    <button type="submit" class="btn btn-success btn-sm save" style="width: 150px"><i
-                            class="fas fa-paper-plane"></i> Save</button>
-                    <button type="reset" class="btn btn-danger btn-sm cancel" style="width: 150px; margin-left: 20px"><i
-                            class="fas fa-trash"></i> Cancel</button>
+                    <button type="submit" class="btn btn-success btn-sm save" style="width: 150px"><i class="fas fa-paper-plane"></i> Save</button>
+                    <button type="reset" class="btn btn-danger btn-sm cancel" style="width: 150px; margin-left: 20px"><i class="fas fa-trash"></i> Cancel</button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="card card-primary card-outline">
+
+    {{-- printer Setting --}}
+    {{-- <div class="card card-primary card-outline">
         <div class="card-header">
             <div class="card-title">Printer Setting</div>
         </div>
@@ -177,7 +176,7 @@
             <div class="col-md-3 col-sm-12 col-xs-12">
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection
 
 

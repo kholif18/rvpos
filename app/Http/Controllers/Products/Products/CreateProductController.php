@@ -12,8 +12,8 @@ class CreateProductController extends Controller
         $name = $request->input('pcode');
         $barcode = $request->input('barcode');
         $pname = $request->input('pname');
-        // $category = $request->select('category');
-        // $unit = $request->select('unit');
+        $category = $request->input('category');
+        $unit = $request->input('unit');
         $cost = $request->input('cost');
         $markup = $request->input('markup');
         $saleprice = $request->input('saleprice');
@@ -22,8 +22,8 @@ class CreateProductController extends Controller
             'pcode' => $name,
             'barcode' => $barcode,
             'pname' => $pname,
-            // 'category' => $category,
-            // 'unit' => $unit,
+            'category' => $category,
+            'unit' => $unit,
             'cost' => $cost,
             'markup' => $markup,
             'saleprice' => $saleprice

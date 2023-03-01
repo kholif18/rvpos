@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Customers\AddCustomersController;
 use App\Http\Controllers\Customers\CustomersController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Kas\KasController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\Products\Category\CategoryController;
 use App\Http\Controllers\Products\Category\StoreController as CategoryStoreController;
 use App\Http\Controllers\Products\Products\CreateProductController;
 use App\Http\Controllers\Products\Products\ProductsController;
+use App\Http\Controllers\Products\StockOpname\AddStockOpnameController;
 use App\Http\Controllers\Products\StockOpname\StockOpnameController;
 use App\Http\Controllers\Products\StockOut\AddStockOutController;
 use App\Http\Controllers\Products\StockOut\StockOutController;
@@ -20,10 +22,12 @@ use App\Http\Controllers\Report\StockInOut\StockInOutController;
 use App\Http\Controllers\Sale\StoreController;
 use App\Http\Controllers\Sales\SalesController;
 use App\Http\Controllers\Setting\SettingController;
+use App\Http\Controllers\Supplier\AddSupplierController;
 use App\Http\Controllers\Supplier\SuppliersController;
 use App\Http\Controllers\Transaction\Debt\DebtController;
 use App\Http\Controllers\Transaction\Debt\DebtPayController;
 use App\Http\Controllers\Transaction\ListPost\ListPostController;
+use App\Http\Controllers\User\AddUserController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -71,6 +75,7 @@ Route::get('/products/stockout', [StockOutController::class, 'index']);
 Route::post('/products/add-stockout', [AddStockOutController::class, 'addstockout']);
 
 Route::get('/products/stock-opname', [StockOpnameController::class, 'index']);
+Route::post('/products/add-stockopname', [AddStockOpnameController::class, 'addstockopname']);
 
 //Kas ----------------------------------------------------------------------------
 
@@ -79,10 +84,12 @@ Route::get('/kas', [KasController::class, 'index']);
 //Supplier -----------------------------------------------------------------------
 
 Route::get('/supplier', [SuppliersController::class, 'index']);
+Route::post('/supplier/add-supplier', [AddSupplierController::class, 'addsupplier']);
 
 //Customer -----------------------------------------------------------------------
 
 Route::get('/customers', [CustomersController::class, 'index']);
+Route::post('/products/add-customer', [AddCustomersController::class, 'addcustomer']);
 
 //Reposrt -----------------------------------------------------------------------
 
@@ -97,6 +104,7 @@ Route::get('/report/debt-report', [DebtReportController::class, 'index']);
 //User -----------------------------------------------------------------------
 
 Route::get('/user', [UserController::class, 'index']);
+Route::post('/user/add-user', [AddUserController::class, 'adduser']);
 
 
 
