@@ -3,27 +3,34 @@
 namespace App\Http\Controllers\Products\Category;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Unit;
 use Illuminate\Http\Request;
 
 class StoreController extends Controller
 {
     public function addcategory(Request $request)
     {
-        $name = $request->input('categoryadd');
-        $prefix = $request->input('prefix');
+        $category = new Category();
 
-        return response()->json([
-            'categoryadd' => $name,
-            'prefix' => $prefix
-        ]);
+        $category->id = $request->id;
+        $category->category = $request->input('categoryadd');
+        $category->prefix = $request->input('prefix');
+
+        $category->save();
+
+        return redirect()->back();
     }
 
     public function addunit(Request $request)
     {
-        $addunit = $request->input('addunit');
+        $unit = new Unit();
 
-        return response()->json([
-            'addunit' => $addunit
-        ]);
+        $unit->id = $request->id;
+        $unit->unit = $request->input('addunit');
+
+        $unit->save();
+
+        return redirect()->back();
     }
 }

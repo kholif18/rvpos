@@ -29,67 +29,67 @@
                 </div>
             </div>
             <div class="col-md-7 col-sm-12 col-xs-12">
-                <div class="form-group">
-                    <label class="form-group-sm">Company Name</label>
-                    <div class="input-group input-group-sm">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" style="width: 30px"><i class="fas fa-landmark"></i></span>
+                <form action="{{ url('/setting/add-data') }}" class="form-horizontal" method="post">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <div class="form-group">
+                        <label class="form-group-sm">Company Name</label>
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="width: 30px"><i class="fas fa-landmark"></i></span>
+                            </div>
+                            <input type="text" name="name" autofocus class="form-control form-control-sm" value="Ravaa Studio">
                         </div>
-                        <input type="text" autofocus class="form-control form-control-sm" value="Ravaa Studio">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="form-group-sm">Address</label>
-                    <div class="input-group input-group-sm">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" style="width: 30px"><i class="fas fa-map-marker-alt"></i></span>
+                    <div class="form-group">
+                        <label class="form-group-sm">Address</label>
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="width: 30px"><i class="fas fa-map-marker-alt"></i></span>
+                            </div>
+                            <input type="text" name="address" class="form-control form-control-sm" value="Gedong, Ds. Ngluyu, Kec. Ngluyu, Kab. Nganjuk">
                         </div>
-                        <input type="text" class="form-control form-control-sm" value="Gedong, Ds. Ngluyu, Kec. Ngluyu, Kab. Nganjuk">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="form-group-sm">Phone</label>
-                    <div class="input-group input-group-sm">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" style="width: 30px"><i class="fas fa-mobile-alt"></i></span>
+                    <div class="form-group">
+                        <label class="form-group-sm">Phone</label>
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="width: 30px"><i class="fas fa-mobile-alt"></i></span>
+                            </div>
+                            <input type="text" name="telp" class="form-control form-control-sm" value="0822-3337-7661">
                         </div>
-                        <input type="text" class="form-control form-control-sm" value="0822-3337-7661">
                     </div>
-                </div>
-                <div class="form-group form-group-sm">
-                    <label class="form-group-sm">Company Logo</label>
-                    <div class="input-group input-group-sm">
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="customFile">
-                            <label class="custom-file-label" for="customFile">Choose file</label>
+                    <div class="form-group form-group-sm">
+                        <label class="form-group-sm">Company Logo</label>
+                        <div class="input-group input-group-sm">
+                            <div class="custom-file">
+                                <input type="file" name="logo" class="custom-file-input" id="customFile">
+                                <label class="custom-file-label" for="customFile">Choose file</label>
+                            </div>
                         </div>
-                        {{-- <div class="input-group-append">
-                        <button class="input-group-text">Upload</button>
-                        </div> --}}
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="form-group-sm">Email</label>
-                    <div class="input-group input-group-sm">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" style="width: 30px"><i class="fas fa-envelope"></i></span>
+                    <div class="form-group">
+                        <label class="form-group-sm">Email</label>
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="width: 30px"><i class="fas fa-envelope"></i></span>
+                            </div>
+                            <input type="email" name="email" class="form-control form-control-sm" value="ravaastudio@gmail.com">
                         </div>
-                        <input type="email" class="form-control form-control-sm" value="ravaastudio@gmail.com">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="form-group-sm">Website</label>
-                    <div class="input-group input-group-sm">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" style="width: 30px"><i class="fas fa-globe"></i></span>
+                    <div class="form-group">
+                        <label class="form-group-sm">Website</label>
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="width: 30px"><i class="fas fa-globe"></i></span>
+                            </div>
+                            <input type="text" name="web" class="form-control form-control-sm" value="ravaastudio.wordpress.com">
                         </div>
-                        <input type="text" class="form-control form-control-sm" value="ravaastudio.wordpress.com">
                     </div>
-                </div>
-                <div class="form-group text-center align-items-center justify-content-center">
-                    <button type="submit" class="btn btn-success btn-sm save" style="width: 150px"><i class="fas fa-paper-plane"></i> Save</button>
-                    <button type="reset" class="btn btn-danger btn-sm cancel" style="width: 150px; margin-left: 20px"><i class="fas fa-trash"></i> Cancel</button>
-                </div>
+                    <div class="form-group text-center align-items-center justify-content-center">
+                        <button type="submit" class="btn btn-success btn-sm save" style="width: 150px"><i class="fas fa-paper-plane"></i> Save</button>
+                        <button type="reset" class="btn btn-danger btn-sm cancel" style="width: 150px; margin-left: 20px"><i class="fas fa-trash"></i> Cancel</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

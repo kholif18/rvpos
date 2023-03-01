@@ -2,7 +2,7 @@
 <div class="modal fade" id="modal-add-kas">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
-            <form action="#" class="form-horizontal" method="post">
+            <form action="{{ url('/kas/add') }}" class="form-horizontal" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="modal-header">
                     <h4 class="modal-title">Add Kas</h4>
@@ -43,7 +43,7 @@
                     <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">
                         Close
                     </button>
-                    <button type="submit" class="btn btn-primary btn-sm">
+                    <button type="submit" class="btn btn-success btn-sm">
                         <i class="fas fa-paper-plane"></i>
                         Save
                     </button>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Customers\AddCustomersController;
 use App\Http\Controllers\Customers\CustomersController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Kas\AddKasController;
 use App\Http\Controllers\Kas\KasController;
 use App\Http\Controllers\Login\LoginController;
 use App\Http\Controllers\Products\Category\CategoryController;
@@ -19,8 +20,8 @@ use App\Http\Controllers\Report\DebtReport\DebtReportController;
 use App\Http\Controllers\Report\ProfitLoss\ProfitLossController;
 use App\Http\Controllers\Report\SalesReport\SalesReportController;
 use App\Http\Controllers\Report\StockInOut\StockInOutController;
-use App\Http\Controllers\Sale\StoreController;
 use App\Http\Controllers\Sales\SalesController;
+use App\Http\Controllers\Setting\AddSettingController;
 use App\Http\Controllers\Setting\SettingController;
 use App\Http\Controllers\Supplier\AddSupplierController;
 use App\Http\Controllers\Supplier\SuppliersController;
@@ -80,6 +81,7 @@ Route::post('/products/add-stockopname', [AddStockOpnameController::class, 'adds
 //Kas ----------------------------------------------------------------------------
 
 Route::get('/kas', [KasController::class, 'index']);
+Route::post('/kas/add', [AddKasController::class, 'addkas']);
 
 //Supplier -----------------------------------------------------------------------
 
@@ -115,3 +117,4 @@ Route::post('/user/add-user', [AddUserController::class, 'adduser']);
 //Setting -----------------------------------------------------------------------
 
 Route::get('/setting', [SettingController::class, 'index']);
+Route::post('/setting/add-data', [AddSettingController::class, 'addsetting']);
