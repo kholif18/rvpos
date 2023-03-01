@@ -13,8 +13,8 @@ class StoreController extends Controller
         $prefix = $request->input('prefix');
 
         return response()->json([
-            'status' => 'success', 'categoryadd' => $name, 'input' => $request->input($name),
-            'prefix' => $prefix, 'input' => $request->input($prefix)
+            'categoryadd' => $name,
+            'prefix' => $prefix
         ]);
     }
 
@@ -23,7 +23,7 @@ class StoreController extends Controller
         $addunit = $request->input('addunit');
 
         return response()->json([
-            'status' => 'success', 'addunit' => $addunit, 'input' => $request->input($addunit)
+            'addunit' => $addunit
         ]);
     }
 }

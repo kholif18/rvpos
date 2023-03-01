@@ -6,6 +6,7 @@ use App\Http\Controllers\Kas\KasController;
 use App\Http\Controllers\Login\LoginController;
 use App\Http\Controllers\Products\Category\CategoryController;
 use App\Http\Controllers\Products\Category\StoreController as CategoryStoreController;
+use App\Http\Controllers\Products\Products\CreateProductController;
 use App\Http\Controllers\Products\Products\ProductsController;
 use App\Http\Controllers\Products\StockOpname\StockOpnameController;
 use App\Http\Controllers\Products\StockOut\StockOutController;
@@ -59,10 +60,11 @@ Route::get('/purchases/list-purchases', [ListPurchasesController::class, 'index'
 //Products -----------------------------------------------------------------------
 
 Route::get('/products/products', [ProductsController::class, 'index']);
+Route::post('/products/add-product', [CreateProductController::class, 'createproduct']);
 
 Route::get('/products/category-unit', [CategoryController::class, 'index']);
-Route::post('/products/category-unit', [CategoryStoreController::class, 'addcategory']);
-Route::post('/products/category-unit', [CategoryStoreController::class, 'addunit']);
+Route::post('/products/category', [CategoryStoreController::class, 'addcategory']);
+Route::post('/products/unit', [CategoryStoreController::class, 'addunit']);
 
 Route::get('/products/stockout', [StockOutController::class, 'index']);
 

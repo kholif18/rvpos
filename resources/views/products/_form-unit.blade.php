@@ -1,7 +1,7 @@
 <div class="modal fade" id="modal-add-unit">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
-            <form action="{{ url('/products/category-unit') }}" class="form-horizontal" method="post">
+            <form action="{{ url('/products/unit') }}" class="form-horizontal" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="modal-header">
                     <h4 class="modal-title">Add Unit</h4>
@@ -13,13 +13,13 @@
                     <div class="form-group">
                         <label class="col-form-label col-form-label-sm text-sm-right">Unit Name</label>
                         <div class="input-group input-group-sm">
-                            <input name="addunit" type="text" class="form-control">
+                            <input name="addunit" type="text" class="form-control" required>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success btn-sm"><i class="fas fa-paper-plane"></i>
+                    <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-paper-plane"></i>
                         Save</button>
                 </div>
             </form>

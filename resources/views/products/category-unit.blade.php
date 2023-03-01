@@ -179,7 +179,7 @@
     <div class="modal fade" id="modal-add-category">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
-                <form action="{{ url('/products/category-unit') }}" class="form-horizontal" method="post">
+                <form action="{{ url('/products/category') }}" class="form-horizontal" method="post">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="modal-header">
                         <h4 class="modal-title">Add Category</h4>
