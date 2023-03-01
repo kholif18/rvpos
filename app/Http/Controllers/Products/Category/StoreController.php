@@ -13,7 +13,7 @@ class StoreController extends Controller
     {
         $category = new Category();
 
-        $category->id = $request->id;
+        $category->no = $request->no;
         $category->category = $request->input('categoryadd');
         $category->prefix = $request->input('prefix');
 
@@ -26,7 +26,7 @@ class StoreController extends Controller
     {
         $unit = new Unit();
 
-        $unit->id = $request->id;
+        $unit->no = $request->no;
         $unit->unit = $request->input('addunit');
 
         $unit->save();

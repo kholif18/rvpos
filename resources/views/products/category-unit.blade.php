@@ -39,7 +39,7 @@
                                     <tbody>
                                         @foreach ($categories as $category)
                                             <tr>
-                                                <td>{{ $category->id }}</td>
+                                                <td>{{ $category->no }}</td>
                                                 <td>{{ $category->category }}</td>
                                                 <td>{{ $category->prefix }}</td>
                                                 <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-category-edit"><i class="fas fa-edit"></i></button>
@@ -85,7 +85,7 @@
                                     <tbody>
                                         @foreach ($units as $unit)
                                             <tr>
-                                                <td>{{ $unit->id }}</td>
+                                                <td>{{ $unit->no }}</td>
                                                 <td>{{ $unit->unit }}</td>
                                                 <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-pcs"><i class="fas fa-edit"></i></button>
                                                     <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
