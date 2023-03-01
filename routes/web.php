@@ -9,6 +9,7 @@ use App\Http\Controllers\Products\Category\StoreController as CategoryStoreContr
 use App\Http\Controllers\Products\Products\CreateProductController;
 use App\Http\Controllers\Products\Products\ProductsController;
 use App\Http\Controllers\Products\StockOpname\StockOpnameController;
+use App\Http\Controllers\Products\StockOut\AddStockOutController;
 use App\Http\Controllers\Products\StockOut\StockOutController;
 use App\Http\Controllers\Purchases\ListPurchases\ListPurchasesController;
 use App\Http\Controllers\Purchases\Purchase\PurchaseController;
@@ -60,13 +61,14 @@ Route::get('/purchases/list-purchases', [ListPurchasesController::class, 'index'
 //Products -----------------------------------------------------------------------
 
 Route::get('/products/products', [ProductsController::class, 'index']);
-Route::post('/products/add-product', [CreateProductController::class, 'createproduct']);
+Route::post('/products/add-product', [CreateProductController::class, 'addproduct']);
 
 Route::get('/products/category-unit', [CategoryController::class, 'index']);
 Route::post('/products/category', [CategoryStoreController::class, 'addcategory']);
 Route::post('/products/unit', [CategoryStoreController::class, 'addunit']);
 
 Route::get('/products/stockout', [StockOutController::class, 'index']);
+Route::post('/products/add-stockout', [AddStockOutController::class, 'addstockout']);
 
 Route::get('/products/stock-opname', [StockOpnameController::class, 'index']);
 

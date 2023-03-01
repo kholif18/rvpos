@@ -29,8 +29,8 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <form action="enhanced-results.html">
-                {{-- <div class="form-group">
+            {{-- <form action="enhanced-results.html">
+                <div class="form-group">
                 <label>Filter by Category:</label>
                 <select class="select2" multiple="multiple" data-placeholder="All" style="width: 400px;">
                     <option value="all">All</option>
@@ -39,8 +39,8 @@
                     <option value="jasa">Jasa</option>
                 </select>
                 <button type="button" class="btn btn-success"><i class="fas fa-print"></i></button>
-            </div> --}}
-            </form>
+            </div>
+            </form> --}}
             <div class="row">
                 <div class="col-12">
                     <div class="card-body table-responsive p-0" style="height: 69vh;">
@@ -114,7 +114,7 @@
                                 <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Product
                                     Code</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="pcode" class="form-control form-control-sm" required placeholder="RV098">
+                                    <input type="text" name="pcode" class="form-control form-control-sm" required value="RV098">
                                 </div>
                             </div>
                             <div class="form-group row">
