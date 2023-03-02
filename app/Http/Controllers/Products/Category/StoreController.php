@@ -25,20 +25,11 @@ class StoreController extends Controller
     {
         $unit = new Unit();
 
-        $unit->no = $request->no;
+        // $unit->no = $request->no;
         $unit->unit = $request->input('addunit');
 
         $unit->save();
 
         return redirect()->back();
-    }
-
-    public function edit($id)
-    {
-        $category = Category::find($id);
-
-        return view('products.category-unit', [
-            'category' => $category,
-        ]);
     }
 }

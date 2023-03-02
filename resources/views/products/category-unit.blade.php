@@ -46,7 +46,7 @@
                                                     <form action="{{ route('category.destroy', $category->id) }}" method="post" class="d-inline">
                                                         @csrf
                                                         @method('delete')
-                                                        <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
+                                                        <button style="margin-left: 20px" type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"><i class="fas fa-trash-alt"></i></button>
                                                     </form>
                                                 </td>
                                             </tr>
@@ -92,11 +92,14 @@
                                                 <td>{{ $unit->no }}</td>
                                                 <td>{{ $unit->unit }}</td>
                                                 <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-pcs"><i class="fas fa-edit"></i></button>
-                                                    <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
+                                                    <form action="{{ route('unit.delete', $unit->id) }}" method="post" class="d-inline">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button style="margin-left: 20px" type="submit" class="btn btn-danger btn-sm" onclick="confirm()"><i class="fas fa-trash-alt"></i></button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                         @endforeach
-
                                     </tbody>
                                 </table>
                             </div>
@@ -117,7 +120,7 @@
 
 @push('scripts')
     <script>
-        $('.delete').click(function() {
+        function confirm() {
             Swal.fire({
                 title: 'Are you sure?',
                 text: "You won't be able to revert this!",
@@ -137,6 +140,6 @@
                     })
                 }
             });
-        });
+        }
     </script>
 @endpush

@@ -59,32 +59,25 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>RV0015</td>
-                                    <td>0651454789546</td>
-                                    <td>Kartas F4 70 Gsm</td>
-                                    <td>ATK</td>
-                                    <td>Pkg</td>
-                                    <td>Rp 52.000</td>
-                                    <td>Rp 56.000</td>
-                                    <td>12</td>
-                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></button>
-                                        <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>RV0015</td>
-                                    <td>8754654324153</td>
-                                    <td>Isolasi Hitam National </td>
-                                    <td>ATK</td>
-                                    <td>Pcs</td>
-                                    <td>Rp 5.800</td>
-                                    <td>Rp 7.500</td>
-                                    <td>8</td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
-                                        <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
-                                    </td>
-                                </tr>
+                                @foreach ($products as $product)
+                                    <tr>
+                                        <td>{{ $product->pcode }}</td>
+                                        <td>{{ $product->barcode }}</td>
+                                        <td>{{ $product->pname }}</td>
+                                        <td>{{ $product->category }}</td>
+                                        <td>{{ $product->unit }}</td>
+                                        <td>{{ $product->cost }}</td>
+                                        <td>{{ $product->saleprice }}</td>
+                                        <td>-</td>
+                                        <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></button>
+                                            <form action="{{ route('product.delete', $product->id) }}" method="post" class="d-inline">
+                                                @csrf
+                                                @method('delete')
+                                                <button style="margin-left: 20px" type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"><i class="fas fa-trash-alt"></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -135,9 +128,9 @@
                             <div class="col-sm-9">
                                 <div class="input-group input-group-sm">
                                     <select name="category" class="form-control select2" required>
-                                        <option value="atk">ATK</option>
-                                        <option value="jasa">Jasa</option>
-                                        <option value="print">Print</option>
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">{{ $category->category }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -147,9 +140,9 @@
                             <div class="col-sm-9">
                                 <div class="input-group input-group-sm">
                                     <select name="unit" class="form-control select2" required>
-                                        <option value="pcs">Pcs</option>
-                                        <option value="pkg">Pkg</option>
-                                        <option value="rim">Rim</option>
+                                        @foreach ($units as $unit)
+                                            <option value="{{ $unit->id }}">{{ $unit->unit }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>

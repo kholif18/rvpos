@@ -45,7 +45,7 @@
 <div class="modal fade" id="modal-category-edit">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
-            <form action="{{ route('category.edit', $category->id) }}" class="form-horizontal" method="post">
+            <form action="#" class="form-horizontal" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="modal-header">
                     <h4 class="modal-title">Edit Category</h4>
@@ -57,11 +57,11 @@
                     <div class="form-group">
                         <label class="col-form-label col-form-label-sm text-sm-right">Category Name</label>
                         <div class="input-group input-group-sm">
-                            <input type="text" name="categoryadd" class="form-control" value="{{ $category->categoryadd }}">
+                            <input type="text" name="categoryadd" class="form-control" value="">
                         </div>
                         <label class="col-form-label col-form-label-sm text-sm-right">Prefix</label>
                         <div class="input-group input-group-sm">
-                            <input type="text" name="prefix" class="form-control" value="{{ $category->prefix }}">
+                            <input type="text" name="prefix" class="form-control" value="">
                         </div>
                     </div>
                 </div>
