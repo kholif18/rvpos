@@ -13,7 +13,6 @@ class StoreController extends Controller
     {
         $category = new Category();
 
-        $category->no = $request->no;
         $category->category = $request->input('categoryadd');
         $category->prefix = $request->input('prefix');
 
@@ -32,5 +31,14 @@ class StoreController extends Controller
         $unit->save();
 
         return redirect()->back();
+    }
+
+    public function edit($id)
+    {
+        $category = Category::find($id);
+
+        return view('products.category-unit', [
+            'category' => $category,
+        ]);
     }
 }

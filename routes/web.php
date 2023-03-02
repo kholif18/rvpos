@@ -7,10 +7,11 @@ use App\Http\Controllers\Kas\AddKasController;
 use App\Http\Controllers\Kas\KasController;
 use App\Http\Controllers\Login\LoginController;
 use App\Http\Controllers\Products\Category\CategoryController;
+use App\Http\Controllers\Products\Category\DeleteController;
 use App\Http\Controllers\Products\Category\StoreController as CategoryStoreController;
 use App\Http\Controllers\Products\Products\CreateProductController;
 use App\Http\Controllers\Products\Products\ProductsController;
-use App\Http\Controllers\Products\StockOpname\AddStockOpnameController;
+use App\Http\Controllers\Products\StockOpname\CreateStockOpnameController;
 use App\Http\Controllers\Products\StockOpname\StockOpnameController;
 use App\Http\Controllers\Products\StockOut\AddStockOutController;
 use App\Http\Controllers\Products\StockOut\StockOutController;
@@ -68,15 +69,17 @@ Route::get('/purchases/list-purchases', [ListPurchasesController::class, 'index'
 Route::get('/products/products', [ProductsController::class, 'index']);
 Route::post('/products/add-product', [CreateProductController::class, 'addproduct']);
 
-Route::get('/products/category-unit', [CategoryController::class, 'index']);
-Route::post('/products/category', [CategoryStoreController::class, 'addcategory']);
-Route::post('/products/unit', [CategoryStoreController::class, 'addunit']);
+Route::get('/products/category-unit', [CategoryController::class, 'index'])->name('category-unit');
+Route::post('/products/category', [CategoryStoreController::class, 'addcategory'])->name('category.add');
+Route::get('/products/category/{id}/edit', [CategoryStoreController::class, 'edit'])->name('category.edit');
+Route::delete('/products/category/{id}', [DeleteController::class, 'destroy'])->name('category.destroy');
+Route::post('/products/unit', [CategoryStoreController::class, 'addunit'])->name('unit.add');
 
 Route::get('/products/stockout', [StockOutController::class, 'index']);
 Route::post('/products/add-stockout', [AddStockOutController::class, 'addstockout']);
 
 Route::get('/products/stock-opname', [StockOpnameController::class, 'index']);
-Route::post('/products/add-stockopname', [AddStockOpnameController::class, 'addstockopname']);
+Route::post('/products/add-stockopname', [CreateStockOpnameController::class, 'addstockopname']);
 
 //Kas ----------------------------------------------------------------------------
 

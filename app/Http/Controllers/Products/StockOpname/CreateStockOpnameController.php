@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Products\StockOpname;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class AddStockOpnameController extends Controller
+class CreateStockOpnameController extends Controller
 {
     public function addstockopname(Request $request)
     {
