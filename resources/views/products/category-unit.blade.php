@@ -40,7 +40,7 @@
                                         @foreach ($categories as $category)
                                             <tr>
                                                 <td></td>
-                                                <td>{{ $category->category }}</td>
+                                                <td>{{ $category->name }}</td>
                                                 <td>{{ $category->prefix }}</td>
                                                 <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-category-edit"><i class="fas fa-edit"></i></button>
                                                     <form action="{{ route('category.destroy', $category->id) }}" method="post" class="d-inline">

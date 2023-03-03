@@ -64,8 +64,12 @@
                                         <td>{{ $product->pcode }}</td>
                                         <td>{{ $product->barcode }}</td>
                                         <td>{{ $product->pname }}</td>
-                                        <td>{{ $product->category }}</td>
-                                        <td>{{ $product->unit }}</td>
+                                        @foreach ($categories as $category)
+                                            <td>{{ $category->name }}</td>
+                                        @endforeach
+                                        @foreach ($units as $unit)
+                                            <td>{{ $unit->unit }}</td>
+                                        @endforeach
                                         <td>{{ $product->cost }}</td>
                                         <td>{{ $product->saleprice }}</td>
                                         <td>-</td>
@@ -123,5 +127,13 @@ toggle between hiding and showing the dropdown content --}}
                 confirmButtonText: 'Yes, delete it!'
             });
         });
+
+        // function getProducts(keyword) {
+        //     const ajax = new XMLHttpRequest();
+        //     ajax.onload = function () {
+        //         const data = JSON.parse(ajax.responseText);
+        //         displayProduct(data);
+        //     }
+        // }
     </script>
 @endpush

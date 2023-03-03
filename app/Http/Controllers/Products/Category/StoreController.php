@@ -13,7 +13,7 @@ class StoreController extends Controller
     {
         $category = new Category();
 
-        $category->category = $request->input('categoryadd');
+        $category->name = $request->input('categoryadd');
         $category->prefix = $request->input('prefix');
 
         $category->save();
