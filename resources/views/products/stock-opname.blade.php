@@ -39,58 +39,21 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>20/02/2023</td>
-                                    <td>0651454789546</td>
-                                    <td>Kartas F4 70 Gsm</td>
-                                    <td>12</td>
-                                    <td>10</td>
-                                    <td>2</td>
-                                    <td>Rp 560.000</td>
-                                    <td>Rusak</td>
-                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></button>
-                                        <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>19/02/2023</td>
-                                    <td>8754654324153</td>
-                                    <td>Isolasi Hitam National </td>
-                                    <td>7</td>
-                                    <td>8</td>
-                                    <td>1</td>
-                                    <td>Rp 60.000</td>
-                                    <td>Ketlisut</td>
-                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></button>
-                                        <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>15/02/2023</td>
-                                    <td>0651454789546</td>
-                                    <td>Tipe-x Joyko CF-5221</td>
-                                    <td>8</td>
-                                    <td>7</td>
-                                    <td>1</td>
-                                    <td>Rp 28.000</td>
-                                    <td>Tidak di masukkan kasir</td>
-                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></button>
-                                        <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>12/01/2023</td>
-                                    <td>546843241585</td>
-                                    <td>Buku HC Folio isi 100</td>
-                                    <td>5</td>
-                                    <td>3</td>
-                                    <td>2</td>
-                                    <td>Rp 69.000</td>
-                                    <td>Dibuat sendiri</td>
-                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></button>
-                                        <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
-                                    </td>
-                                </tr>
+                                @foreach ($stockopnames as $stockopname)
+                                    <tr>
+                                        <td>{{ $stockopname->created_at }}</td>
+                                        <td>-</td>
+                                        <td>{{ $stockopname->pname }}</td>
+                                        <td>-</td>
+                                        <td>{{ $stockopname->realstock }}</td>
+                                        <td>-</td>
+                                        <td>Rp 560.000</td>
+                                        <td>{{ $stockopname->detail }}</td>
+                                        <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></button>
+                                            <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

@@ -17,6 +17,8 @@ class CreateStockOpnameController extends Controller
         $stockopname->realstock = $request->input('realstock');
         $stockopname->detail = $request->input('detail');
 
-        return response();
+        $stockopname->save();
+
+        return redirect()->back();
     }
 }

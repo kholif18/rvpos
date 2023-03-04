@@ -37,7 +37,7 @@
                             <div class="input-group input-group-sm">
                                 <select name="category" class="form-control select2" required>
                                     @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        <option value="{{ $category->name }}">{{ $category->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -49,7 +49,7 @@
                             <div class="input-group input-group-sm">
                                 <select name="unit" class="form-control select2" required>
                                     @foreach ($units as $unit)
-                                        <option value="{{ $unit->id }}">{{ $unit->unit }}</option>
+                                        <option value="{{ $unit->unit }}">{{ $unit->unit }}</option>
                                     @endforeach
                                 </select>
                             </div>

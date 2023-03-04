@@ -2,7 +2,7 @@
 <div class="modal fade" id="modal-add">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
-            <form action="{{ url('/products/add-stockopname') }}" class="form-horizontal" method="post">
+            <form action="{{ route('stockopname.add') }}" class="form-horizontal" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="modal-header">
                     <h4 class="modal-title">Add Product</h4>
@@ -14,13 +14,21 @@
                     <div class="form-group">
                         <label class="col-form-label col-form-label-sm text-sm-right">Product Name</label>
                         <div class="input-group input-group-sm">
-                            <input name="pname" type="text" class="form-control">
+                            <select name="name" class="form-control select2" required>
+                                @foreach ($products as $product)
+                                    <option value="{{ $product->pname }}">{{ $product->pname }}</option>
+                                @endforeach
+                            </select>
+                            {{-- <input name="name" type="text" class="form-control"> --}}
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-form-label col-form-label-sm text-sm-right">Stock</label>
                         <div class="input-group input-group-sm">
-                            <input name="qty" type="text" class="form-control" value="501" readonly>
+                            @foreach ($products as $product)
+                                <option value="{{ $product->qty }}">{{ $product->qty }}</option>
+                            @endforeach
+                            {{-- <input name="qty" type="text" class="form-control" value="501" readonly> --}}
                         </div>
                     </div>
                     <div class="form-group">
@@ -62,7 +70,7 @@
                 <div class="form-group">
                     <label class="col-form-label col-form-label-sm text-sm-right">Product Name</label>
                     <div class="input-group input-group-sm">
-                        <input name="productname" type="text" class="form-control" value="Buku HC Folio isi 100" readonly>
+                        <input name="pname" type="text" class="form-control" value="Buku HC Folio isi 100" readonly>
                     </div>
                 </div>
                 <div class="form-group">

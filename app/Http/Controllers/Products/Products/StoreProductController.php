@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Products\Products;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
-use App\Models\Unit;
 use Illuminate\Http\Request;
 
 class StoreProductController extends Controller

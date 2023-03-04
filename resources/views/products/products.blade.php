@@ -44,15 +44,11 @@
                                         <td>{{ $product->pcode }}</td>
                                         <td>{{ $product->barcode }}</td>
                                         <td>{{ $product->pname }}</td>
-                                        @foreach ($categories as $category)
-                                            <td>{{ $category->name }}</td>
-                                        @endforeach
-                                        @foreach ($units as $unit)
-                                            <td>{{ $unit->unit }}</td>
-                                        @endforeach
+                                        <td>{{ $product->category }}</td>
+                                        <td>{{ $product->unit }}</td>
                                         <td>{{ $product->cost }}</td>
                                         <td>{{ $product->saleprice }}</td>
-                                        <td>-</td>
+                                        <td>{{ $product->created_at }}</td>
                                         <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></button>
                                             <form action="{{ route('product.delete', $product->id) }}" method="post" class="d-inline">
                                                 @csrf

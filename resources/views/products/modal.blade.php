@@ -3,7 +3,7 @@
 <div class="modal fade" id="modal-add">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
-            <form action="{{ url('/products/add-stockout') }}" class="form-horizontal" method="post">
+            <form action="{{ url('stockout.add') }}" class="form-horizontal" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="modal-header">
                     <h4 class="modal-title">Add Stock Out</h4>
