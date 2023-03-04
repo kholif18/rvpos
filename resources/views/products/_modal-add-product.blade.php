@@ -14,7 +14,7 @@
                         <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Product
                             Code</label>
                         <div class="col-sm-9">
-                            <input type="text" name="pcode" class="form-control form-control-sm" required value="RV098">
+                            <input type="text" name="code" class="form-control form-control-sm" required value="RV098">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -27,7 +27,7 @@
                         <label class="col-sm-3 col-form-label col-form-label-sm text-right">Product Name</label>
                         <div class="col-sm-9">
                             <div class="input-group input-group-sm">
-                                <input type="text" name="pname" class="form-control text-bold" required>
+                                <input type="text" name="name" class="form-control text-bold" required>
                             </div>
                         </div>
                     </div>
@@ -35,9 +35,9 @@
                         <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Category</label>
                         <div class="col-sm-9">
                             <div class="input-group input-group-sm">
-                                <select name="category" class="form-control select2" required>
+                                <select name="category_id" class="form-control select2" required>
                                     @foreach ($categories as $category)
-                                        <option value="{{ $category->name }}">{{ $category->name }}</option>
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -47,9 +47,9 @@
                         <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Unit</label>
                         <div class="col-sm-9">
                             <div class="input-group input-group-sm">
-                                <select name="unit" class="form-control select2" required>
+                                <select name="unit_id" class="form-control select2" required>
                                     @foreach ($units as $unit)
-                                        <option value="{{ $unit->unit }}">{{ $unit->unit }}</option>
+                                        <option value="{{ $unit->id }}">{{ $unit->unit }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -63,7 +63,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Rp </span>
                                 </div>
-                                <input type="text" name="cost" class="form-control form-control-sm" required>
+                                <input type="text" name="purchase_price" class="form-control form-control-sm" required>
                             </div>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Rp </span>
                                 </div>
-                                <input type="text" name="saleprice" class="form-control form-control-sm" required>
+                                <input type="text" name="sale_price" class="form-control form-control-sm" required>
                             </div>
                         </div>
                     </div>

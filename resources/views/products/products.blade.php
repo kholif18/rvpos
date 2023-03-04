@@ -41,14 +41,14 @@
                             <tbody>
                                 @foreach ($products as $product)
                                     <tr>
-                                        <td>{{ $product->pcode }}</td>
+                                        <td>{{ $product->code }}</td>
                                         <td>{{ $product->barcode }}</td>
-                                        <td>{{ $product->pname }}</td>
-                                        <td>{{ $product->category }}</td>
-                                        <td>{{ $product->unit }}</td>
-                                        <td>{{ $product->cost }}</td>
-                                        <td>{{ $product->saleprice }}</td>
-                                        <td>{{ $product->created_at }}</td>
+                                        <td>{{ $product->name }}</td>
+                                        <td>{{ $product->category_id->name }}</td>
+                                        <td>{{ $product->unit_id->name }}</td>
+                                        <td>{{ $product->purchase_price }}</td>
+                                        <td>{{ $product->sale_price }}</td>
+                                        <td>{{ $product->quantity }}</td>
                                         <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></button>
                                             <form action="{{ route('product.delete', $product->id) }}" method="post" class="d-inline">
                                                 @csrf

@@ -13,14 +13,14 @@ class StoreProductController extends Controller
     {
         $product = new Product();
 
-        $product->pcode = $request->input('pcode');
+        $product->code = $request->input('code');
         $product->barcode = $request->input('barcode');
-        $product->pname = $request->input('pname');
-        $product->category = $request->input('category');
-        $product->unit = $request->input('unit');
-        $product->cost = $request->input('cost');
+        $product->name = $request->input('name');
+        $product->category_id = $request->input('category_id');
+        $product->unit_id = $request->input('unit_id');
+        $product->purchase_price = $request->input('purchase_price');
         $product->markup = $request->input('markup');
-        $product->saleprice = $request->input('saleprice');
+        $product->sale_price = $request->input('sale_price');
 
         $product->save();
 
