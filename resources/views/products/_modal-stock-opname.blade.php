@@ -16,7 +16,7 @@
                         <div class="input-group input-group-sm">
                             <select name="name" class="form-control select2" required>
                                 @foreach ($products as $product)
-                                    <option value="{{ $product->pname }}">{{ $product->pname }}</option>
+                                    <option value="{{ $product->id }}">{{ $product->name }}</option>
                                 @endforeach
                             </select>
                             {{-- <input name="name" type="text" class="form-control"> --}}
@@ -25,16 +25,18 @@
                     <div class="form-group">
                         <label class="col-form-label col-form-label-sm text-sm-right">Stock</label>
                         <div class="input-group input-group-sm">
-                            @foreach ($products as $product)
-                                <option value="{{ $product->qty }}">{{ $product->qty }}</option>
-                            @endforeach
+                            <select name="quantity" class="form-control select2" required>
+                                @foreach ($products as $product)
+                                    <option value="{{ $product->id }}">{{ $product->quantity }}</option>
+                                @endforeach
+                            </select>
                             {{-- <input name="qty" type="text" class="form-control" value="501" readonly> --}}
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-form-label col-form-label-sm text-sm-right">Real Stock</label>
                         <div class="input-group input-group-sm">
-                            <input name="realstock" type="text" class="form-control" required>
+                            <input name="real_stock" type="text" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-group">

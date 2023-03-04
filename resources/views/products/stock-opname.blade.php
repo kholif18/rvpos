@@ -42,12 +42,12 @@
                                 @foreach ($stockopnames as $stockopname)
                                     <tr>
                                         <td>{{ $stockopname->created_at }}</td>
-                                        <td>-</td>
-                                        <td>{{ $stockopname->pname }}</td>
-                                        <td>-</td>
+                                        <td>{{ $Stockopname->barcode->barcode }}</td>
+                                        <td>{{ $stockopname->name }}</td>
+                                        <td>{{ $stockopname->quantity->quantity }}</td>
                                         <td>{{ $stockopname->realstock }}</td>
-                                        <td>-</td>
-                                        <td>Rp 560.000</td>
+                                        <td>{{ $stockopname->difference }}</td>
+                                        <td>{{ $stockopname->value_price }}</td>
                                         <td>{{ $stockopname->detail }}</td>
                                         <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></button>
                                             <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
