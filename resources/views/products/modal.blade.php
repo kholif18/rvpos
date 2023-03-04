@@ -15,7 +15,7 @@
                     <div class="form-group">
                         <label class="col-form-label col-form-label-sm text-sm-right">Product Name</label>
                         <div class="input-group input-group-sm">
-                            <input name="productname" type="text" class="form-control" required>
+                            <input name="pname" type="text" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -59,7 +59,7 @@
                 <div class="form-group">
                     <label class="col-form-label col-form-label-sm text-sm-right">Product Name</label>
                     <div class="input-group input-group-sm">
-                        <input name="productname" type="text" class="form-control" value="Kertas A4 70 Gsm" readonly>
+                        <input name="pname" type="text" class="form-control" value="Kertas A4 70 Gsm" readonly>
                     </div>
                 </div>
                 <div class="form-group">
@@ -77,7 +77,7 @@
             </div>
             <div class="modal-footer justify-content-between">
                 <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-success btn-sm"><i class="fas fa-paper-plane"></i>
+                <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-paper-plane"></i>
                     Save</button>
             </div>
         </div>

@@ -13,14 +13,6 @@
     <div class="card card-primary card-outline">
         <div class="card-header">
             <h3 class="card-title">Stok Opname</h3>
-            {{-- <div class="dropdown">
-            <button onclick="myFunction()" class="dt-btn-split-drop">Dropdown</button>
-            <div id="myDropdown" class="dropdown-content">
-                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                <a href="#atk">ATK</a>
-                <a href="#print">Print</a>
-            </div>
-            </div> --}}
             <div class="card-tools">
                 <button type="button" class="btn btn-success  btn-sm" data-toggle="modal" data-target="#modal-add">
                     <i class="fas fa-plus-circle"></i> Add Product

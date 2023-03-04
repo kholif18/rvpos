@@ -75,14 +75,14 @@ Route::get('/products/category-unit', [CategoryController::class, 'index'])->nam
 Route::post('/products/category', [CategoryStoreController::class, 'addcategory'])->name('category.add');
 // Route::get('/products/category/{id}/edit', [CategoryStoreController::class, 'edit'])->name('category.edit');
 Route::delete('/products/category/{id}', [DeleteController::class, 'categorydestroy'])->name('category.destroy');
-Route::post('/products/unit', [CategoryStoreController::class, 'addunit'])->name('unit.add');
+Route::post('/products/unit', [CategoryStoreController::class, 'addunit'])->name('unit.add')->name('unit.add');
 Route::delete('/products/unit/{id}', [DeleteController::class, 'unitdestroy'])->name('unit.delete');
 
-Route::get('/products/stockout', [StockOutController::class, 'index']);
-Route::post('/products/add-stockout', [AddStockOutController::class, 'addstockout']);
+Route::get('/products/stockout', [StockOutController::class, 'index'])->name('stockout');
+Route::post('/products/add-stockout', [AddStockOutController::class, 'addstockout'])->name('stockout.add');
 
-Route::get('/products/stock-opname', [StockOpnameController::class, 'index']);
-Route::post('/products/add-stockopname', [CreateStockOpnameController::class, 'addstockopname']);
+Route::get('/products/stock-opname', [StockOpnameController::class, 'index'])->name('stockopname');
+Route::post('/products/add-stockopname', [CreateStockOpnameController::class, 'addstockopname'])->name('stockopname.add');
 
 //Kas ----------------------------------------------------------------------------
 

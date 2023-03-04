@@ -38,62 +38,24 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>RV0015</td>
-                                    <td>0651454789546</td>
-                                    <td>Kartas F4 70 Gsm</td>
-                                    <td>ATK</td>
-                                    <td>1</td>
-                                    <td>Sobek</td>
-                                    <td>12/02/2023</td>
-                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                            data-target="#modal-edit"><i class="fas fa-edit"></i></button>
-                                        <button style="margin-left: 20px" type="button"
-                                            class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>RV0015</td>
-                                    <td>8754654324153</td>
-                                    <td>Isolasi Hitam National </td>
-                                    <td>ATK</td>
-                                    <td>1</td>
-                                    <td>Hilang</td>
-                                    <td>12/02/2023</td>
-                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                            data-target="#modal-edit"><i class="fas fa-edit"></i></button>
-                                        <button style="margin-left: 20px" type="button"
-                                            class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>RV0015</td>
-                                    <td>0651454789546</td>
-                                    <td>Tipe-x Joyko CF-5221</td>
-                                    <td>ATK</td>
-                                    <td>1</td>
-                                    <td>Rusak</td>
-                                    <td>12/02/2023</td>
-                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                            data-target="#modal-edit"><i class="fas fa-edit"></i></button>
-                                        <button style="margin-left: 20px" type="button"
-                                            class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>RV0015</td>
-                                    <td>546843241585</td>
-                                    <td>Buku HC Folio isi 100</td>
-                                    <td>ATK</td>
-                                    <td>1</td>
-                                    <td>Rusak</td>
-                                    <td>12/02/2023</td>
-                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                            data-target="#modal-edit"><i class="fas fa-edit"></i></button>
-                                        <button style="margin-left: 20px" type="button"
-                                            class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
-                                    </td>
-                                </tr>
+                                @foreach ($stockouts as $stockout)
+                                    <tr>
+                                        @foreach ($products as $product)
+                                            <td>{{ $product->pcode }}</td>
+                                            <td>{{ $product->barcode }}</td>
+                                        @endforeach
+                                        <td>{{ $stockout->pname }}</td>
+                                        @foreach ($categories as $category)
+                                            <td>{{ $category->name }}</td>
+                                        @endforeach
+                                        <td>{{ $stockout->qty }}</td>
+                                        <td>{{ $stockout->detail }}</td>
+                                        <td>{{ $stockout->create_at }}</td>
+                                        <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></button>
+                                            <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

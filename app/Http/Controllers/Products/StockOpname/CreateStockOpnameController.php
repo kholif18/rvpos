@@ -3,22 +3,20 @@
 namespace App\Http\Controllers\Products\StockOpname;
 
 use App\Http\Controllers\Controller;
+use App\Models\StockOpname;
 use Illuminate\Http\Request;
 
 class CreateStockOpnameController extends Controller
 {
     public function addstockopname(Request $request)
     {
-        $name = $request->input('productname');
-        $qty = $request->input('qty');
-        $realstock = $request->input('realstock');
-        $detail = $request->input('detail');
+        $stockopname = new StockOpname();
 
-        return response()->json([
-            'productname' => $name,
-            'qty' => $qty,
-            'realstock' => $realstock,
-            'detail' => $detail,
-        ]);
+        $stockopname->name = $request->input('name');
+        $stockopname->qty = $request->input('qty');
+        $stockopname->realstock = $request->input('realstock');
+        $stockopname->detail = $request->input('detail');
+
+        return response();
     }
 }

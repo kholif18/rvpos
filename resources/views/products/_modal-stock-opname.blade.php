@@ -14,7 +14,7 @@
                     <div class="form-group">
                         <label class="col-form-label col-form-label-sm text-sm-right">Product Name</label>
                         <div class="input-group input-group-sm">
-                            <input name="productname" type="text" class="form-control">
+                            <input name="pname" type="text" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
