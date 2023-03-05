@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('stock_outs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('product_id')->index();
-            $table->integer('quantity')->default(0);
+            // $table->foreignId('barcode')->constrained('products')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('quantity');
             $table->text('note')->nullable();
             $table->timestamps();
             $table->softDeletes();

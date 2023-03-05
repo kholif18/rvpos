@@ -13,9 +13,13 @@ return new class extends Migration
     {
         Schema::create('stock_opnames', function (Blueprint $table) {
             $table->id();
+            // $table->foreignId('barcode')->constrained('products')->onDelete('cascade')->onUpdate('cascade');
             $table->string('name');
-            $table->integer('qty');
-            $table->integer('realstock');
+            $table->foreignId('quantity')->constrained('products')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('real_stock');
+            $table->integer('difference');
+            // $table->foreignId('sale_price')->constrained('products')->onDelete('cascade')->onUpdate('cascade');
+            $table->decimal('value_price', 12, 2);
             $table->string('detail');
             $table->timestamps();
             $table->softDeletes();

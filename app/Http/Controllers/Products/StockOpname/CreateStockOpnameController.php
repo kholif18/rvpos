@@ -14,12 +14,10 @@ class CreateStockOpnameController extends Controller
         $stockopname = new StockOpname();
         $product = Product::get();
 
-        $stockopname->barcode = $product('barcode');
         $stockopname->name = $request->input('name');
-        $stockopname->quantity = $request->product('quantity');
-        $stockopname->realstock = $request->input('realstock');
-        $stockopname->difference = $product('quantity') - $stockopname->realstock;
-        $stockopname->value_price = $stockopname->difference * $product('sale_price');
+        $stockopname->real_stock = $request->input('real_stock');
+        // $stockopname->difference = $product('quantity');
+        // $stockopname->value_price = $stockopname;
         $stockopname->detail = $request->input('detail');
 
         $stockopname->save();

@@ -36,8 +36,8 @@
                         <div class="col-sm-9">
                             <div class="input-group input-group-sm">
                                 <select name="category_id" class="form-control select2" required>
-                                    @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @foreach ($products as $produc)
+                                        <option value="{{ $product->category->id }}">{{ $product->category->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -48,8 +48,8 @@
                         <div class="col-sm-9">
                             <div class="input-group input-group-sm">
                                 <select name="unit_id" class="form-control select2" required>
-                                    @foreach ($units as $unit)
-                                        <option value="{{ $unit->id }}">{{ $unit->unit }}</option>
+                                    @foreach ($products as $product)
+                                        <option value="{{ $product->unit->id }}">{{ $product->unit->unit }}</option>
                                     @endforeach
                                 </select>
                             </div>

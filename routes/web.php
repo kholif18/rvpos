@@ -69,6 +69,7 @@ Route::get('/purchases/list-purchases', [ListPurchasesController::class, 'index'
 
 Route::get('/products/products', [ProductsController::class, 'index'])->name('products');
 Route::post('/products/add-product', [StoreProductController::class, 'store'])->name('product.add');
+Route::post('/products/show', [StoreProductController::class, 'show'])->name('product.show');
 Route::delete('/products/product/{id}', [ProductsDeleteController::class, 'productdestroy'])->name('product.delete');
 
 Route::get('/products/category-unit', [CategoryController::class, 'index'])->name('category-unit');

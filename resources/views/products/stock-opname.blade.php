@@ -42,9 +42,9 @@
                                 @foreach ($stockopnames as $stockopname)
                                     <tr>
                                         <td>{{ $stockopname->created_at }}</td>
-                                        <td>{{ $Stockopname->barcode->barcode }}</td>
+                                        <td>{{ $Stockopname->product->barcode }}</td>
                                         <td>{{ $stockopname->name }}</td>
-                                        <td>{{ $stockopname->quantity->quantity }}</td>
+                                        <td>{{ $stockopname->product->quantity }}</td>
                                         <td>{{ $stockopname->realstock }}</td>
                                         <td>{{ $stockopname->difference }}</td>
                                         <td>{{ $stockopname->value_price }}</td>

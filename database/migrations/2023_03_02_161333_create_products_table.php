@@ -15,13 +15,13 @@ return new class extends Migration
             $table->id();
             $table->unsignedInteger('category_id')->index();
             $table->unsignedInteger('unit_id')->index();
-            $table->string('name');
             $table->string('code')->unique();
             $table->string('barcode')->nullable();
-            $table->integer('quantity')->default(0);
+            $table->string('name');
             $table->decimal('purchase_price', 12, 2);
             $table->decimal('sale_price', 12, 2);
             $table->decimal('markup', 12, 2);
+            $table->integer('quantity')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

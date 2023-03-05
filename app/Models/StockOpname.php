@@ -22,7 +22,7 @@ class StockOpname extends Model
         'detail',
     ];
 
-    public function product(): BelongsTo
+    public function product()
     {
         return $this->belongsTo(Product::class, 'barcode', 'quantity', 'sale_price');
     }

@@ -13,9 +13,7 @@ class ProductsController extends Controller
     public function index()
     {
         return view('products/products', [
-            'products' => Product::get(),
-            'categories' => Category::get(),
-            'units' => Unit::get(),
+            'products' => Product::with(['category', 'unit'])->get(),
         ]);
     }
 }
