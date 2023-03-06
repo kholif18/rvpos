@@ -7,11 +7,7 @@ use App\Http\Controllers\Kas\AddKasController;
 use App\Http\Controllers\Kas\KasController;
 use App\Http\Controllers\Login\LoginController;
 use App\Http\Controllers\Products\Category\CategoryController;
-use App\Http\Controllers\Products\Category\DeleteController;
-use App\Http\Controllers\Products\Category\StoreController as CategoryStoreController;
-use App\Http\Controllers\Products\Products\DeleteController as ProductsDeleteController;
 use App\Http\Controllers\Products\Products\ProductsController;
-use App\Http\Controllers\Products\Products\StoreProductController;
 use App\Http\Controllers\Products\StockOpname\CreateStockOpnameController;
 use App\Http\Controllers\Products\StockOpname\StockOpnameController;
 use App\Http\Controllers\Products\StockOut\AddStockOutController;
@@ -68,16 +64,22 @@ Route::get('/purchases/list-purchases', [ListPurchasesController::class, 'index'
 //Products -----------------------------------------------------------------------
 
 Route::get('/products/products', [ProductsController::class, 'index'])->name('products');
-Route::post('/products/add-product', [StoreProductController::class, 'store'])->name('product.add');
-Route::post('/products/show', [StoreProductController::class, 'show'])->name('product.show');
-Route::delete('/products/product/{id}', [ProductsDeleteController::class, 'productdestroy'])->name('product.delete');
+Route::post('/products/add-product', [ProductsController::class, 'store'])->name('product.add');
+Route::post('/products/show', [ProductsController::class, 'show'])->name('product.show');
+Route::delete('/products/product/{id}', [ProductsDeleteController::class, 'destroy'])->name('product.delete');
 
 Route::get('/products/category-unit', [CategoryController::class, 'index'])->name('category-unit');
-Route::post('/products/category', [CategoryStoreController::class, 'addcategory'])->name('category.add');
-// Route::get('/products/category/{id}/edit', [CategoryStoreController::class, 'edit'])->name('category.edit');
-Route::delete('/products/category/{id}', [DeleteController::class, 'categorydestroy'])->name('category.destroy');
-Route::post('/products/unit', [CategoryStoreController::class, 'addunit'])->name('unit.add')->name('unit.add');
-Route::delete('/products/unit/{id}', [DeleteController::class, 'unitdestroy'])->name('unit.delete');
+
+Route::post('/products/category', [CategoryController::class, 'storecategory'])->name('category.add');
+Route::post('/products/category/category-update/{id}', [CategoryController::class, 'categoryupdate'])->name('category.update');
+Route::get('/products/category/{id}/edit', [CategoryController::class, 'categoryedit'])->name('category.edit');
+Route::delete('/products/category/{id}', [CategoryController::class, 'categorydestroy'])->name('category.destroy');
+
+Route::get('/products/unit-create', [CategoryController::class, 'createunit'])->name('unit.create');
+Route::get('/products/unit-show', [CategoryController::class, 'show'])->name('unit.show');
+Route::post('/products/unit', [CategoryController::class, 'storeunit'])->name('unit.add');
+Route::get('/products/unit/{id}/edit', [CategoryController::class, 'unitedit'])->name('unit.edit');
+Route::delete('/products/unit/{id}', [CategoryController::class, 'unitdestroy'])->name('unit.delete');
 
 Route::get('/products/stockout', [StockOutController::class, 'index'])->name('stockout');
 Route::post('/products/add-stockout', [AddStockOutController::class, 'addstockout'])->name('stockout.add');

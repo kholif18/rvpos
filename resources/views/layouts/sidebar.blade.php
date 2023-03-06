@@ -1,8 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ url('/') }}" class="brand-link">
-        <img src="{{ asset('template/dist/img/logo.svg') }}" alt="logo" class="brand-image img-circle elevation-3"
-            style="opacity: .8">
+        <img src="{{ asset('template/dist/img/logo.svg') }}" alt="logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">Ravaa <b>POS</b></span>
     </a>
 
@@ -11,8 +10,7 @@
         <!-- Sidebar user (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{ asset('template/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
-                    alt="User Image">
+                <img src="{{ asset('template/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
                 <a href="{{ url('/user') }}" class="d-block">Admin</a>
@@ -22,8 +20,7 @@
         <!-- SidebarSearch Form -->
         <div class="form-inline">
             <div class="input-group" data-widget="sidebar-search">
-                <input class="form-control form-control-sidebar" type="search" placeholder="Search"
-                    aria-label="Search">
+                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
                 <div class="input-group-append">
                     <button class="btn btn-sidebar">
                         <i class="fas fa-search fa-fw"></i>
@@ -34,8 +31,7 @@
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                     with font-awesome or any other icon font library -->
                 <li class="nav-item">
@@ -57,10 +53,9 @@
                         <i class="nav-icon fas fa-exchange-alt"></i>
                         <p>Transaction<i class="fas fa-angle-left right"></i></p>
                     </a>
-                    <ul class="nav nav-treeview">
+                    <ul class="nav nav-treeview {{ Request::is('transactions/list-pos', 'transactions/debt') ? 'active' : '' }}">
                         <li class="nav-item">
-                            <a href="{{ url('/transactions/list-pos') }}"
-                                class="nav-link {{ Request::is('transactions/list-pos') ? 'active' : '' }}">
+                            <a href="{{ url('/transactions/list-pos') }}" class="nav-link {{ Request::is('transactions/list-pos') ? 'active' : '' }}">
                                 <i class="nav-icon far fa-circle"></i>
                                 <p>List POS</p>
                             </a>
@@ -72,8 +67,7 @@
                             </a>
                         </li> --}}
                         <li class="nav-item">
-                            <a href="{{ url('/transactions/debt') }}"
-                                class="nav-link {{ Request::is('transactions/debt') ? 'active' : '' }}">
+                            <a href="{{ url('/transactions/debt') }}" class="nav-link {{ Request::is('transactions/debt') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Debt</p>
                             </a>
@@ -87,15 +81,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ url('/purchases/purchase') }}"
-                                class="nav-link {{ Request::is('purchases/purchase') ? 'active' : '' }}">
+                            <a href="{{ url('/purchases/purchase') }}" class="nav-link {{ Request::is('purchases/purchase') ? 'active' : '' }}">
                                 <i class="nav-icon far fa-circle"></i>
                                 <p>Purchase</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('/purchases/list-purchases') }}"
-                                class="nav-link {{ Request::is('purchases/list-purchases') ? 'active' : '' }}">
+                            <a href="{{ url('/purchases/list-purchases') }}" class="nav-link {{ Request::is('purchases/list-purchases') ? 'active' : '' }}">
                                 <i class="nav-icon far fa-circle"></i>
                                 <p>List Purchases</p>
                             </a>
@@ -109,15 +101,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ url('/products/products') }}"
-                                class="nav-link {{ Request::is('products/products') ? 'active' : '' }}">
+                            <a href="{{ url('/products/products') }}" class="nav-link {{ Request::is('products/products') ? 'active' : '' }}">
                                 <i class="nav-icon far fa-circle text-info"></i>
                                 <p>Products</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('/products/category-unit') }}"
-                                class="nav-link {{ Request::is('products/category-unit') ? 'active' : '' }}">
+                            <a href="{{ url('/products/category-unit') }}" class="nav-link {{ Request::is('products/category-unit') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Categories / Units</p>
                             </a>
@@ -129,15 +119,13 @@
                             </a>
                         </li> --}}
                         <li class="nav-item">
-                            <a href="{{ url('/products/stockout') }}"
-                                class="nav-link {{ Request::is('products/stockout') ? 'active' : '' }}">
+                            <a href="{{ url('/products/stockout') }}" class="nav-link {{ Request::is('products/stockout') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Stock Out</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('/products/stock-opname') }}"
-                                class="nav-link {{ Request::is('products/stock-opname') ? 'active' : '' }}">
+                            <a href="{{ url('/products/stock-opname') }}" class="nav-link {{ Request::is('products/stock-opname') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Stock Opname</p>
                             </a>
@@ -163,29 +151,25 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ url('/report/sales-report') }}"
-                                class="nav-link {{ Request::is('report/sales-report') ? 'active' : '' }}">
+                            <a href="{{ url('/report/sales-report') }}" class="nav-link {{ Request::is('report/sales-report') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Sales</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('/report/stockin-out') }}"
-                                class="nav-link {{ Request::is('report/stockin-out') ? 'active' : '' }}">
+                            <a href="{{ url('/report/stockin-out') }}" class="nav-link {{ Request::is('report/stockin-out') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Stock In/Out</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('/report/profit-loss') }}"
-                                class="nav-link {{ Request::is('report/profit-loss') ? 'active' : '' }}">
+                            <a href="{{ url('/report/profit-loss') }}" class="nav-link {{ Request::is('report/profit-loss') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Profit & Loss</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('/report/debt-report') }}"
-                                class="nav-link {{ Request::is('report/debt-report') ? 'active' : '' }}">
+                            <a href="{{ url('/report/debt-report') }}" class="nav-link {{ Request::is('report/debt-report') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Debt Report</p>
                             </a>

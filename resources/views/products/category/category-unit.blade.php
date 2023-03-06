@@ -16,7 +16,7 @@
                 <div class="card-header">
                     <h3 class="card-title">Category</h3>
                     <div class="card-tools">
-                        <button type="button" class="btn btn-success  btn-sm" data-toggle="modal" data-target="#modal-add-category">
+                        <button type="button" class="btn btn-success  btn-sm" data-toggle="modal" data-target="#add-category">
                             <i class="fas fa-plus-circle"></i> Add Category
                         </button>
                     </div>
@@ -42,7 +42,7 @@
                                                 <td></td>
                                                 <td>{{ $category->name }}</td>
                                                 <td>{{ $category->prefix }}</td>
-                                                <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-category-edit"><i class="fas fa-edit"></i></button>
+                                                <td><a href="{{ route('category.edit', $category->id) }}" class="d-inline btn btn-info btn-sm"><i class="fas fa-edit"></i></a>
                                                     <form action="{{ route('category.destroy', $category->id) }}" method="post" class="d-inline">
                                                         @csrf
                                                         @method('delete')
@@ -62,13 +62,14 @@
             <!-- /.card -->
         </div>
         {{-- Card Category End --}}
+
         {{-- Card Unit --}}
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="card card-primary card-outline">
                 <div class="card-header">
                     <h3 class="card-title">Units</h3>
                     <div class="card-tools">
-                        <button type="button" class="btn btn-success  btn-sm" data-toggle="modal" data-target="#modal-add-unit">
+                        <button type="button" class="btn btn-success  btn-sm" onClick="createunit()">
                             <i class="fas fa-plus-circle"></i> Add Unit
                         </button>
                     </div>
@@ -77,7 +78,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12">
-                            <div class="card-body table-responsive p-0" style="height: 69vh;">
+                            <div class="card-body table-responsive p-0" id="read" style="height: 69vh;">
                                 <table class="table table-head-fixed text-nowrap table-striped table-sm">
                                     <thead>
                                         <tr>
@@ -90,8 +91,9 @@
                                         @foreach ($units as $unit)
                                             <tr>
                                                 <td>{{ $unit->no }}</td>
-                                                <td>{{ $unit->unit }}</td>
-                                                <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-pcs"><i class="fas fa-edit"></i></button>
+                                                <td>{{ $unit->name }}</td>
+                                                <td><button style="margin-left: 20px" class="btn btn-info btn-sm" onClick="showunit({{ $unit->id }})"><i class="fas fa-edit"></i></button>
+                                                    {{-- <a href="{{ route('unit.edit', $unit->id) }}" class="d-inline btn btn-info btn-sm" data-toggle="modal" data-target="#unit-edit"><i class="fas fa-edit"></i></a> --}}
                                                     <form action="{{ route('unit.delete', $unit->id) }}" method="post" class="d-inline">
                                                         @csrf
                                                         @method('delete')
@@ -113,13 +115,71 @@
     </div>
     {{-- Card Unit End --}}
 
+    <!-- Modal -->
     <!-- Modal Unit -->
-    @include('products._form-category-unit')
+    <div class="modal fade" id="edit-unit">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Unit</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="col-form-label col-form-label-sm text-sm-right">Unit Name</label>
+                        <div class="input-group input-group-sm">
+                            <input name="addunit" type="text" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-paper-plane"></i>
+                        Save</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+    <!-- Modal create category-->
+    @include('products.category._form-category')
+    <!-- Modal edit category-->
+    @include('products.category._form-category-edit')
+    <!-- Modal create unit-->
+    @include('products.category._form-unit')
+    <!-- Modal edit unit-->
+    @include('products.category._form-unit-edit')
 @endsection
 
 
 @push('scripts')
     <script>
+        function showunit(id) {
+            $.get("{{ route('unit.show', $unit->id) }}", function(unit, status) {
+                $("#edit-unit").modal('show');
+            });
+        }
+        // });
+        // function update(id) {
+        //     var name = $('#name').val();
+        //     var prefix = $('#prefix').val();
+        //     $.ajax({
+        //         type: "get",
+        //         url: {{ route('category.update', $category->id) }},
+        //         category: "name=" + name,
+        //         category: "prefix=" + prefix,
+        //         success: function(data) {
+        //             $(".btn-close").click();
+        //             read()
+        //         }
+        //     });
+        // }
+
         function confirm() {
             Swal.fire({
                 title: 'Are you sure?',

@@ -39,11 +39,11 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Unit::create([
-            'unit' => 'Pcs'
+            'name' => 'Pcs'
         ]);
 
         Unit::create([
-            'unit' => 'Pkg'
+            'name' => 'Pkg'
         ]);
 
         Product::create([
@@ -60,7 +60,7 @@ class DatabaseSeeder extends Seeder
 
         Product::create([
             'category_id' => '2',
-            'unit_id' => '1',
+            'unit_id' => '2',
             'name' => 'HVS A4 Maxi',
             'code' => 'AT002',
             'barcode' => '78984654',

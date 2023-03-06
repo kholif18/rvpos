@@ -14,7 +14,7 @@
                         <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Product
                             Code</label>
                         <div class="col-sm-9">
-                            <input type="text" name="code" class="form-control form-control-sm" required value="RV098">
+                            <input type="text" name="code" class="form-control form-control-sm" required>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -36,8 +36,8 @@
                         <div class="col-sm-9">
                             <div class="input-group input-group-sm">
                                 <select name="category_id" class="form-control select2" required>
-                                    @foreach ($products as $produc)
-                                        <option value="{{ $product->category->id }}">{{ $product->category->name }}</option>
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -48,8 +48,8 @@
                         <div class="col-sm-9">
                             <div class="input-group input-group-sm">
                                 <select name="unit_id" class="form-control select2" required>
-                                    @foreach ($products as $product)
-                                        <option value="{{ $product->unit->id }}">{{ $product->unit->unit }}</option>
+                                    @foreach ($units as $unit)
+                                        <option value="{{ $unit->id }}">{{ $unit->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -114,11 +114,11 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="">
+                <form action="edit" id="edit">
                     <div class="form-group row">
-                        <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Barcode</label>
+                        <label for="barcode" class="col-sm-3 col-form-label col-form-label-sm text-right">Barcode</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control form-control-sm" value="0651454789546">
+                            <input type="text" name="barcode" class="form-control form-control-sm" value="0651454789546">
                         </div>
                     </div>
                     <div class="form-group row">
