@@ -35,92 +35,33 @@
                                     <th>Address</th>
                                     <th>Status</th>
                                     <th style="width: 120px">Member Disc.</th>
-                                    <th>Note</th>
-                                    <th style="width: 90px">Actions</th>
+                                    <th style="width: 250px">Note</th>
+                                    <th style="width: 100px">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>CS001</td>
-                                    <td>Umum</td>
-                                    <td>Umum</td>
-                                    <td>Umum</td>
-                                    <td>Umum</td>
-                                    <td>Umum</td>
-                                    <td>0%</td>
-                                    <td>-</td>
-                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></button></td>
-                                </tr>
-                                <tr>
-                                    <td>CS002</td>
-                                    <td>Bambang</td>
-                                    <td>081122233344</td>
-                                    <td>example@mail.com</td>
-                                    <td>Ngluyu, Nganjuk</td>
-                                    <td>Agent</td>
-                                    <td>10%</td>
-                                    <td>
-                                        <textarea name="note" rows="3">Sebagai Agent Undangan, memiliki diskon product undangan sebesar 10%</textarea>
-                                    </td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i
-                                                class="fas fa-trash-alt"></i></button></td>
-                                </tr>
-                                <tr>
-                                    <td>CS003</td>
-                                    <td>Bu Win</td>
-                                    <td>082233344556</td>
-                                    <td>example@mail.com</td>
-                                    <td>Gondang, Nganjuk</td>
-                                    <td>Pelanggan</td>
-                                    <td>5%</td>
-                                    <td>
-                                        <textarea name="note" rows="3">Sebagai Agent Undangan, memiliki diskon product print sebesar 5%</textarea>
-                                    </td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i
-                                                class="fas fa-trash-alt"></i></button></td>
-                                </tr>
-                                <tr>
-                                    <td>CS004</td>
-                                    <td>Neneng</td>
-                                    <td>082233344556</td>
-                                    <td>example@mail.com</td>
-                                    <td>Gondang, Nganjuk</td>
-                                    <td>Pelanggan</td>
-                                    <td>0%</td>
-                                    <td>
-                                        <textarea name="note" rows="3">-</textarea>
-                                    </td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i
-                                                class="fas fa-trash-alt"></i></button></td>
-                                </tr>
-                                <tr>
-                                    <td>CS005</td>
-                                    <td>Alexandro</td>
-                                    <td>082233344556</td>
-                                    <td>example@mail.com</td>
-                                    <td>Gondang, Nganjuk</td>
-                                    <td>Pelanggan</td>
-                                    <td>0%</td>
-                                    <td>
-                                        <textarea name="note" rows="3">-</textarea>
-                                    </td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i
-                                                class="fas fa-trash-alt"></i></button></td>
-                                </tr>
-                                <tr>
-                                    <td>CS006</td>
-                                    <td>Rudi</td>
-                                    <td>082233344556</td>
-                                    <td>example@mail.com</td>
-                                    <td>Gondang, Nganjuk</td>
-                                    <td>Pelanggan</td>
-                                    <td>0%</td>
-                                    <td>
-                                        <textarea name="note" rows="3">-</textarea>
-                                    </td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i
-                                                class="fas fa-trash-alt"></i></button></td>
-                                </tr>
+                                @foreach ($customers as $customer)
+                                    <tr>
+                                        <td>{{ $customer->code }}</td>
+                                        <td>{{ $customer->name }}</td>
+                                        <td>{{ $customer->telp }}</td>
+                                        <td>{{ $customer->email }}</td>
+                                        <td>{{ $customer->address }}</td>
+                                        <td>{{ $customer->status }}</td>
+                                        <td>{{ $customer->member_discount }}</td>
+                                        <td>
+                                            {{-- {{ $customer->note }} --}}
+                                            <textarea cols="25" rows="3" style="border: none; resize: none; background: none" disabled>{{ $customer->note }}</textarea>
+                                        </td>
+                                        <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></button>
+                                            <form action="{{ route('customer.destroy', $customer->id) }}" method="post" class="d-inline">
+                                                @csrf
+                                                @method('delete')
+                                                <button style="margin-left: 20px" type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"><i class="fas fa-trash-alt"></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

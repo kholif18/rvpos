@@ -5,7 +5,9 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Category;
+use App\Models\Customer;
 use App\Models\Product;
+use App\Models\Supplier;
 use App\Models\Unit;
 use Illuminate\Database\Seeder;
 
@@ -92,6 +94,27 @@ class DatabaseSeeder extends Seeder
             'purchase_price' => '2000',
             'sale_price' => '2500',
             'markup' => '5',
+        ]);
+
+        Customer::create([
+            'code' => 'CS001',
+            'name' => 'Umum',
+            'telp' => 'Umum',
+            'email' => 'Umum',
+            'address' => 'Umum',
+            'status' => 'Umum',
+            'member_discount' => '0',
+            'note' => 'Untuk customer umum',
+        ]);
+
+        Supplier::create([
+            'code' => 'SP001',
+            'name' => 'Penjual Keliling',
+            'no_telp' => '-',
+            'email' => '-',
+            'bank' => '-',
+            'no_rek' => '-',
+            'address' => '-',
         ]);
     }
 }

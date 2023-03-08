@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Customers\AddCustomersController;
 use App\Http\Controllers\Customers\CustomersController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Kas\AddKasController;
@@ -8,7 +7,6 @@ use App\Http\Controllers\Kas\KasController;
 use App\Http\Controllers\Login\LoginController;
 use App\Http\Controllers\Products\Category\CategoryController;
 use App\Http\Controllers\Products\Products\ProductsController;
-use App\Http\Controllers\Products\StockOpname\CreateStockOpnameController;
 use App\Http\Controllers\Products\StockOpname\StockOpnameController;
 use App\Http\Controllers\Products\StockOut\AddStockOutController;
 use App\Http\Controllers\Products\StockOut\StockOutController;
@@ -21,7 +19,6 @@ use App\Http\Controllers\Report\StockInOut\StockInOutController;
 use App\Http\Controllers\Sales\SalesController;
 use App\Http\Controllers\Setting\AddSettingController;
 use App\Http\Controllers\Setting\SettingController;
-use App\Http\Controllers\Supplier\AddSupplierController;
 use App\Http\Controllers\Supplier\SuppliersController;
 use App\Http\Controllers\Transaction\Debt\DebtController;
 use App\Http\Controllers\Transaction\Debt\DebtPayController;
@@ -66,7 +63,7 @@ Route::get('/purchases/list-purchases', [ListPurchasesController::class, 'index'
 Route::get('/products/products', [ProductsController::class, 'index'])->name('products');
 Route::post('/products/add-product', [ProductsController::class, 'store'])->name('product.add');
 Route::post('/products/show', [ProductsController::class, 'show'])->name('product.show');
-Route::delete('/products/product/{id}', [ProductsDeleteController::class, 'destroy'])->name('product.delete');
+Route::delete('/products/product/{id}', [ProductsController::class, 'destroy'])->name('product.delete');
 
 Route::get('/products/category-unit', [CategoryController::class, 'index'])->name('category-unit');
 
@@ -85,7 +82,7 @@ Route::get('/products/stockout', [StockOutController::class, 'index'])->name('st
 Route::post('/products/add-stockout', [AddStockOutController::class, 'addstockout'])->name('stockout.add');
 
 Route::get('/products/stock-opname', [StockOpnameController::class, 'index'])->name('stockopname');
-Route::post('/products/add-stockopname', [CreateStockOpnameController::class, 'addstockopname'])->name('stockopname.add');
+Route::post('/products/add-stockopname', [StockOpnameController::class, 'store'])->name('stockopname.add');
 
 //Kas ----------------------------------------------------------------------------
 
@@ -94,13 +91,15 @@ Route::post('/kas/add', [AddKasController::class, 'addkas']);
 
 //Supplier -----------------------------------------------------------------------
 
-Route::get('/supplier', [SuppliersController::class, 'index']);
-Route::post('/supplier/add-supplier', [AddSupplierController::class, 'addsupplier']);
+Route::get('/supplier', [SuppliersController::class, 'index'])->name('supplier');
+Route::post('/supplier/add-supplier', [SuppliersController::class, 'store'])->name('supplier.add');
+Route::delete('/supplier/{id}', [SuppliersController::class, 'destroy'])->name('supplier.destroy');
 
 //Customer -----------------------------------------------------------------------
 
-Route::get('/customers', [CustomersController::class, 'index']);
-Route::post('/products/add-customer', [AddCustomersController::class, 'addcustomer']);
+Route::get('/customers', [CustomersController::class, 'index'])->name('customer');
+Route::post('/products/add-customer', [CustomersController::class, 'store'])->name('customer.add');
+Route::delete('/customer/{id}', [CustomersController::class, 'destroy'])->name('customer.destroy');
 
 //Reposrt -----------------------------------------------------------------------
 

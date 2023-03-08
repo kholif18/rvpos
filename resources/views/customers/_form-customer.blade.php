@@ -14,7 +14,7 @@
                         <div class="form-group row">
                             <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Code</label>
                             <div class="col-sm-9">
-                                <input type="text" name="code" class="form-control form-control-sm" readonly value="CS007">
+                                <input type="text" name="code" class="form-control form-control-sm" value="CS007">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -35,7 +35,7 @@
                         <div class="form-group row">
                             <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Email</label>
                             <div class="col-sm-9">
-                                <input type="email" name="email" class="form-control form-control-sm">
+                                <input type="text" name="email" class="form-control form-control-sm">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -54,14 +54,13 @@
                             <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Member
                                 Discount</label>
                             <div class="col-sm-9">
-                                <input type="text" name="memdisc" class="form-control form-control-sm">
+                                <input type="text" name="memdisc" class="form-control form-control-sm" value="0">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Note</label>
                             <div class="col-sm-9">
                                 <textarea class="form-control form-control-sm" name="note" rows="3"></textarea>
-                                {{-- <input type="text" name="note" class="form-control form-control-sm"> --}}
                             </div>
                         </div>
                     </div>
@@ -77,6 +76,7 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
+
     {{-- modal update --}}
     <div class="modal fade" id="modal-edit">
         <div class="modal-dialog modal-lg">

@@ -39,82 +39,24 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>CS001</td>
-                                    <td>Karunia Photo</td>
-                                    <td>0812-1656-9634</td>
-                                    <td>karuniaphoto@gmail.com</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>Nganjuk</td>
-                                    <td><button type="button" class="btn btn-info  btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i> Update</button><button style="margin-left: 20px"
-                                            type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i> Delete</button></td>
-                                </tr>
-                                <tr>
-                                    <td>CS002</td>
-                                    <td>Praktika</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>Nganjuk</td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>
-                                            Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i>
-                                            Delete</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>CS003</td>
-                                    <td>Citra Stationary</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>Nganjuk</td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>
-                                            Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i>
-                                            Delete</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>CS004</td>
-                                    <td>Mbak Nik</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>Pasar Pahing, Ngluyu</td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>
-                                            Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i>
-                                            Delete</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>CS005</td>
-                                    <td>Mbak Ning</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>Pasar Pahing, Ngluyu</td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>
-                                            Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i>
-                                            Delete</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>CS006</td>
-                                    <td>Tukang Jualan keliling</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>
-                                            Update</button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i>
-                                            Delete</button>
-                                    </td>
-                                </tr>
+                                @foreach ($suppliers as $supplier)
+                                    <tr>
+                                        <td>{{ $supplier->code }}</td>
+                                        <td>{{ $supplier->name }}</td>
+                                        <td>{{ $supplier->no_telp }}</td>
+                                        <td>{{ $supplier->email }}</td>
+                                        <td>{{ $supplier->bank }}</td>
+                                        <td>{{ $supplier->no_rek }}</td>
+                                        <td>{{ $supplier->address }}</td>
+                                        <td><button type="button" class="btn btn-info  btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i> Update</button>
+                                            <form action="{{ route('supplier.destroy', $supplier->id) }}" method="post" class="d-inline">
+                                                @csrf
+                                                @method('delete')
+                                                <button style="margin-left: 20px" type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"><i class="fas fa-trash-alt"></i> Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
