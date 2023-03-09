@@ -37,9 +37,12 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @php
+                                            $no = 1;
+                                        @endphp
                                         @foreach ($categories as $category)
                                             <tr>
-                                                <td></td>
+                                                <td>{{ $no++ }}</td>
                                                 <td>{{ $category->name }}</td>
                                                 <td>{{ $category->prefix }}</td>
                                                 <td><a href="{{ route('category.edit', $category->id) }}" class="d-inline btn btn-info btn-sm"><i class="fas fa-edit"></i></a>
@@ -88,9 +91,12 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @php
+                                            $no = 1;
+                                        @endphp
                                         @foreach ($units as $unit)
                                             <tr>
-                                                <td>{{ $unit->no }}</td>
+                                                <td>{{ $no++ }}</td>
                                                 <td>{{ $unit->name }}</td>
                                                 <td><button style="margin-left: 20px" class="btn btn-info btn-sm" onClick="showunit({{ $unit->id }})"><i class="fas fa-edit"></i></button>
                                                     {{-- <a href="{{ route('unit.edit', $unit->id) }}" class="d-inline btn btn-info btn-sm" data-toggle="modal" data-target="#unit-edit"><i class="fas fa-edit"></i></a> --}}
