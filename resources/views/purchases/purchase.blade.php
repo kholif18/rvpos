@@ -82,7 +82,12 @@
                     <label class="col-sm-3 col-form-label col-form-label-sm text-sm-right">Product</label>
                     <div class="col-sm-9">
                         <div class="input-group input-group-sm">
-                            <input type="text" class="form-control" placeholder="Enter Product Name / SKU / Scan Barcode">
+                            {{-- <input type="text" class="form-control" placeholder="Enter Product Name / SKU / Scan Barcode"> --}}
+                            <select class="select2" multiple="multiple" data-placeholder="Enter Product Name / SKU / Scan Barcode" style="width: 90%">
+                                @foreach ($products as $product)
+                                    <option value="{{ $product->id }}">{{ $product->name }}</option>
+                                @endforeach
+                            </select>
                             <span class="input-group-append">
                                 <button type="button" class="btn btn-info btn-flat"><i class="fas fa-search"></i></button>
                             </span>
@@ -295,12 +300,15 @@
     @include('supplier.addsupplierform')
 
     {{-- Modal add product --}}
-    @include('products._modal-add-product')
+    @include('products.products._modal-add-product')
 @endsection
 
 
 @push('scripts')
     <script>
+        $(function() {
+            $('.select2').select2()
+        });
         $('#example2').DataTable({
             "paging": false,
             "lengthChange": false,
