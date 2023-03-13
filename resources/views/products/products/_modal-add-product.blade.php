@@ -35,7 +35,7 @@
                         <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Category</label>
                         <div class="col-sm-9">
                             <div class="input-group input-group-sm">
-                                <select name="category_id" class="form-control select2" required>
+                                <select name="category_id" class="form-control" required>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
@@ -47,7 +47,7 @@
                         <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Unit</label>
                         <div class="col-sm-9">
                             <div class="input-group input-group-sm">
-                                <select name="unit_id" class="form-control select2" required>
+                                <select name="unit_id" class="form-control" required>
                                     @foreach ($units as $unit)
                                         <option value="{{ $unit->id }}">{{ $unit->name }}</option>
                                     @endforeach
