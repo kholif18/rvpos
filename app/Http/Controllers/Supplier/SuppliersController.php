@@ -66,9 +66,11 @@ class SuppliersController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Supplier $supplier)
+    public function update(Request $request, $id)
     {
-        //
+        $supplier = Supplier::find($id)->update($request->all());
+
+        return response()->json('Data berhasil disimpan', 200);
     }
 
     /**

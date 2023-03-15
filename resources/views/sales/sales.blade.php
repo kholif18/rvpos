@@ -36,8 +36,9 @@
                             <div class="col-sm-8">
                                 <div class="input-group input-group-sm">
                                     <select name="customer" class="form-control select2" required>
-                                        <option value="Produk">Umum</option>
-                                        <option value="Servis">Id Customer</option>
+                                        @foreach ($customers as $customer)
+                                            <option value="{{ $customer->id }}">{{ $customer->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -73,8 +74,7 @@
                 <label for="inputitem" class="col-sm-2 col-form-label col-form-label-sm text-right">Kode Item</label>
                 <div class="col-sm-10">
                     <div class="input-group input-group-sm">
-                        <input type="text" autofocus class="form-control"
-                            placeholder="Enter Product Name / SKU / Scan Barcode">
+                        <input type="text" autofocus class="form-control" placeholder="Enter Product Name / SKU / Scan Barcode">
                         <span class="input-group-append">
                             <button type="button" class="btn btn-info btn-flat"><i class="fas fa-search"></i></button>
                         </span>
@@ -131,10 +131,8 @@
                                         </div>
                                     </td>
                                     <td>Rp 48.000</td>
-                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                            data-target="#modal-edit"><i class="fas fa-edit"></i></button><button
-                                            style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i
-                                                class="fas fa-trash-alt"></i></button></td>
+                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></button><button style="margin-left: 20px" type="button"
+                                            class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button></td>
                                 </tr>
                                 <tr>
                                     <td>RV006</td>
@@ -157,9 +155,7 @@
                                         </div>
                                     </td>
                                     <td>Rp 15.000</td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i
-                                                class="fas fa-edit"></i></button><button style="margin-left: 20px"
-                                            type="button" class="btn btn-danger btn-sm delete"><i
+                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button><button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i
                                                 class="fas fa-trash-alt"></i>
                                         </button>
                                     </td>
@@ -178,8 +174,14 @@
                 <div class="card-body">
                     <div class="mailbox-read-info">
                         <h4>Bambang</h4>
+                        {{-- @foreach ($customers as $customer)
+                            <h4>{{ $customer->name }}</h4>
+                        @endforeach --}}
                     </div>
                     <div class="mailbox-read-message">
+                        {{-- @foreach ($customers as $customer)
+                            <textarea cols="25" rows="3" style="border: none; resize: none; background: none" disabled>{{ $customer->note }}</textarea>
+                        @endforeach --}}
                         <p>Sebagai Agent Undangan, memiliki diskon product undangan sebesar 10%</p>
                     </div>
                 </div>
@@ -222,8 +224,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" style="width: 40px">Rp </span>
                                 </div>
-                                <input type="text" class="form-control bg-primary text-bold" min="0"
-                                    placeholder="Rp 0">
+                                <input type="text" class="form-control bg-primary text-bold" min="0" placeholder="Rp 0">
                             </div>
                         </div>
                     </div>
@@ -241,14 +242,10 @@
                     <table class="table text-center">
                         <tbody>
                             <tr>
-                                <td><button type="button" class="btn btn-block btn-primary btn-sm"><i
-                                            class="fas fa-save"></i> Save</button></td>
-                                <td><button type="button" class="btn btn-block btn-success btn-sm"><i
-                                            class="fas fa-paper-plane"></i> Cash</button></td>
-                                <td><button type="button" class="btn btn-block btn-info btn-sm"><i
-                                            class="fas fa-credit-card"></i> Credit</button></td>
-                                <td><button type="button" class="btn btn-block btn-danger btn-sm cancel"><i
-                                            class="fas fa-trash-alt"></i> Cancel</button></td>
+                                <td><button type="button" class="btn btn-block btn-primary btn-sm"><i class="fas fa-save"></i> Save</button></td>
+                                <td><button type="button" class="btn btn-block btn-success btn-sm"><i class="fas fa-paper-plane"></i> Cash</button></td>
+                                <td><button type="button" class="btn btn-block btn-info btn-sm"><i class="fas fa-credit-card"></i> Credit</button></td>
+                                <td><button type="button" class="btn btn-block btn-danger btn-sm cancel"><i class="fas fa-trash-alt"></i> Cancel</button></td>
                             </tr>
                         </tbody>
                     </table>

@@ -48,7 +48,8 @@
                                         <td>{{ $supplier->bank }}</td>
                                         <td>{{ $supplier->no_rek }}</td>
                                         <td>{{ $supplier->address }}</td>
-                                        <td><button type="button" class="btn btn-info  btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i> Update</button>
+                                        <td><button type="button" onclick="editForm({{ route('supplier.update', $supplier->id) }})" class="btn btn-info  btn-sm" data-toggle="modal" data-target="#supplier-edit"><i
+                                                    class="fas fa-edit"></i> Update</button>
                                             <form action="{{ route('supplier.destroy', $supplier->id) }}" method="post" class="d-inline">
                                                 @csrf
                                                 @method('delete')
@@ -68,6 +69,7 @@
 
     {{-- modal Add Supplier --}}
     @include('supplier.addsupplierform')
+    @include('supplier.form')
 @endsection
 
 @push('scripts')
@@ -133,6 +135,28 @@
                     }
                 });
             });
+
+            function editForm(url) {
+
+                $('#supplier-edit form')[0].reset();
+                $('#supplier-edit form').attr('action', url);
+                $('#supplier-edit [name=_method]').val('put');
+
+                $.get(url)
+                    .done((response) => {
+                        $('#supplier-edit [name=code]').val(response.code);
+                        $('#supplier-edit [name=name]').val(response.name);
+                        $('#supplier-edit [name=telp]').val(response.telp);
+                        $('#supplier-edit [name=email]').val(response.email);
+                        $('#supplier-edit [name=bank]').val(response.bank);
+                        $('#supplier-edit [name=norek]').val(response.norek);
+                        $('#supplier-edit [name=address]').val(response.address);
+                    })
+                    .fail((errors) => {
+                        alert('Tidak dapat menampilkan data');
+                        return;
+                    });
+            }
         });
     </script>
 @endpush
