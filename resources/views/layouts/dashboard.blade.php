@@ -30,15 +30,14 @@
             <!-- small box -->
             <div class="small-box bg-success">
                 <div class="inner">
-                    <h3>53</h3>
+                    <h3>{{ $product }}</h3>
                     <p>Products</p>
                 </div>
                 <div class="icon">
                     {{-- <i class="ion ion-stats-bars"></i> --}}
                     <i class="fas fa-archive"></i>
                 </div>
-                <a href="{{ url('/products/products') }}" class="small-box-footer">More info <i
-                        class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ url('/products/products') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -46,14 +45,13 @@
             <!-- small box -->
             <div class="small-box bg-warning">
                 <div class="inner">
-                    <h3>44</h3>
+                    <h3>{{ $customer }}</h3>
                     <p>Customers</p>
                 </div>
                 <div class="icon">
                     <i class="fas fa-users"></i>
                 </div>
-                <a href="{{ url('customers') }}" class="small-box-footer">More info <i
-                        class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ url('customers') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -61,14 +59,13 @@
             <!-- small box -->
             <div class="small-box bg-danger">
                 <div class="inner">
-                    <h3>65</h3>
+                    <h3>{{ $supplier }}</h3>
                     <p>Suppliers</p>
                 </div>
                 <div class="icon">
                     <i class="fas fa-truck-loading"></i>
                 </div>
-                <a href="{{ url('/supplier') }}" class="small-box-footer">More info <i
-                        class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ url('/supplier') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -84,8 +81,7 @@
                 <div class="icon">
                     <i class="fas fa-sign-in-alt"></i>
                 </div>
-                <a href="{{ url('/kas') }}" class="small-box-footer">More info <i
-                        class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ url('/kas') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -99,8 +95,7 @@
                 <div class="icon">
                     <i class="fas fa-sign-out-alt"></i>
                 </div>
-                <a href="{{ url('/kas') }}" class="small-box-footer">More info <i
-                        class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ url('/kas') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -120,8 +115,7 @@
                 </div>
                 <div class="card-body">
                     <div class="chart">
-                        <canvas id="areaChart"
-                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        <canvas id="areaChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                     </div>
                 </div>
                 <!-- /.card-body -->
@@ -153,8 +147,7 @@
         <div class="card-header">
             <h3 class="card-title">Low Stock Products</h3>
             <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse"><i
-                        class="fas fa-minus"></i></button>
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse"><i class="fas fa-minus"></i></button>
             </div>
         </div>
         <!-- /.card-header -->
