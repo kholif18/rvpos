@@ -1,11 +1,12 @@
     {{-- modal update --}}
-    <div class="modal fade" id="supplier-edit">
+    <div class="modal fade" id="supplierModal">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <form id="formSupplier" action="{{ route('supplier.add') }}" class="form-horizontal" method="post">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <form id="supplierForm" action="" class="form-horizontal">
+                    @csrf
+                    @method('post')
                     <div class="modal-header">
-                        <h4 class="modal-title">Edit Supplier</h4>
+                        <h4 class="modal-title"></h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -13,20 +14,26 @@
                     <div class="modal-body">
                         <form action="">
                             <div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Code</label>
+                                <label for="code" class="col-sm-3 col-form-label col-form-label-sm text-right">Code</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="code" class="form-control form-control-sm" readonly placeholder="CS001">
+                                    <input type="text" name="code" class="form-control form-control-sm @error('code') is-invalid @enderror" readonly autofocus>
+                                    @error('code')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Supplier
+                                <label for="name" class="col-sm-3 col-form-label col-form-label-sm text-right">Supplier
                                     Name</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="name" autofocus class="form-control form-control-sm">
+                                    <input type="text" name="name" autofocus class="form-control form-control-sm @error('name') is-invalid @enderror">
+                                    @error('name')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-3 col-form-label col-form-label-sm text-right">Telp</label>
+                                <label for="telp" class="col-sm-3 col-form-label col-form-label-sm text-right">Telp</label>
                                 <div class="col-sm-9">
                                     <div class="input-group input-group-sm">
                                         <input type="text" name="telp" class="form-control text-bold">

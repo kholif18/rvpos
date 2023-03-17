@@ -92,9 +92,7 @@ Route::post('/kas/add', [AddKasController::class, 'addkas']);
 //Supplier -----------------------------------------------------------------------
 
 Route::get('/supplier', [SuppliersController::class, 'index'])->name('supplier');
-Route::post('/supplier/add-supplier', [SuppliersController::class, 'store'])->name('supplier.add');
-Route::post('/supplier/update/{id}', [SuppliersController::class, 'update'])->name('supplier.update');
-Route::delete('/supplier/{id}', [SuppliersController::class, 'destroy'])->name('supplier.destroy');
+Route::resource('/supplier', SuppliersController::class);
 
 //Customer -----------------------------------------------------------------------
 

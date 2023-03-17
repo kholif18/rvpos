@@ -110,10 +110,10 @@ class DatabaseSeeder extends Seeder
         Supplier::create([
             'code' => 'SP001',
             'name' => 'Penjual Keliling',
-            'no_telp' => '-',
+            'phone' => '-',
             'email' => '-',
             'bank' => '-',
-            'no_rek' => '-',
+            'norek' => '-',
             'address' => '-',
         ]);
     }

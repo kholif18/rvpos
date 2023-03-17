@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Supplier;
 
 use App\Models\Supplier;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 class SuppliersController extends Controller
 {
@@ -32,27 +33,48 @@ class SuppliersController extends Controller
      */
     public function store(Request $request)
     {
-        $supplier = new Supplier();
+        $validator = Validator::make($request->all(), [
+            'code' => 'required|unique:suppliers',
+            'name' => 'required',
+        ], [
+            'code.required' => 'Code telah digunakan!',
+            'name.required' => 'Nama supplier wajib diisi!',
 
-        $supplier->code = $request->input('code');
-        $supplier->name = $request->input('name');
-        $supplier->no_telp = $request->input('telp');
-        $supplier->email = $request->input('email');
-        $supplier->bank = $request->input('bank');
-        $supplier->no_rek = $request->input('norek');
-        $supplier->address = $request->input('address');
+        ]);
+        if ($validator->fails()) {
+            return response()->json([
+                'status'    =>  400,
+                'error'     =>  $validator->errors()->toArray(),
+            ]);
+        } else {
 
-        $supplier->save();
+            $supplier = new Supplier();
 
-        return redirect()->back();
+            $supplier->code = $request->input('code');
+            $supplier->name = $request->input('name');
+            $supplier->phone = $request->input('phone');
+            $supplier->email = $request->input('email');
+            $supplier->bank = $request->input('bank');
+            $supplier->norek = $request->input('norek');
+            $supplier->address = $request->input('address');
+
+            $supplier->save();
+
+            return response()->json([
+                'status'    => 200,
+                'message'   => 'Data Supplier Berhasil Disimpan!',
+            ]);
+        }
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Supplier $supplier)
+    public function show($id)
     {
-        //
+        $supplier = Supplier::find($id);
+
+        return response()->json($supplier);
     }
 
     /**
@@ -70,7 +92,7 @@ class SuppliersController extends Controller
     {
         $supplier = Supplier::find($id)->update($request->all());
 
-        return response()->json('Data berhasil disimpan', 200);
+        return redirect()->back();
     }
 
     /**
@@ -78,10 +100,8 @@ class SuppliersController extends Controller
      */
     public function destroy($id,)
     {
-        $supplier = Supplier::find($id);
+        $supplier = Supplier::find($id)->delete();
 
-        $supplier->delete();
-
-        return redirect()->back();
+        return response(null, 204);
     }
 }

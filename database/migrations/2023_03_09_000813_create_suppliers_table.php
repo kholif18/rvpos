@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('code')->unique();
             $table->string('name');
-            $table->string('no_telp')->nullable();
+            $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->string('bank')->nullable();
-            $table->string('no_rek')->nullable();
+            $table->string('norek')->nullable();
             $table->string('address')->nullable();
             $table->timestamps();
         });
