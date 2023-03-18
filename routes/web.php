@@ -9,7 +9,6 @@ use App\Http\Controllers\Products\Category\Ajax\DetailController as CategoryAjax
 use App\Http\Controllers\Products\Category\Ajax\StoreController as CategoryAjaxStoreController;
 use App\Http\Controllers\Products\Category\Ajax\SaveController as CategoryAjaxSaveController;
 use App\Http\Controllers\Products\Category\Ajax\DeleteController as CategoryAjaxDeleteController;
-use App\Http\Controllers\Products\Category\CategoryController;
 use App\Http\Controllers\Products\Category\IndexController as CategoryIndexController;
 use App\Http\Controllers\Products\Products\ProductsController;
 use App\Http\Controllers\Products\StockOpname\StockOpnameController;
