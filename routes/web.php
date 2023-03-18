@@ -5,7 +5,11 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Kas\AddKasController;
 use App\Http\Controllers\Kas\KasController;
 use App\Http\Controllers\Login\LoginController;
+use App\Http\Controllers\Products\Category\Ajax\StoreController as CategoryAjaxStoreController;
+use App\Http\Controllers\Products\Category\Ajax\SaveController as CategoryAjaxSaveController;
+use App\Http\Controllers\Products\Category\Ajax\DeleteController as CategoryAjaxDeleteController;
 use App\Http\Controllers\Products\Category\CategoryController;
+use App\Http\Controllers\Products\Category\IndexController as CategoryIndexController;
 use App\Http\Controllers\Products\Products\ProductsController;
 use App\Http\Controllers\Products\StockOpname\StockOpnameController;
 use App\Http\Controllers\Products\StockOut\AddStockOutController;
@@ -65,7 +69,21 @@ Route::post('/products/add-product', [ProductsController::class, 'store'])->name
 Route::post('/products/show', [ProductsController::class, 'show'])->name('product.show');
 Route::delete('/products/product/{id}', [ProductsController::class, 'destroy'])->name('product.delete');
 
-Route::get('/products/category-unit', [CategoryController::class, 'index'])->name('category-unit');
+Route::group([
+    'prefix' => '/products',
+    'as' => 'products.',
+], function () {
+    Route::get('/category-unit', [CategoryIndexController::class, 'index'])->name('category-unit.index');
+
+    Route::group([
+        'prefix' => '/categories',
+        'as' => 'categories.ajax.',
+    ], function () {
+        Route::post('/ajax', [CategoryAjaxStoreController::class, 'store'])->name('store');
+        Route::put('/ajax/{cateogry}', [CategoryAjaxSaveController::class, 'save'])->name('save');
+        Route::delete('/ajax/{category}', [CategoryAjaxDeleteController::class, 'delete'])->name('delete');
+    });
+});
 
 Route::post('/products/category', [CategoryController::class, 'storecategory'])->name('category.add');
 Route::post('/products/category/category-update/{id}', [CategoryController::class, 'categoryupdate'])->name('category.update');

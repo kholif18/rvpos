@@ -94,8 +94,8 @@
                         </li>
                     </ul>
                 </div>
-                <li class="nav-item">
-                    <a href="#" class="nav-link {{ Request::is('product*') ? 'active' : '' }}">
+                <li class="nav-item {{ Request::is('products') || Request::is('products/*') ? 'menu-is-opening menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ Request::is('products') || Request::is('products/*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-archive"></i>
                         <p>Products<i class="fas fa-angle-left right"></i></p>
                     </a>
@@ -109,7 +109,7 @@
                         <li class="nav-item">
                             <a href="{{ url('/products/category-unit') }}" class="nav-link {{ Request::is('products/category-unit') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Categories / Units</p>
+                                <p>Categories & Units</p>
                             </a>
                         </li>
                         {{-- <li class="nav-item">

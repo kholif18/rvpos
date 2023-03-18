@@ -51,10 +51,12 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             @section('breadcrumb')
-                                <li class="breadcrumb-item"><a href="{{ url('/') }}"><i class="fa fa-dashboard"></i>
-                                        Home</a></li>
-                            <li class="breadcrumb-item active">@show
-                            </li>
+                                <li class="breadcrumb-item">
+                                    <a href="{{ url('/') }}"><i class="fa fa-dashboard"></i>
+                                        Home
+                                    </a>
+                                </li>
+                            @show
                         </ol>
                     </div>
                 </div>
