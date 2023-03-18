@@ -6,6 +6,7 @@ use App\Http\Controllers\Kas\AddKasController;
 use App\Http\Controllers\Kas\KasController;
 use App\Http\Controllers\Login\LoginController;
 use App\Http\Controllers\Products\Category\CategoryController;
+use App\Http\Controllers\Products\Category\IndexController as CategoryIndexController;
 use App\Http\Controllers\Products\Products\ProductsController;
 use App\Http\Controllers\Products\StockOpname\StockOpnameController;
 use App\Http\Controllers\Products\StockOut\AddStockOutController;
@@ -65,7 +66,8 @@ Route::post('/products/add-product', [ProductsController::class, 'store'])->name
 Route::post('/products/show', [ProductsController::class, 'show'])->name('product.show');
 Route::delete('/products/product/{id}', [ProductsController::class, 'destroy'])->name('product.delete');
 
-Route::get('/products/category-unit', [CategoryController::class, 'index'])->name('category-unit');
+// Route::get('/products/category-unit', [CategoryController::class, 'index'])->name('category-unit');
+Route::get('/products/categories', [CategoryIndexController::class, 'get'])->name('category.index');
 
 Route::post('/products/category', [CategoryController::class, 'storecategory'])->name('category.add');
 Route::post('/products/category/category-update/{id}', [CategoryController::class, 'categoryupdate'])->name('category.update');

@@ -155,36 +155,16 @@
     <!-- Modal create category-->
     @include('products.category._form-category')
     <!-- Modal edit category-->
-    @include('products.category._form-category-edit')
+    {{-- @include('products.category._form-category-edit') --}}
     <!-- Modal create unit-->
     @include('products.category._form-unit')
     <!-- Modal edit unit-->
-    @include('products.category._form-unit-edit')
+    {{-- @include('products.category._form-unit-edit') --}}
 @endsection
 
 
 @push('scripts')
     <script>
-        function showunit(id) {
-            $.get("{{ route('unit.show', $unit->id) }}", function(unit, status) {
-                $("#edit-unit").modal('show');
-            });
-        }
-        // });
-        // function update(id) {
-        //     var name = $('#name').val();
-        //     var prefix = $('#prefix').val();
-        //     $.ajax({
-        //         type: "get",
-        //         url: {{ route('category.update', $category->id) }},
-        //         category: "name=" + name,
-        //         category: "prefix=" + prefix,
-        //         success: function(data) {
-        //             $(".btn-close").click();
-        //             read()
-        //         }
-        //     });
-        // }
 
         function confirm() {
             Swal.fire({
