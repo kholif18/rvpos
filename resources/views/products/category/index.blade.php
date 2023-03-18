@@ -158,6 +158,7 @@
             showConfirmButton: false,
             timer: 2000
         });
+        toastr.success('Lorem ipsum dolor');
         $(document).ready(function() {
             // Handle submit form (Tambah Kategori & Update Kategori)
             $(document).on('submit', '#form-category', function(event) {
