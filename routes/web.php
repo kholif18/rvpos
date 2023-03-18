@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Kas\AddKasController;
 use App\Http\Controllers\Kas\KasController;
 use App\Http\Controllers\Login\LoginController;
+use App\Http\Controllers\Products\Category\Ajax\DetailController as CategoryAjaxDetailController;
 use App\Http\Controllers\Products\Category\Ajax\StoreController as CategoryAjaxStoreController;
 use App\Http\Controllers\Products\Category\Ajax\SaveController as CategoryAjaxSaveController;
 use App\Http\Controllers\Products\Category\Ajax\DeleteController as CategoryAjaxDeleteController;
@@ -79,8 +80,9 @@ Route::group([
         'prefix' => '/categories',
         'as' => 'categories.ajax.',
     ], function () {
+        Route::get('/ajax/{category}', [CategoryAjaxDetailController::class, 'get'])->name('detail');
         Route::post('/ajax', [CategoryAjaxStoreController::class, 'store'])->name('store');
-        Route::put('/ajax/{cateogry}', [CategoryAjaxSaveController::class, 'save'])->name('save');
+        Route::put('/ajax/{category}', [CategoryAjaxSaveController::class, 'save'])->name('save');
         Route::delete('/ajax/{category}', [CategoryAjaxDeleteController::class, 'delete'])->name('delete');
     });
 });
