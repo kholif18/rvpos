@@ -7,7 +7,11 @@
 
 @section('breadcrumb')
     @parent
-    <li class="active">Suppliers</li>
+    <li class="breadcrumb-item active">
+        <a href="{{ url()->current() }}">
+            Suppliers
+        </a>
+    </li>
 @endsection
 
 @section('content')

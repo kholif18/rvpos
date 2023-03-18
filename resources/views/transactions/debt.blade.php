@@ -6,7 +6,16 @@
 
 @section('breadcrumb')
     @parent
-    <li class="active">Transaction / Debt</li>
+    <li class="breadcrumb-item">
+        <a href="#">
+            Transaction
+        </a>
+    </li>
+    <li class="breadcrumb-item active">
+        <a href="{{ url()->current() }}">
+            Debt
+        </a>
+    </li>
 @endsection
 
 @section('content')
@@ -51,8 +60,7 @@
                                     <td><span class="badge bg-danger" style="padding: 8px; font-size: 10pt">Belum
                                             Lunas</span></td>
                                     <td>
-                                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                            data-target="#modal-detail">
+                                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-detail">
                                             <i class="fas fa-search-plus"></i>
                                             Detail</button>
                                         <a href="{{ url('/transactions/debtpay') }}" class="btn btn-success btn-sm">
@@ -70,8 +78,7 @@
                                     <td>Rp -</td>
                                     <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span>
                                     </td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i
-                                                class="fas fa-search-plus"></i> Detail</button></td>
+                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-search-plus"></i> Detail</button></td>
                                 </tr>
                                 <tr>
                                     <td>120120230023</td>
@@ -121,8 +128,7 @@
                                     <td>Rp -</td>
                                     <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span>
                                     </td>
-                                    <td><button type="button" class="btn btn-info btn-sm"><i
-                                                class="fas fa-search-plus"></i> Detail</button></td>
+                                    <td><button type="button" class="btn btn-info btn-sm"><i class="fas fa-search-plus"></i> Detail</button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -202,8 +208,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" style="width: 40px">Rp </span>
                                         </div>
-                                        <input type="text" class="form-control text-bold bg-warning" readonly
-                                            value="63.000">
+                                        <input type="text" class="form-control text-bold bg-warning" readonly value="63.000">
                                     </div>
                                 </div>
                             </div>
@@ -248,15 +253,13 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="row">
-                                        <label class="col-sm-4 col-form-label col-form-label-sm text-right"
-                                            readonly>Less</label>
+                                        <label class="col-sm-4 col-form-label col-form-label-sm text-right" readonly>Less</label>
                                         <div class="col-sm-8">
                                             <div class="input-group input-group-sm">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" style="width: 40px">Rp </span>
                                                 </div>
-                                                <input type="text" class="form-control text-bold bg-danger" readonly
-                                                    value="13.000">
+                                                <input type="text" class="form-control text-bold bg-danger" readonly value="13.000">
                                             </div>
                                         </div>
                                     </div>

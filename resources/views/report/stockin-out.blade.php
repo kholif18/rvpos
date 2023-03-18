@@ -2,12 +2,21 @@
 @extends('layouts.master')
 
 @section('title')
-    Stock In / Out Report
+    Stock In & Out Report
 @endsection
 
 @section('breadcrumb')
     @parent
-    <li class="active">Reports / Stock In / Out</li>
+    <li class="breadcrumb-item">
+        <a href="#">
+            Report
+        </a>
+    </li>
+    <li class="breadcrumb-item active">
+        <a href="{{ url()->current() }}">
+            Stock In & Out
+        </a>
+    </li>
 @endsection
 
 @section('content')

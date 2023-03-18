@@ -50,11 +50,11 @@ Route::get('/sales', [SalesController::class, 'index']);
 
 // Transaction -----------------------------------------------------------------------
 
-Route::get('/transactions/list-pos', [ListPostController::class, 'index']);
+Route::get('/transactions/list-pos', [ListPostController::class, 'index'])->name('list-pos');
 
-Route::get('/transactions/debt', [DebtController::class, 'index']);
+Route::get('/transactions/debt', [DebtController::class, 'index'])->name('debt');
 
-Route::get('/transactions/debtpay', [DebtPayController::class, 'index']);
+Route::get('/transactions/debtpay', [DebtPayController::class, 'index'])->name('debt.pay');
 
 //Purchases -----------------------------------------------------------------------
 

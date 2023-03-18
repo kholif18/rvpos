@@ -6,7 +6,11 @@
 
 @section('breadcrumb')
     @parent
-    <li class="active">Kas</li>
+    <li class="breadcrumb-item active">
+        <a href="{{ url()->current() }}">
+            Kas
+        </a>
+    </li>
 @endsection
 
 @section('content')
@@ -46,8 +50,7 @@
                                     <td>Modal Kasir</td>
                                     <td>kholif18</td>
                                     <td>
-                                        <button style="margin-left: 20px" type="button"
-                                            class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
+                                        <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -58,8 +61,7 @@
                                     <td>Beli Galon</td>
                                     <td>kholif18</td>
                                     <td>
-                                        <button style="margin-left: 20px" type="button"
-                                            class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
+                                        <button style="margin-left: 20px" type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt"></i></button>
                                     </td>
                                 </tr>
                             </tbody>

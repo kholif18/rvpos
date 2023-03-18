@@ -7,7 +7,16 @@
 
 @section('breadcrumb')
     @parent
-    <li class="active">Reports / Profit & Loss</li>
+    <li class="breadcrumb-item">
+        <a href="#">
+            Report
+        </a>
+    </li>
+    <li class="breadcrumb-item active">
+        <a href="{{ url()->current() }}">
+            Profit & Lost
+        </a>
+    </li>
 @endsection
 
 @section('content')

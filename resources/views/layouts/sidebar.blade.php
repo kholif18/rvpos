@@ -47,9 +47,8 @@
                         <p>Sales</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <!-- TODO: Set active -->
-                    <a href="#" class="nav-link {{ Request::is('transactions*') ? 'active' : '' }}">
+                <li class="nav-item  {{ Request::is('transactions') || Request::is('transactions/*') ? 'menu-is-opening menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ Request::is('transactions') || Request::is('transactions/*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-exchange-alt"></i>
                         <p>Transaction<i class="fas fa-angle-left right"></i></p>
                     </a>
@@ -74,8 +73,8 @@
                         </li>
                     </ul>
                 </li>
-                <div class="nav-item">
-                    <a href="#" class="nav-link {{ Request::is('purchases*') ? 'active' : '' }}">
+                <div class="nav-item  {{ Request::is('purchases') || Request::is('purchases/*') ? 'menu-is-opening menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ Request::is('purchases') || Request::is('purchases/*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-cart-arrow-down"></i>
                         <p>Purchases<i class="fas fa-angle-left right"></i></p>
                     </a>
@@ -144,8 +143,8 @@
                         <p>Customers</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link {{ Request::is('report*') ? 'active' : '' }}">
+                <li class="nav-item  {{ Request::is('report') || Request::is('report/*') ? 'menu-is-opening menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ Request::is('report') || Request::is('report/*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-file"></i>
                         <p>Reports<i class="fas fa-angle-left right"></i></p>
                     </a>

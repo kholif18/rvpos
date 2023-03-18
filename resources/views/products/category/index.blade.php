@@ -36,7 +36,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="card-body table-responsive p-0" style="height: 69vh;">
-                                <table class="table table-head-fixed text-nowrap table-striped table-sm">
+                                <table id="categoryTable" class="table table-head-fixed text-nowrap table-striped table-sm">
                                     <thead>
                                         <tr>
                                             <th style="width: 60px">No.</th>
@@ -63,12 +63,14 @@
                                                 <td>
                                                     <div class="row">
                                                         <div class="col-sm-6">
-                                                            <a href="#" class="btn btn-info btn-sm btn-block edit-category" data-url="{{ route('products.categories.ajax.save', ['category' => $category->id]) }}" data-fetch-url="{{ route('products.categories.ajax.detail', ['category' => $category->id]) }}">
+                                                            <a href="#" class="btn btn-info btn-sm btn-block edit-category" data-url="{{ route('products.categories.ajax.save', ['category' => $category->id]) }}"
+                                                                data-fetch-url="{{ route('products.categories.ajax.detail', ['category' => $category->id]) }}">
                                                                 <i class="fas fa-edit"></i>
                                                             </a>
                                                         </div>
                                                         <div class="col-sm-6">
-                                                            <a href="#" class="btn btn-danger btn-sm btn-block delete-category" data-url="{{ route('products.categories.ajax.delete', ['category' => $category->id]) }}" data-token="{{ csrf_token() }}">
+                                                            <a href="#" class="btn btn-danger btn-sm btn-block delete-category" data-url="{{ route('products.categories.ajax.delete', ['category' => $category->id]) }}"
+                                                                data-token="{{ csrf_token() }}">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </a>
                                                         </div>

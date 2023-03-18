@@ -6,7 +6,16 @@
 
 @section('breadcrumb')
     @parent
-    <li class="active">Transaction / List Purchases</li>
+    <li class="breadcrumb-item">
+        <a href="#">
+            Purchases
+        </a>
+    </li>
+    <li class="breadcrumb-item active">
+        <a href="{{ url()->current() }}">
+            List Purchases
+        </a>
+    </li>
 @endsection
 
 @section('content')
@@ -46,14 +55,10 @@
                                     </td>
                                     <td>Admin</td>
                                     <td>Rp 523.000</td>
-                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                            data-target="#modal-view"><i class="fas fa-eye"></i></button>
-                                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                            data-target="#modal-edit"><i class="fas fa-edit"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm"><i
-                                                class="fas fa-print"></i></button>
-                                        <button type="button" class="btn btn-danger btn-sm delete"><i
-                                                class="fas fa-trash"></i></button>
+                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-view"><i class="fas fa-eye"></i></button>
+                                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></button>
+                                        <button type="button" class="btn btn-success btn-sm"><i class="fas fa-print"></i></button>
+                                        <button type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -64,14 +69,10 @@
                                     </td>
                                     <td>Admin</td>
                                     <td>Rp 56.000</td>
-                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                            data-target="#modal-view"><i class="fas fa-eye"></i></button>
-                                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                            data-target="#modal-edit"><i class="fas fa-edit"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm"><i
-                                                class="fas fa-print"></i></button>
-                                        <button type="button" class="btn btn-danger btn-sm delete"><i
-                                                class="fas fa-trash"></i></button>
+                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-view"><i class="fas fa-eye"></i></button>
+                                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></button>
+                                        <button type="button" class="btn btn-success btn-sm"><i class="fas fa-print"></i></button>
+                                        <button type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -82,14 +83,10 @@
                                     </td>
                                     <td>Admin</td>
                                     <td>Rp 63.000</td>
-                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                            data-target="#modal-view"><i class="fas fa-eye"></i></button>
-                                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                            data-target="#modal-edit"><i class="fas fa-edit"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm"><i
-                                                class="fas fa-print"></i></button>
-                                        <button type="button" class="btn btn-danger btn-sm delete"><i
-                                                class="fas fa-trash"></i></button>
+                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-view"><i class="fas fa-eye"></i></button>
+                                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-edit"><i class="fas fa-edit"></i></button>
+                                        <button type="button" class="btn btn-success btn-sm"><i class="fas fa-print"></i></button>
+                                        <button type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>
                             </tbody>

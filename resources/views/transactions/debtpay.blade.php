@@ -6,7 +6,21 @@
 
 @section('breadcrumb')
     @parent
-    <li class="active">Transaction / Debt / Debt Pay</li>
+    <li class="breadcrumb-item">
+        <a href="#">
+            Transaction
+        </a>
+    </li>
+    <li class="breadcrumb-item">
+        <a href="{{ route('debt') }}">
+            Debt
+        </a>
+    </li>
+    <li class="breadcrumb-item active">
+        <a href="{{ url()->current() }}">
+            Debt Pay
+        </a>
+    </li>
 @endsection
 
 @section('content')
@@ -169,10 +183,8 @@
                     <table class="table text-center">
                         <tbody>
                             <tr>
-                                <td><button type="button" class="btn btn-block btn-success btn-sm"><i
-                                            class="fas fa-paper-plane"></i> Pay</button></td>
-                                <td><button type="button" class="btn btn-block btn-danger btn-sm cancel"><i
-                                            class="fas fa-trash-alt"></i> Cancel</button></td>
+                                <td><button type="button" class="btn btn-block btn-success btn-sm"><i class="fas fa-paper-plane"></i> Pay</button></td>
+                                <td><button type="button" class="btn btn-block btn-danger btn-sm cancel"><i class="fas fa-trash-alt"></i> Cancel</button></td>
                             </tr>
                         </tbody>
                     </table>

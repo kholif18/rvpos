@@ -6,7 +6,16 @@
 
 @section('breadcrumb')
     @parent
-    <li class="active">Transaction / List POS</li>
+    <li class="breadcrumb-item">
+        <a href="#">
+            Transaction
+        </a>
+    </li>
+    <li class="breadcrumb-item active">
+        <a href="{{ url()->current() }}">
+            List POS
+        </a>
+    </li>
 @endsection
 
 @section('content')
@@ -59,12 +68,9 @@
                                     <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span>
                                     </td>
                                     <td>Rp 250.000</td>
-                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                            data-target="#modal-view1"><i class="fas fa-search-plus"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm"><i
-                                                class="fas fa-print"></i></button>
-                                        <button type="button" class="btn btn-danger btn-sm delete"><i
-                                                class="fas fa-trash"></i></button>
+                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-view1"><i class="fas fa-search-plus"></i></button>
+                                        <button type="button" class="btn btn-success btn-sm"><i class="fas fa-print"></i></button>
+                                        <button type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -78,12 +84,9 @@
                                     <td><span class="badge bg-success" style="padding: 8px; font-size: 10pt">Lunas</span>
                                     </td>
                                     <td>Rp 103.000</td>
-                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                            data-target="#modal-view2"><i class="fas fa-search-plus"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm"><i
-                                                class="fas fa-print"></i></button>
-                                        <button type="button" class="btn btn-danger btn-sm delete"><i
-                                                class="fas fa-trash"></i></button>
+                                    <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-view2"><i class="fas fa-search-plus"></i></button>
+                                        <button type="button" class="btn btn-success btn-sm"><i class="fas fa-print"></i></button>
+                                        <button type="button" class="btn btn-danger btn-sm delete"><i class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -97,8 +100,7 @@
                                     <td><span class="badge bg-danger" style="padding: 8px; font-size: 10pt">Hutang</span>
                                     </td>
                                     <td>Rp 200.000</td>
-                                    <td><a href="{{ url('/transactions/debtpay') }}"
-                                            class="btn btn-success btn-block btn-sm">
+                                    <td><a href="{{ url('/transactions/debtpay') }}" class="btn btn-success btn-block btn-sm">
                                             <i class="fas fa-paper-plane"></i> Payment
                                         </a></td>
                                 </tr>
