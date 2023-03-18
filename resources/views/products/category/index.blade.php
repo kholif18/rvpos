@@ -152,28 +152,12 @@
 
 @push('scripts')
     <script>
-        function confirm() {
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Deleted!',
-                        text: "Your file has been deleted.",
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                }
-            });
-        }
-
+        let Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000
+        });
         $(document).ready(function() {
             // Handle submit form (Tambah Kategori & Update Kategori)
             $(document).on('submit', '#form-category', function(event) {
@@ -195,9 +179,10 @@
                             Swal.fire({
                                 title: response.message,
                                 icon: 'success',
-                                allowEscapeKey: false,
-                                allowOutsideClick: false,
-                                confirmButtonText: 'OK'
+                                allowEscapeKey: true,
+                                allowOutsideClick: true,
+                                timer: 2000,
+                                showConfirmButton: false,
                             }).then((result) => {
                                 window.location.reload();
                             });
@@ -301,9 +286,10 @@
                                     Swal.fire({
                                         title: response.message,
                                         icon: 'success',
-                                        allowEscapeKey: false,
-                                        allowOutsideClick: false,
-                                        confirmButtonText: 'OK'
+                                        allowEscapeKey: true,
+                                        allowOutsideClick: true,
+                                        timer: 2000,
+                                        showConfirmButton: false,
                                     }).then((result) => {
                                         window.location.reload();
                                     });
