@@ -155,24 +155,43 @@
 
         function deleteData(url) {
             Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
+                title: 'Apakah Anda yakin ingin menghapus item ini?',
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
+                confirmButtonText: 'Ya, hapus!',
+                cancelButtonText: 'Batal'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Deleted!',
-                        text: "Your file has been deleted.",
-                        showConfirmButton: false,
-                        timer: 1500
+                    // Jika pengguna mengkonfirmasi untuk menghapus item
+                    // Mengirim permintaan penghapusan menggunakan AJAX
+                    $.ajax({
+                        type: 'DELETE',
+                        data: {
+                            _token: '{{ csrf_token() }}'
+                        },
+                        success: function(result) {
+                            // Menampilkan pesan sukses jika item berhasil dihapus
+                            Swal.fire({
+                                title: 'Supplier berhasil dihapus',
+                                icon: 'success',
+                            });
+                            // Menghapus item dari daftar
+                            $('#example2' + $supplier - > id).remove();
+                        },
+                        error: function(result) {
+                            // Menampilkan pesan kesalahan jika terjadi masalah saat menghapus item
+                            Swal.fire({
+                                title: 'Terjadi kesalahan',
+                                text: 'Item tidak dapat dihapus. Silakan coba lagi nanti.',
+                                icon: 'error',
+                            });
+                        }
                     });
                 }
             });
+
         };
     </script>
 @endpush
