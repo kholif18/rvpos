@@ -2,10 +2,10 @@
 <div class="modal fade" id="modal-form-unit">
     <div class="modal-dialog modal-md">
         <div class="modal-content">
-            <form id="form-unit" action="#" class="form-horizontal" method="post">
+            <form id="form-unit" action="{{ route('products.units.ajax.store') }}" class="form-horizontal" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="modal-header">
-                    <h4 id="form-unit-title" class="modal-title">Add Unit</h4>
+                    <h4 id="form-unit-title" class="modal-title"></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

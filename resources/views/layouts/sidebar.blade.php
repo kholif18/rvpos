@@ -106,7 +106,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('/products/category-unit') }}" class="nav-link {{ Request::is('products/category-unit') ? 'active' : '' }}">
+                            <a href="{{ route('products.category-unit.index') }}" class="nav-link {{ Request::is('products/category-unit') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Categories & Units</p>
                             </a>

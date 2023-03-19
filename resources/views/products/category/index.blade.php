@@ -93,7 +93,7 @@
                 <div class="card-header">
                     <h3 class="card-title">Units</h3>
                     <div class="card-tools">
-                        <button type="button" class="btn btn-success  btn-sm" data-toggle="modal" data-target="#modal-form-unit">
+                        <button type="button" class="btn btn-success btn-sm add-unit" data-url="{{ route('products.units.ajax.store') }}">
                             <i class="fas fa-plus-circle"></i> Add Unit
                         </button>
                     </div>
@@ -123,13 +123,20 @@
                                                     {{ $unit->name }}
                                                 </td>
                                                 <td>
-                                                    <button style="margin-left: 20px" class="btn btn-info btn-sm" onClick="showunit({{ $unit->id }})"><i class="fas fa-edit"></i></button>
-                                                    {{-- <a href="{{ route('unit.edit', $unit->id) }}" class="d-inline btn btn-info btn-sm" data-toggle="modal" data-target="#unit-edit"><i class="fas fa-edit"></i></a> --}}
-                                                    <form action="{{ route('unit.delete', $unit->id) }}" method="post" class="d-inline">
-                                                        @csrf
-                                                        @method('delete')
-                                                        <button style="margin-left: 20px" type="submit" class="btn btn-danger btn-sm" onclick="confirm()"><i class="fas fa-trash-alt"></i></button>
-                                                    </form>
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <a href="#" class="btn btn-info btn-sm btn-block edit-unit" data-url="{{ route('products.units.ajax.save', ['unit' => $unit->id]) }}"
+                                                                data-fetch-url="{{ route('products.units.ajax.detail', ['unit' => $unit->id]) }}">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <a href="#" class="btn btn-danger btn-sm btn-block delete-unit" data-url="{{ route('products.units.ajax.delete', ['unit' => $unit->id]) }}"
+                                                                data-token="{{ csrf_token() }}">
+                                                                <i class="fas fa-trash-alt"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -158,7 +165,7 @@
             showConfirmButton: false,
             timer: 2000
         });
-        toastr.success('Lorem ipsum dolor');
+
         $(document).ready(function() {
             // Handle submit form (Tambah Kategori & Update Kategori)
             $(document).on('submit', '#form-category', function(event) {
@@ -206,7 +213,7 @@
                 });
             });
 
-            // Handle ketiak user meng-klik tombol "Add Category"
+            // Handle ketika user meng-klik tombol "Add Category"
             $(document).on('click', '.add-category', function(event) {
                 event.preventDefault();
 
@@ -214,6 +221,7 @@
                 const httpUrl = $(this).attr('data-url');
                 $(document).find('#form-category').attr('action', httpUrl);
                 $(document).find('#form-category').attr('method', 'post');
+                $('#modal-form-category .modal-title').text('Add category');
 
                 // Reset form input from previous
                 $(document).find('#form-category input[name="name"]').val('');
@@ -231,6 +239,7 @@
                 const httpUrl = $(this).attr('data-url');
                 $(document).find('#form-category').attr('action', httpUrl);
                 $(document).find('#form-category').attr('method', 'put');
+                $('#modal-form-category .modal-title').text('Edit category');
 
                 // Fetch data from database
                 const httpFetchUrl = $(this).attr('data-fetch-url');
@@ -313,6 +322,99 @@
                         });
                     }
                 });
+            });
+
+            //----------------------------------Unit---------------------------------
+
+            // Handle submit form (Tambah Unit & Update Unit)
+            $(document).on('submit', '#form-unit', function(event) {
+                event.preventDefault();
+
+                const httpUrl = $(this).attr('action');
+                const httpMethod = $(this).attr('method');
+                const formData = $(this).serialize();
+
+                // Submit the form data using Ajax
+                $.ajax({
+                    type: httpMethod,
+                    url: httpUrl,
+                    data: formData,
+                    success: function(response) {
+                        // Do something with the response data
+                        console.log(response);
+                        if (response.status === 'success') {
+                            Swal.fire({
+                                title: response.message,
+                                icon: 'success',
+                                allowEscapeKey: true,
+                                allowOutsideClick: true,
+                                timer: 2000,
+                                showConfirmButton: false,
+                            }).then((result) => {
+                                window.location.reload();
+                            });
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle errors
+                        console.log(xhr.responseText);
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Maaf, terjadi kesalahan',
+                            text: 'Cek log untuk info detail',
+                            toast: true,
+                            position: 'top-end',
+                            timer: 3500,
+                            timerProgressBar: true,
+                            showConfirmButton: false,
+                        });
+                    }
+                });
+            });
+
+            // Handle ketika user meng-klik tombol "Add Unit"
+            $(document).on('click', '.add-unit', function(event) {
+                event.preventDefault();
+
+                // Set url action to add
+                const httpUrl = $(this).attr('data-url');
+                $(document).find('#form-unit').attr('action', httpUrl);
+                $(document).find('#form-unit').attr('method', 'post');
+                $('#modal-form-unit .modal-title').text('Add Unit');
+
+                // Reset form input from previous
+                $(document).find('#form-unit input[name="name"]').val('');
+
+                // Show modal form
+                $('#modal-form-unit').modal('show');
+            });
+
+            // Handle ketika user meng-klik tombol edit
+            $(document).on('click', '.edit-unit', function(event) {
+                event.preventDefault();
+
+                // Set url action to edit
+                const httpUrl = $(this).attr('data-url');
+                $(document).find('#form-unit').attr('action', httpUrl);
+                $(document).find('#form-unit').attr('method', 'put');
+                $('#modal-form-unit .modal-title').text('Edit Unit');
+
+                // Fetch data from database
+                const httpFetchUrl = $(this).attr('data-fetch-url');
+                $.ajax({
+                    url: httpFetchUrl,
+                    success: function(response) {
+                        // Do something with the response data
+                        console.log(response);
+                        if (response.status === 'success') {
+                            const data = response.data;
+                            $(document).find('#form-unit input[name="name"]').val(data.name);
+                        }
+                    }
+                });
+
+                // Show modal form
+                $('#modal-form-unit').modal('show');
             });
         });
     </script>

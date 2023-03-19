@@ -5,7 +5,7 @@
             <form id="form-category" action="{{ route('products.categories.ajax.store') }}" class="form-horizontal" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="modal-header">
-                    <h4 id="form-category-title" class="modal-title">Add Category</h4>
+                    <h4 id="form-category-title" class="modal-title"></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

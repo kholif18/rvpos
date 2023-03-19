@@ -9,6 +9,10 @@ use App\Http\Controllers\Products\Category\Ajax\DetailController as CategoryAjax
 use App\Http\Controllers\Products\Category\Ajax\StoreController as CategoryAjaxStoreController;
 use App\Http\Controllers\Products\Category\Ajax\SaveController as CategoryAjaxSaveController;
 use App\Http\Controllers\Products\Category\Ajax\DeleteController as CategoryAjaxDeleteController;
+use App\Http\Controllers\Products\Unit\Ajax\DetailController as UnitAjaxDetailController;
+use App\Http\Controllers\Products\Unit\Ajax\StoreController as UnitAjaxStoreController;
+use App\Http\Controllers\Products\Unit\Ajax\SaveController as UnitAjaxSaveController;
+use App\Http\Controllers\Products\Unit\Ajax\DeleteController as UnitAjaxDeleteController;
 use App\Http\Controllers\Products\Category\IndexController as CategoryIndexController;
 use App\Http\Controllers\Products\Products\ProductsController;
 use App\Http\Controllers\Products\StockOpname\StockOpnameController;
@@ -83,6 +87,16 @@ Route::group([
         Route::post('/ajax', [CategoryAjaxStoreController::class, 'store'])->name('store');
         Route::put('/ajax/{category}', [CategoryAjaxSaveController::class, 'save'])->name('save');
         Route::delete('/ajax/{category}', [CategoryAjaxDeleteController::class, 'delete'])->name('delete');
+    });
+
+    Route::group([
+        'prefix' => '/units',
+        'as' => 'units.ajax.',
+    ], function () {
+        Route::get('/ajax/{unit}', [UnitAjaxDetailController::class, 'get'])->name('detail');
+        Route::post('/ajax', [UnitAjaxStoreController::class, 'store'])->name('store');
+        Route::put('/ajax/{unit}', [UnitAjaxSaveController::class, 'save'])->name('save');
+        Route::delete('/ajax/{unit}', [UnitAjaxDeleteController::class, 'delete'])->name('delete');
     });
 });
 
