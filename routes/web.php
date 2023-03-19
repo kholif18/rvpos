@@ -14,6 +14,12 @@ use App\Http\Controllers\Products\Unit\Ajax\StoreController as UnitAjaxStoreCont
 use App\Http\Controllers\Products\Unit\Ajax\SaveController as UnitAjaxSaveController;
 use App\Http\Controllers\Products\Unit\Ajax\DeleteController as UnitAjaxDeleteController;
 use App\Http\Controllers\Products\Category\IndexController as CategoryIndexController;
+
+use App\Http\Controllers\Supplier\Ajax\DetailController as SupplierAjaxDetailController;
+use App\Http\Controllers\Supplier\Ajax\StoreController as SupplierAjaxStoreController;
+use App\Http\Controllers\Supplier\Ajax\SaveController as SupplierAjaxSaveController;
+use App\Http\Controllers\Supplier\Ajax\DeleteController as SupplierAjaxDeleteController;
+use App\Http\Controllers\Supplier\IndexController as SupplierIndexController;
 use App\Http\Controllers\Products\Products\ProductsController;
 use App\Http\Controllers\Products\StockOpname\StockOpnameController;
 use App\Http\Controllers\Products\StockOut\AddStockOutController;
@@ -100,17 +106,6 @@ Route::group([
     });
 });
 
-Route::post('/products/category', [CategoryController::class, 'storecategory'])->name('category.add');
-Route::post('/products/category/category-update/{id}', [CategoryController::class, 'categoryupdate'])->name('category.update');
-Route::get('/products/category/{id}/edit', [CategoryController::class, 'categoryedit'])->name('category.edit');
-Route::delete('/products/category/{id}', [CategoryController::class, 'categorydestroy'])->name('category.destroy');
-
-Route::get('/products/unit-create', [CategoryController::class, 'createunit'])->name('unit.create');
-Route::get('/products/unit-show', [CategoryController::class, 'show'])->name('unit.show');
-Route::post('/products/unit', [CategoryController::class, 'storeunit'])->name('unit.add');
-Route::get('/products/unit/{id}/edit', [CategoryController::class, 'unitedit'])->name('unit.edit');
-Route::delete('/products/unit/{id}', [CategoryController::class, 'unitdestroy'])->name('unit.delete');
-
 Route::get('/products/stockout', [StockOutController::class, 'index'])->name('stockout');
 Route::post('/products/add-stockout', [AddStockOutController::class, 'addstockout'])->name('stockout.add');
 
@@ -124,8 +119,12 @@ Route::post('/kas/add', [AddKasController::class, 'addkas']);
 
 //Supplier -----------------------------------------------------------------------
 
-Route::get('/supplier', [SuppliersController::class, 'index'])->name('supplier');
-Route::resource('/supplier', SuppliersController::class);
+Route::get('/supplier', [SupplierIndexController::class, 'index'])->name('supplier');
+
+Route::get('/ajax/{supplier}', [SupplierAjaxDetailController::class, 'get'])->name('supplier.detail');
+Route::post('/ajax', [SupplierAjaxStoreController::class, 'store'])->name('supplier.store');
+Route::put('/ajax/{supplier}', [SupplierAjaxSaveController::class, 'save'])->name('supplier.save');
+Route::delete('/ajax/{supplier}', [SupplierAjaxDeleteController::class, 'delete'])->name('supplier.delete');
 
 //Customer -----------------------------------------------------------------------
 

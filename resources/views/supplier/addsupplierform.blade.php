@@ -2,9 +2,8 @@
     <div class="modal fade" id="supplierModal">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <form id="formSupplier" action="" class="form-horizontal" method="post">
+                <form id="form-supplier" action="{{ route('supplier.store') }}" class="form-horizontal" method="post">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    @method('PUT')
                     <div class="modal-header">
                         <h4 class="modal-title">Add Supplier</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">

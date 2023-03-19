@@ -132,7 +132,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('/supplier') }}" class="nav-link {{ Request::is('supplier') ? 'active' : '' }}">
+                    <a href="{{ route('supplier') }}" class="nav-link {{ Request::is('supplier') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-truck"></i>
                         <p>Suppliers</p>
                     </a>

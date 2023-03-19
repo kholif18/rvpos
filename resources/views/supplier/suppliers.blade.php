@@ -19,7 +19,7 @@
         <div class="card-header">
             <h3 class="card-title">Suppliers</h3>
             <div class="card-tools">
-                <button onclick="addSupplier('{{ route('supplier.store') }}')" class="btn btn-success btn-sm">
+                <button class="btn btn-success btn-sm add-supplier" data-url="{{ route('supplier.store') }}">
                     <i class="fas fa-plus-circle"></i> Add Supplier
                 </button>
             </div>
@@ -52,14 +52,21 @@
                                         <td>{{ $supplier->bank }}</td>
                                         <td>{{ $supplier->norek }}</td>
                                         <td>{{ $supplier->address }}</td>
-                                        <td><button onclick="editForm('{{ route('supplier.update', $supplier->id) }}')" class="btn btn-info  btn-sm"><i class="fas fa-edit"></i> Update</button>
-                                            <button onclick="deleteData('{{ route('supplier.destroy', $supplier->id) }}')" class="btn btn-danger  btn-sm"><i class="fas fa-trash-alt"></i> Delete</button>
-
-                                            {{-- <form action="{{ route('supplier.destroy', $supplier->id) }}" method="post" class="d-inline">
-                                                @csrf
-                                                @method('delete')
-                                                <button style="margin-left: 20px" type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"><i class="fas fa-trash-alt"></i> Delete</button>
-                                            </form> --}}
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <a href="#" class="btn btn-info btn-sm btn-block edit-supplier" data-url="{{ route('supplier.save', ['supplier' => $supplier->id]) }}"
+                                                        data-fetch-url="{{ route('supplier.detail', ['supplier' => $supplier->id]) }}">
+                                                        <i class="fas fa-edit"></i> Edit
+                                                    </a>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <a href="#" class="btn btn-danger btn-sm btn-block delete-supplier" data-url="{{ route('supplier.delete', ['supplier' => $supplier->id]) }}"
+                                                        data-token="{{ csrf_token() }}">
+                                                        <i class="fas fa-trash-alt"></i> Delete
+                                                    </a>
+                                                </div>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -73,129 +80,179 @@
     </div>
 
     {{-- modal Add Supplier --}}
-    @include('supplier.addsupplierform')
-    {{-- @include('supplier.form') --}}
+    {{-- @include('supplier.addsupplierform') --}}
+    @include('supplier.form')
 @endsection
 
 @push('scripts')
     <script>
-        @if (Session::has('success'))
-            toastr.success("{{ Session::get('success') }}");
-        @endif
-
         $(document).ready(function() {
-            $(function() {
-                $('#example2').DataTable({
-                    "paging": false,
-                    "lengthChange": false,
-                    "searching": false,
-                    "ordering": true,
-                    "info": false,
-                    "autoWidth": true,
-                    "responsive": false,
+            // Handle submit form (Tambah Supplier & Update Supplier)
+            $(document).on('submit', '#form-supplier', function(event) {
+                event.preventDefault();
+
+                const httpUrl = $(this).attr('action');
+                const httpMethod = $(this).attr('method');
+                const formData = $(this).serialize();
+
+                // Submit the form data using Ajax
+                $.ajax({
+                    type: httpMethod,
+                    url: httpUrl,
+                    data: formData,
+                    success: function(response) {
+                        // Do something with the response data
+                        console.log(response);
+                        if (response.status === 'success') {
+                            Swal.fire({
+                                title: response.message,
+                                icon: 'success',
+                                allowEscapeKey: true,
+                                allowOutsideClick: true,
+                                timer: 2000,
+                                showConfirmButton: false,
+                            }).then((result) => {
+                                window.location.reload();
+                            });
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle errors
+                        console.log(xhr.responseText);
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Maaf, terjadi kesalahan',
+                            text: 'Cek log untuk info detail',
+                            toast: true,
+                            position: 'top-end',
+                            timer: 3500,
+                            timerProgressBar: true,
+                            showConfirmButton: false,
+                        });
+                    }
+                });
+            });
+
+            // Handle ketika user meng-klik tombol "Add Supplier"
+            $(document).on('click', '.add-supplier', function(event) {
+                event.preventDefault();
+
+                // Set url action to add
+                const httpUrl = $(this).attr('data-url');
+                $(document).find('#form-supplier').attr('action', httpUrl);
+                $(document).find('#form-supplier').attr('method', 'post');
+                $('#supplierModal .modal-title').text('Add supplier');
+
+                // Reset form input from previous
+                $(document).find('#form-supplier input[name="code"]').val('');
+                $(document).find('#form-supplier input[name="name"]').val('');
+                $(document).find('#form-supplier input[name="phone"]').val('');
+                $(document).find('#form-supplier input[name="email"]').val('');
+                $(document).find('#form-supplier input[name="bank"]').val('');
+                $(document).find('#form-supplier input[name="norek"]').val('');
+                $(document).find('#form-supplier input[name="address"]').val('');
+
+                // Show modal form
+                $('#supplierModal').modal('show');
+            });
+
+            // Handle ketika user meng-klik tombol edit
+            $(document).on('click', '.edit-supplier', function(event) {
+                event.preventDefault();
+
+                // Set url action to edit
+                const httpUrl = $(this).attr('data-url');
+                $(document).find('#form-supplier').attr('action', httpUrl);
+                $(document).find('#form-supplier').attr('method', 'put');
+                $('#supplierModal .modal-title').text('Edit supplier');
+
+                // Fetch data from database
+                const httpFetchUrl = $(this).attr('data-fetch-url');
+                $.ajax({
+                    url: httpFetchUrl,
+                    success: function(response) {
+                        // Do something with the response data
+                        console.log(response);
+                        if (response.status === 'success') {
+                            const data = response.data;
+                            $(document).find('#form-supplier input[name="code"]').val(data.code);
+                            $(document).find('#form-supplier input[name="name"]').val(data.name);
+                            $(document).find('#form-supplier input[name="phone"]').val(data.phone);
+                            $(document).find('#form-supplier input[name="email"]').val(data.email);
+                            $(document).find('#form-supplier input[name="bank"]').val(data.bank);
+                            $(document).find('#form-supplier input[name="norek"]').val(data.norek);
+                            $(document).find('#form-supplier input[name="address"]').val(data.address);
+                        }
+                    }
+                });
+
+                // Show modal form
+                $('#supplierModal').modal('show');
+            });
+
+            // Handle ketika user meng-klik tombol hapus
+            $(document).on('click', '.delete-supplier', function(event) {
+                event.preventDefault();
+
+                // Variable bantuan (Menghindari scope js)
+                const _this = $(this);
+
+                // Show confirmation
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        const httpUrl = _this.attr('data-url');
+                        const httpMethod = 'delete';
+                        const csrfToken = _this.attr('data-token');
+
+                        // Submit the form data using Ajax
+                        $.ajax({
+                            type: httpMethod,
+                            url: httpUrl,
+                            data: {
+                                "_token": csrfToken,
+                            },
+                            success: function(response) {
+                                // Do something with the response data
+                                console.log(response);
+                                if (response.status === 'success') {
+                                    Swal.fire({
+                                        title: response.message,
+                                        icon: 'success',
+                                        allowEscapeKey: true,
+                                        allowOutsideClick: true,
+                                        timer: 2000,
+                                        showConfirmButton: false,
+                                    }).then((result) => {
+                                        window.location.reload();
+                                    });
+                                }
+                            },
+                            error: function(xhr, status, error) {
+                                // Handle errors
+                                console.log(xhr.responseText);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Maaf, terjadi kesalahan',
+                                    text: 'Cek log untuk info detail',
+                                    toast: true,
+                                    position: 'top-end',
+                                    timer: 3500,
+                                    timerProgressBar: true,
+                                    showConfirmButton: false,
+                                });
+                            }
+                        });
+                    }
                 });
             });
         });
-
-        function addSupplier(url) {
-            $('#supplierModal').modal('show');
-            $('#supplierModal .modal-title').text('Add Supplier');
-
-            $('#supplierModal form')[0].reset();
-            $('#supplierModal form').attr('action', url);
-            $('#supplierModal [name=_method]').val('post');
-            $('#supplierModal [name=name]').focus();
-            document.getElementById('code').readOnly = false;
-            $.ajax({
-                beforeSend: function() {
-                    $('.formSupplier').find('span.error-text').text('');
-                },
-                success: function(response) {
-                    if (response.status == 400) {
-                        $.each(response.error, function(prefix, val) {
-                            $('.formSupplier').find('span.' + prefix + '_error').text(val[0]);
-                        });
-                    } else {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Kategori Baru Berhasil Di Tambahkan',
-                            showConfirmButton: false,
-                            timer: 1900
-                        });
-                        $('#modalAddKategori').modal('hide');
-                        $('#table_kategori').DataTable().ajax.reload(null, false);
-                        $('.formSupplier')[0].reset();
-                    }
-                }
-            });
-        }
-
-        function editForm(url) {
-            $('#supplierModal').modal('show');
-            $('#supplierModal .modal-title').text('Edit Supplier');
-
-            $('#supplierModal form')[0].reset();
-            $('#supplierModal form').attr('action', url);
-            $('#supplierModal [name=_method]').val('put');
-            $('#supplierModal [name=name]').focus();
-            toastr.error('Stock Kertas A4 tinggal 5');
-
-            $.get(url)
-                .done((response) => {
-                    document.getElementById('code').readOnly = true;
-                    $('#supplierModal [name=code]').val(response.code);
-                    $('#supplierModal [name=name]').val(response.name);
-                    $('#supplierModal [name=phone]').val(response.phone);
-                    $('#supplierModal [name=email]').val(response.email);
-                    $('#supplierModal [name=bank]').val(response.bank);
-                    $('#supplierModal [name=norek]').val(response.norek);
-                    $('#supplierModal [name=address]').val(response.address);
-                })
-                .fail((errors) => {
-                    alert('Tidak dapat menampilkan data');
-                    return;
-                });
-        }
-
-        function deleteData(url) {
-            Swal.fire({
-                title: 'Apakah Anda yakin ingin menghapus item ini?',
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Ya, hapus!',
-                cancelButtonText: 'Batal'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Jika pengguna mengkonfirmasi untuk menghapus item
-                    // Mengirim permintaan penghapusan menggunakan AJAX
-                    $.ajax({
-                        type: 'DELETE',
-                        data: {
-                            _token: '{{ csrf_token() }}'
-                        },
-                        success: function(result) {
-                            // Menampilkan pesan sukses jika item berhasil dihapus
-                            Swal.fire({
-                                title: 'Supplier berhasil dihapus',
-                                icon: 'success',
-                            });
-                            // Menghapus item dari daftar
-                            $('#example2' + $supplier - > id).remove();
-                        },
-                        error: function(result) {
-                            // Menampilkan pesan kesalahan jika terjadi masalah saat menghapus item
-                            Swal.fire({
-                                title: 'Terjadi kesalahan',
-                                text: 'Item tidak dapat dihapus. Silakan coba lagi nanti.',
-                                icon: 'error',
-                            });
-                        }
-                    });
-                }
-            });
-
-        };
     </script>
 @endpush

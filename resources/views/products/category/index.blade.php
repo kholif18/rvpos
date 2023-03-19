@@ -416,6 +416,70 @@
                 // Show modal form
                 $('#modal-form-unit').modal('show');
             });
+
+            // Handle ketika user meng-klik tombol hapus
+            $(document).on('click', '.delete-unit', function(event) {
+                event.preventDefault();
+
+                // Variable bantuan (Menghindari scope js)
+                const _this = $(this);
+
+                // Show confirmation
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        const httpUrl = _this.attr('data-url');
+                        const httpMethod = 'delete';
+                        const csrfToken = _this.attr('data-token');
+
+                        // Submit the form data using Ajax
+                        $.ajax({
+                            type: httpMethod,
+                            url: httpUrl,
+                            data: {
+                                "_token": csrfToken,
+                            },
+                            success: function(response) {
+                                // Do something with the response data
+                                console.log(response);
+                                if (response.status === 'success') {
+                                    Swal.fire({
+                                        title: response.message,
+                                        icon: 'success',
+                                        allowEscapeKey: true,
+                                        allowOutsideClick: true,
+                                        timer: 2000,
+                                        showConfirmButton: false,
+                                    }).then((result) => {
+                                        window.location.reload();
+                                    });
+                                }
+                            },
+                            error: function(xhr, status, error) {
+                                // Handle errors
+                                console.log(xhr.responseText);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Maaf, terjadi kesalahan',
+                                    text: 'Cek log untuk info detail',
+                                    toast: true,
+                                    position: 'top-end',
+                                    timer: 3500,
+                                    timerProgressBar: true,
+                                    showConfirmButton: false,
+                                });
+                            }
+                        });
+                    }
+                });
+            });
         });
     </script>
 @endpush

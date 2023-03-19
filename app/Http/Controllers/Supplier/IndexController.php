@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Products\Category;
+namespace App\Http\Controllers\Supplier;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
-use App\Models\Unit;
+use App\Models\Supplier;
 use Illuminate\View\View;
 
 class IndexController extends Controller
@@ -17,10 +16,9 @@ class IndexController extends Controller
     public function index(): View
     {
         $data = [
-            'categories' => Category::get(),
-            'units' => Unit::get(),
+            'suppliers' => Supplier::get(),
         ];
 
-        return view('products.category.index', $data);
+        return view('supplier.suppliers', $data);
     }
 }
