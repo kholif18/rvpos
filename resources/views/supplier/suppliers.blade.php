@@ -125,16 +125,26 @@
                     type: httpMethod,
                     url: httpUrl,
                     data: formData,
+                    beforSend: function() {
+                        $('#form-supplier').find('span.error-text').text('');
+                    },
                     success: function(response) {
                         // Do something with the response data
                         console.log(response);
-                        if (response.status === 'success') {
-                            $('#supplierTable').DataTable().ajax.reload(null, false).draw();
+                        if (response.status == '400') {
+                            $.each(response.error, function(prefix, val) {
+                                $('#supplierModal').find('span.' + prefix + '_error').text(val[0]);
+                                $('#form-supplier')[0].reset();
+                            });
+
+                        } else {
                             $('#supplierModal').modal('hide');
+                            $('#supplierTable').DataTable().ajax.reload(null, false).draw();
+                            $('#form-supplier')[0].reload();
                             toastr.success(response.message);
                         }
                     },
-                    error: function(xhr, status, error) {
+                    error: function(xhr, status, error, prefix, val) {
                         // Handle errors
                         console.log(xhr.responseText);
                         Swal.fire({
@@ -172,6 +182,7 @@
 
                 // Show modal form
                 $('#supplierModal').modal('show');
+                $(document).find('#form-supplier')[0].reset();
             });
 
             // Handle ketika user meng-klik tombol edit
@@ -206,6 +217,7 @@
 
                 // Show modal form
                 $('#supplierModal').modal('show');
+                $(document).find('#form-supplier')[0].reset();
             });
 
             // Handle ketika user meng-klik tombol hapus

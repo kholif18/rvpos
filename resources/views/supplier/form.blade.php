@@ -14,53 +14,49 @@
                         <div class="form-group row">
                             <label for="code" class="col-sm-3 col-form-label col-form-label-sm text-right">Code</label>
                             <div class="col-sm-9">
-                                <input type="text" name="code" class="form-control form-control-sm @error('code') is-invalid @enderror" autofocus>
-                                @error('code')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
+                                <input type="text" name="code" class="form-control form-control-sm" placeholder="SP001" autofocus>
+                                <span class="text-danger error-text code_error"></span>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="name" class="col-sm-3 col-form-label col-form-label-sm text-right">Supplier
                                 Name</label>
                             <div class="col-sm-9">
-                                <input type="text" name="name" class="form-control form-control-sm @error('name') is-invalid @enderror">
-                                @error('name')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
+                                <input type="text" name="name" class="form-control form-control-sm" placeholder="Nama Supplier">
+                                <span class="text-danger error-text name_error"></span>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="telp" class="col-sm-3 col-form-label col-form-label-sm text-right">Telp</label>
                             <div class="col-sm-9">
                                 <div class="input-group input-group-sm">
-                                    <input type="text" name="phone" class="form-control text-bold">
+                                    <input type="text" name="phone" class="form-control text-bold" placeholder="081234567899">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Email</label>
                             <div class="col-sm-9">
-                                <input type="email" name="email" class="form-control form-control-sm">
+                                <input type="email" name="email" class="form-control form-control-sm" placeholder="email@mail.com">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Bank</label>
                             <div class="col-sm-9">
-                                <input type="text" name="bank" class="form-control form-control-sm">
+                                <input type="text" name="bank" class="form-control form-control-sm" placeholder="BRI">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">No.
                                 Rek</label>
                             <div class="col-sm-9">
-                                <input type="text" name="norek" class="form-control form-control-sm">
+                                <input type="text" name="norek" class="form-control form-control-sm" placeholder="0111xxxxxxxxxxx">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Address</label>
                             <div class="col-sm-9">
-                                <input type="text" name="address" class="form-control form-control-sm">
+                                <input type="text" name="address" class="form-control form-control-sm" placeholder="Ngluyu, Nganjuk">
                             </div>
                         </div>
                     </div>
