@@ -24,7 +24,7 @@
                             <label for="name" class="col-sm-3 col-form-label col-form-label-sm text-right">Supplier
                                 Name</label>
                             <div class="col-sm-9">
-                                <input type="text" name="name" autofocus class="form-control form-control-sm @error('name') is-invalid @enderror">
+                                <input type="text" name="name" class="form-control form-control-sm @error('name') is-invalid @enderror">
                                 @error('name')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror

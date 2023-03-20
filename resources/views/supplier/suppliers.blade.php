@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card-body table-responsive p-0" style="height: 69vh;">
-                        <table id="example2" class="table table-head-fixed text-nowrap table-striped table-sm">
+                        <table id="supplierTable" class="table table-head-fixed text-nowrap table-striped table-sm">
                             <thead>
                                 <tr>
                                     <th style="width: 100px">Code</th>
@@ -42,35 +42,6 @@
                                     <th style="width: 200px">Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                @foreach ($suppliers as $supplier)
-                                    <tr>
-                                        <td>{{ $supplier->code }}</td>
-                                        <td>{{ $supplier->name }}</td>
-                                        <td>{{ $supplier->phone }}</td>
-                                        <td>{{ $supplier->email }}</td>
-                                        <td>{{ $supplier->bank }}</td>
-                                        <td>{{ $supplier->norek }}</td>
-                                        <td>{{ $supplier->address }}</td>
-                                        <td>
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <a href="#" class="btn btn-info btn-sm btn-block edit-supplier" data-url="{{ route('supplier.save', ['supplier' => $supplier->id]) }}"
-                                                        data-fetch-url="{{ route('supplier.detail', ['supplier' => $supplier->id]) }}">
-                                                        <i class="fas fa-edit"></i> Edit
-                                                    </a>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <a href="#" class="btn btn-danger btn-sm btn-block delete-supplier" data-url="{{ route('supplier.delete', ['supplier' => $supplier->id]) }}"
-                                                        data-token="{{ csrf_token() }}">
-                                                        <i class="fas fa-trash-alt"></i> Delete
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -80,13 +51,67 @@
     </div>
 
     {{-- modal Add Supplier --}}
-    {{-- @include('supplier.addsupplierform') --}}
     @include('supplier.form')
 @endsection
 
 @push('scripts')
     <script>
+        let Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000
+        });
+
         $(document).ready(function() {
+            $('#supplierTable').DataTable({
+                "paging": true,
+                "ordering": true,
+                "info": true,
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "searching": false,
+                processing: true,
+                serverSide: true,
+                ajax: "{{ route('supplier.loadDataTable') }}",
+                columns: [{
+                        data: 'code',
+                        name: 'code'
+                    },
+                    {
+                        data: 'name',
+                        name: 'name'
+                    },
+                    {
+                        data: 'phone',
+                        name: 'phone'
+                    },
+                    {
+                        data: 'email',
+                        name: 'email'
+                    },
+                    {
+                        data: 'bank',
+                        name: 'bank'
+                    },
+                    {
+                        data: 'norek',
+                        name: 'norek'
+                    },
+                    {
+                        data: 'address',
+                        name: 'address'
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
+                        orderable: false,
+                        searchable: false
+                    }
+                ]
+            });
+
             // Handle submit form (Tambah Supplier & Update Supplier)
             $(document).on('submit', '#form-supplier', function(event) {
                 event.preventDefault();
@@ -104,16 +129,9 @@
                         // Do something with the response data
                         console.log(response);
                         if (response.status === 'success') {
-                            Swal.fire({
-                                title: response.message,
-                                icon: 'success',
-                                allowEscapeKey: true,
-                                allowOutsideClick: true,
-                                timer: 2000,
-                                showConfirmButton: false,
-                            }).then((result) => {
-                                window.location.reload();
-                            });
+                            $('#supplierTable').DataTable().ajax.reload(null, false).draw();
+                            $('#supplierModal').modal('hide');
+                            toastr.success(response.message);
                         }
                     },
                     error: function(xhr, status, error) {
@@ -223,6 +241,8 @@
                                 // Do something with the response data
                                 console.log(response);
                                 if (response.status === 'success') {
+                                    $('#supplierTable').DataTable().ajax.reload(null, false).draw();
+                                    $('#supplierModal').modal('hide');
                                     Swal.fire({
                                         title: response.message,
                                         icon: 'success',
@@ -230,8 +250,6 @@
                                         allowOutsideClick: true,
                                         timer: 2000,
                                         showConfirmButton: false,
-                                    }).then((result) => {
-                                        window.location.reload();
                                     });
                                 }
                             },

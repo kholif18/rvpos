@@ -120,6 +120,7 @@ Route::post('/kas/add', [AddKasController::class, 'addkas']);
 //Supplier -----------------------------------------------------------------------
 
 Route::get('/supplier', [SupplierIndexController::class, 'index'])->name('supplier');
+Route::get('/supplier/dataTable', [SupplierIndexController::class, 'loadDataTable'])->name('supplier.loadDataTable');
 
 Route::get('/ajax/{supplier}', [SupplierAjaxDetailController::class, 'get'])->name('supplier.detail');
 Route::post('/ajax', [SupplierAjaxStoreController::class, 'store'])->name('supplier.store');
