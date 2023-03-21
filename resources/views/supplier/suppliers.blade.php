@@ -112,6 +112,10 @@
                 ]
             });
 
+            // Temukan input yang akan dipvalidasi
+            const inputName = document.querySelector('input[name="name"]');
+            const inputCode = document.querySelector('input[name="code"]');
+
             // Handle submit form (Tambah Supplier & Update Supplier)
             $(document).on('submit', '#form-supplier', function(event) {
                 event.preventDefault();
@@ -131,16 +135,14 @@
                     success: function(response) {
                         // Do something with the response data
                         console.log(response);
-                        if (response.status == '400') {
+                        if (response.status == 400) {
                             $.each(response.error, function(prefix, val) {
-                                $('#supplierModal').find('span.' + prefix + '_error').text(val[0]);
-                                $('#form-supplier')[0].reset();
+                                $('#form-supplier').find('span.' + prefix + '_error').text(val[0]);
                             });
-
                         } else {
                             $('#supplierModal').modal('hide');
                             $('#supplierTable').DataTable().ajax.reload(null, false).draw();
-                            $('#form-supplier')[0].reload();
+                            $('#form-supplier')[0].reset();
                             toastr.success(response.message);
                         }
                     },
@@ -172,7 +174,7 @@
                 $('#supplierModal .modal-title').text('Add supplier');
 
                 // Reset form input from previous
-                $(document).find('#form-supplier input[name="code"]').val('');
+                $(document).find('#form-supplier input[name="code"]').val('').prop('readonly', false);
                 $(document).find('#form-supplier input[name="name"]').val('');
                 $(document).find('#form-supplier input[name="phone"]').val('');
                 $(document).find('#form-supplier input[name="email"]').val('');
@@ -180,14 +182,48 @@
                 $(document).find('#form-supplier input[name="norek"]').val('');
                 $(document).find('#form-supplier input[name="address"]').val('');
 
+                document.querySelectorAll('.code_error, .name_error').forEach(function(el) {
+                    el.innerHTML = '';
+                });
+
+                inputName.addEventListener('input', function() {
+                    if (this.value.trim() !== '') {
+                        // Jika nilai input sudah valid, hapus pesan kesalahan
+                        document.querySelector('.name_error').innerHTML = '';
+                    }
+                });
+
+                inputCode.addEventListener('input', function() {
+                    if (this.value.trim() !== '') {
+                        // Jika nilai input sudah valid, hapus pesan kesalahan
+                        document.querySelector('.code_error').innerHTML = '';
+                    }
+                });
+
                 // Show modal form
                 $('#supplierModal').modal('show');
-                $(document).find('#form-supplier')[0].reset();
             });
 
             // Handle ketika user meng-klik tombol edit
             $(document).on('click', '.edit-supplier', function(event) {
                 event.preventDefault();
+                document.querySelectorAll('.code_error, .name_error').forEach(function(el) {
+                    el.innerHTML = '';
+                });
+
+                inputName.addEventListener('input', function() {
+                    if (this.value.trim() !== '') {
+                        // Jika nilai input sudah valid, hapus pesan kesalahan
+                        document.querySelector('.name_error').innerHTML = '';
+                    }
+                });
+
+                inputCode.addEventListener('input', function() {
+                    if (this.value.trim() !== '') {
+                        // Jika nilai input sudah valid, hapus pesan kesalahan
+                        document.querySelector('.code_error').innerHTML = '';
+                    }
+                });
 
                 // Set url action to edit
                 const httpUrl = $(this).attr('data-url');
@@ -204,7 +240,7 @@
                         console.log(response);
                         if (response.status === 'success') {
                             const data = response.data;
-                            $(document).find('#form-supplier input[name="code"]').val(data.code);
+                            $(document).find('#form-supplier input[name="code"]').val(data.code).prop('readonly', true);
                             $(document).find('#form-supplier input[name="name"]').val(data.name);
                             $(document).find('#form-supplier input[name="phone"]').val(data.phone);
                             $(document).find('#form-supplier input[name="email"]').val(data.email);
@@ -217,7 +253,6 @@
 
                 // Show modal form
                 $('#supplierModal').modal('show');
-                $(document).find('#form-supplier')[0].reset();
             });
 
             // Handle ketika user meng-klik tombol hapus
@@ -254,7 +289,6 @@
                                 console.log(response);
                                 if (response.status === 'success') {
                                     $('#supplierTable').DataTable().ajax.reload(null, false).draw();
-                                    $('#supplierModal').modal('hide');
                                     Swal.fire({
                                         title: response.message,
                                         icon: 'success',

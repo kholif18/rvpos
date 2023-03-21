@@ -23,7 +23,7 @@ class DeleteController extends Controller
 
         return response()->json([
             'status' => 'success',
-            'message' => 'Data kategori berhasil dihapus.'
+            'message' => 'Data supplier berhasil dihapus.'
         ]);
     }
 }

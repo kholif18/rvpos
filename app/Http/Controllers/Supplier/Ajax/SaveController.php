@@ -20,20 +20,23 @@ class SaveController extends Controller
      */
     public function save(Supplier $supplier, Request $request): JsonResponse
     {
-        // $validator = Validator::make($request->all(), [
-        //     'code' => 'required|unique:suppliers',
-        //     'name' => 'required',
-        // ], [
-        //     'code.required' => 'Code telah digunakan!',
-        //     'name.required' => 'Nama supplier wajib diisi!',
+        $rules = [
+            'name' => 'required',
+        ];
 
-        // ]);
-        // if ($validator->fails()) {
-        //     return response()->json([
-        //         'status'    =>  400,
-        //         'error'     =>  $validator->errors()->toArray(),
-        //     ]);
-        // } else {
+        $messages = [
+            'name.required' => 'Kolom nama harus diisi',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status'    =>  400,
+                'error'     =>  $validator->errors()->toArray(),
+            ]);
+        }
+
         $code = $request->input('code');
         $name = $request->input('name');
         $phone = $request->input('phone');
