@@ -14,7 +14,7 @@
                         <div class="form-group row">
                             <label for="code" class="col-sm-3 col-form-label col-form-label-sm text-right">Code</label>
                             <div class="col-sm-9">
-                                <input type="text" name="code" class="form-control form-control-sm " placeholder="SP001" value="{{ old('code') }}" autofocus>
+                                <input type="text" id="code" name="code" class="form-control form-control-sm" readonly>
                                 <span class="text-danger text-sm error-text code_error"></span>
                             </div>
                         </div>

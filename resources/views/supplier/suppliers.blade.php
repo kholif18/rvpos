@@ -63,6 +63,7 @@
             timer: 2000
         });
 
+        //---------------------------------------script reload tabel-------------------------------------------
         $(document).ready(function() {
             $('#supplierTable').DataTable({
                 "paging": true,
@@ -112,6 +113,36 @@
                 ]
             });
 
+            //--------------------------------------------membuat prefix input code otomatis--------------------------------
+            let lastCode = ''; // variable untuk menyimpan nomor urut terakhir
+
+            // melakukan request ke database untuk mendapatkan data terakhir
+            // contoh menggunakan jQuery Ajax
+            $.ajax({
+                url: "{{ route('supplier.getlastcode') }}",
+                type: 'GET',
+                success: function(response) {
+                    lastCode = response.lastCode; // menyimpan nomor urut terakhir dari response
+                },
+                error: function() {
+                    console.log('Error: tidak dapat mengambil data terakhir dari database.');
+                }
+            });
+
+            console.log(lastCode);
+            let prefix = "SP"; // ganti dengan prefix yang diinginkan
+            let lastNumber = parseInt(lastCode.substr(2));
+            let newNumber = lastNumber + 1;
+            let count = 0;
+
+            function generateCode() {
+                let codeNumber = newNumber.toString().padStart(3, '0');
+                let code = prefix + codeNumber;
+                count++;
+                return code;
+            }
+
+            //------------------------------------------pengelolaan tabel (add, edit dan delete)---------------------------------
             // Temukan input yang akan dipvalidasi
             const inputName = document.querySelector('input[name="name"]');
             const inputCode = document.querySelector('input[name="code"]');
@@ -174,7 +205,8 @@
                 $('#supplierModal .modal-title').text('Add supplier');
 
                 // Reset form input from previous
-                $(document).find('#form-supplier input[name="code"]').val('').prop('readonly', false);
+                $(document).find('#form-supplier input[name="code"]').val('');
+                //document.getElementById('code').value = code;
                 $(document).find('#form-supplier input[name="name"]').val('');
                 $(document).find('#form-supplier input[name="phone"]').val('');
                 $(document).find('#form-supplier input[name="email"]').val('');
@@ -240,7 +272,7 @@
                         console.log(response);
                         if (response.status === 'success') {
                             const data = response.data;
-                            $(document).find('#form-supplier input[name="code"]').val(data.code).prop('readonly', true);
+                            $(document).find('#form-supplier input[name="code"]').val(data.code);
                             $(document).find('#form-supplier input[name="name"]').val(data.name);
                             $(document).find('#form-supplier input[name="phone"]').val(data.phone);
                             $(document).find('#form-supplier input[name="email"]').val(data.email);

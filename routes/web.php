@@ -33,6 +33,7 @@ use App\Http\Controllers\Report\StockInOut\StockInOutController;
 use App\Http\Controllers\Sales\SalesController;
 use App\Http\Controllers\Setting\AddSettingController;
 use App\Http\Controllers\Setting\SettingController;
+use App\Http\Controllers\Supplier\CodeController;
 use App\Http\Controllers\Supplier\SuppliersController;
 use App\Http\Controllers\Transaction\Debt\DebtController;
 use App\Http\Controllers\Transaction\Debt\DebtPayController;
@@ -121,6 +122,8 @@ Route::post('/kas/add', [AddKasController::class, 'addkas']);
 
 Route::get('/supplier', [SupplierIndexController::class, 'index'])->name('supplier');
 Route::get('/supplier/dataTable', [SupplierIndexController::class, 'loadDataTable'])->name('supplier.loadDataTable');
+Route::get('/supplier/getlastcode', [CodeController::class, 'getLastCode'])->name('supplier.getlastcode');
+
 
 Route::get('/ajax/{supplier}', [SupplierAjaxDetailController::class, 'get'])->name('supplier.detail');
 Route::post('/ajax', [SupplierAjaxStoreController::class, 'store'])->name('supplier.store');
