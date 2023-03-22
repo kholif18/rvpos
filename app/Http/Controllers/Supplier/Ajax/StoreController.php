@@ -20,14 +20,10 @@ class StoreController extends Controller
     public function store(Request $request): JsonResponse
     {
         $rules = [
-            'code' => 'required|unique:suppliers|min:5',
             'name' => 'required',
         ];
 
         $messages = [
-            'code.required' => 'Code harus diisi',
-            'code.min' => 'Code minimal 5 dengan prefix depan SPxxx',
-            'code.unique' => 'Code sudah digunakan',
             'name.required' => 'Kolom nama harus diisi',
         ];
 

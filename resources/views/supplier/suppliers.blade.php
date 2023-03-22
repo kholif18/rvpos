@@ -113,39 +113,9 @@
                 ]
             });
 
-            //--------------------------------------------membuat prefix input code otomatis--------------------------------
-            let lastCode = ''; // variable untuk menyimpan nomor urut terakhir
-
-            // melakukan request ke database untuk mendapatkan data terakhir
-            // contoh menggunakan jQuery Ajax
-            $.ajax({
-                url: "{{ route('supplier.getlastcode') }}",
-                type: 'GET',
-                success: function(response) {
-                    lastCode = response.lastCode; // menyimpan nomor urut terakhir dari response
-                },
-                error: function() {
-                    console.log('Error: tidak dapat mengambil data terakhir dari database.');
-                }
-            });
-
-            console.log(lastCode);
-            let prefix = "SP"; // ganti dengan prefix yang diinginkan
-            let lastNumber = parseInt(lastCode.substr(2));
-            let newNumber = lastNumber + 1;
-            let count = 0;
-
-            function generateCode() {
-                let codeNumber = newNumber.toString().padStart(3, '0');
-                let code = prefix + codeNumber;
-                count++;
-                return code;
-            }
-
             //------------------------------------------pengelolaan tabel (add, edit dan delete)---------------------------------
             // Temukan input yang akan dipvalidasi
             const inputName = document.querySelector('input[name="name"]');
-            const inputCode = document.querySelector('input[name="code"]');
 
             // Handle submit form (Tambah Supplier & Update Supplier)
             $(document).on('submit', '#form-supplier', function(event) {
@@ -175,6 +145,7 @@
                             $('#supplierTable').DataTable().ajax.reload(null, false).draw();
                             $('#form-supplier')[0].reset();
                             toastr.success(response.message);
+                            $('#code').val();
                         }
                     },
                     error: function(xhr, status, error, prefix, val) {
@@ -205,9 +176,8 @@
                 $('#supplierModal .modal-title').text('Add supplier');
 
                 // Reset form input from previous
-                $(document).find('#form-supplier input[name="code"]').val('');
-                //document.getElementById('code').value = code;
-                $(document).find('#form-supplier input[name="name"]').val('');
+                $(document).find('#form-supplier input[name="code"]').val('{{ $noCode }}');
+                $(document).find('#form-supplier input[name="name"]').val('').focus();
                 $(document).find('#form-supplier input[name="phone"]').val('');
                 $(document).find('#form-supplier input[name="email"]').val('');
                 $(document).find('#form-supplier input[name="bank"]').val('');
@@ -222,13 +192,6 @@
                     if (this.value.trim() !== '') {
                         // Jika nilai input sudah valid, hapus pesan kesalahan
                         document.querySelector('.name_error').innerHTML = '';
-                    }
-                });
-
-                inputCode.addEventListener('input', function() {
-                    if (this.value.trim() !== '') {
-                        // Jika nilai input sudah valid, hapus pesan kesalahan
-                        document.querySelector('.code_error').innerHTML = '';
                     }
                 });
 
@@ -247,13 +210,6 @@
                     if (this.value.trim() !== '') {
                         // Jika nilai input sudah valid, hapus pesan kesalahan
                         document.querySelector('.name_error').innerHTML = '';
-                    }
-                });
-
-                inputCode.addEventListener('input', function() {
-                    if (this.value.trim() !== '') {
-                        // Jika nilai input sudah valid, hapus pesan kesalahan
-                        document.querySelector('.code_error').innerHTML = '';
                     }
                 });
 

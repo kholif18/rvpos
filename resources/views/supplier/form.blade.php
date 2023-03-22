@@ -15,14 +15,13 @@
                             <label for="code" class="col-sm-3 col-form-label col-form-label-sm text-right">Code</label>
                             <div class="col-sm-9">
                                 <input type="text" id="code" name="code" class="form-control form-control-sm" readonly>
-                                <span class="text-danger text-sm error-text code_error"></span>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="name" class="col-sm-3 col-form-label col-form-label-sm text-right">Supplier
                                 Name</label>
                             <div class="col-sm-9">
-                                <input type="text" name="name" class="form-control form-control-sm" value="{{ old('name') }}"placeholder="Nama Supplier">
+                                <input type="text" id="name" name="name" class="form-control form-control-sm" value="{{ old('name') }}" placeholder="Nama Supplier" autofocus>
                                 <span class="text-danger text-sm error-text name_error"></span>
                             </div>
                         </div>
