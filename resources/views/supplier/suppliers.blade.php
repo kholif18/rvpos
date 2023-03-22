@@ -145,7 +145,6 @@
                             $('#supplierTable').DataTable().ajax.reload(null, false).draw();
                             $('#form-supplier')[0].reset();
                             toastr.success(response.message);
-                            $('#code').val();
                         }
                     },
                     error: function(xhr, status, error, prefix, val) {
@@ -176,7 +175,13 @@
                 $('#supplierModal .modal-title').text('Add supplier');
 
                 // Reset form input from previous
-                $(document).find('#form-supplier input[name="code"]').val('{{ $noCode }}');
+                $.ajax({
+                    url: "{{ route('supplier.code') }}",
+                    type: 'GET',
+                    success: function(response) {
+                        $('#code').val(response.noCode); // Perbarui nilai input field pada form modal
+                    }
+                });
                 $(document).find('#form-supplier input[name="name"]').val('').focus();
                 $(document).find('#form-supplier input[name="phone"]').val('');
                 $(document).find('#form-supplier input[name="email"]').val('');

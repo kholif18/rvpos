@@ -1,11 +1,11 @@
     {{-- Modal --}}
-    <div class="modal fade" id="addCustomer">
+    <div class="modal fade" id="customerModal">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <form action="{{ url('/products/add-customer') }}" class="form-horizontal" method="post">
+                <form id="form-customer" action="{{ route('customer.store') }}" class="form-horizontal" method="post">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="modal-header">
-                        <h4 class="modal-title">Add Customer</h4>
+                        <h4 class="modal-title"></h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -14,47 +14,49 @@
                         <div class="form-group row">
                             <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Code</label>
                             <div class="col-sm-9">
-                                <input type="text" name="code" class="form-control form-control-sm" value="CS007">
+                                <input type="text" id="code" name="code" class="form-control form-control-sm">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Customer
-                                Name</label>
+                                Name *</label>
                             <div class="col-sm-9">
-                                <input type="text" name="name" autofocus class="form-control form-control-sm">
+                                <input type="text" id="name" name="name" class="form-control form-control-sm" value="{{ old('name') }}" placeholder="Nama Customer" autofocus>
+                                <span class="text-danger text-sm error-text"></span>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label col-form-label-sm text-right">Telp</label>
+                            <label class="col-sm-3 col-form-label col-form-label-sm text-right">Telp *</label>
                             <div class="col-sm-9">
-                                <div class="input-group input-group-sm">
-                                    <input type="text" name="telp" class="form-control text-bold">
-                                </div>
+                                <input type="text" id="telp" name="telp" class="form-control form-control-sm" value="{{ old('telp') }}" placeholder="081234567899">
+                                <span class="text-danger text-sm error-text"></span>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Email</label>
                             <div class="col-sm-9">
-                                <input type="text" name="email" class="form-control form-control-sm">
+                                <input type="text" name="email" class="form-control form-control-sm" placeholder="email@mail.com">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Address</label>
+                            <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Address *</label>
                             <div class="col-sm-9">
-                                <input type="text" name="address" class="form-control form-control-sm">
+                                <input type="text" id="address" name="address" class="form-control form-control-sm" placeholder="Ngluyu, Nganjuk">
+                                <span class="text-danger text-sm error-text"></span>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Status</label>
+                            <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Status *</label>
                             <div class="col-sm-9">
                                 <input type="text" name="status" class="form-control form-control-sm">
+                                <span class="text-danger text-sm error-text"></span>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Member
-                                Discount</label>
+                                Discount *</label>
                             <div class="col-sm-9">
-                                <input type="text" name="memdisc" class="form-control form-control-sm" value="0">
+                                <input type="text" name="memdisc" class="form-control form-control-sm">
                             </div>
                         </div>
                         <div class="form-group row">

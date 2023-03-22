@@ -78,6 +78,9 @@
 
     <!-- jQuery -->
     <script src="{{ asset('template/plugins/jquery/jquery.min.js') }}"></script>
+    <!-- jquery-validation -->
+    <script src="{{ asset('template/plugins/jquery-validation/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('template/plugins/jquery-validation/additional-methods.min.js') }}"></script>
     <!-- Bootstrap 4 -->
     <script src="{{ asset('template/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->

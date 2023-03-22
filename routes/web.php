@@ -5,10 +5,12 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Kas\AddKasController;
 use App\Http\Controllers\Kas\KasController;
 use App\Http\Controllers\Login\LoginController;
+
 use App\Http\Controllers\Products\Category\Ajax\DetailController as CategoryAjaxDetailController;
 use App\Http\Controllers\Products\Category\Ajax\StoreController as CategoryAjaxStoreController;
 use App\Http\Controllers\Products\Category\Ajax\SaveController as CategoryAjaxSaveController;
 use App\Http\Controllers\Products\Category\Ajax\DeleteController as CategoryAjaxDeleteController;
+
 use App\Http\Controllers\Products\Unit\Ajax\DetailController as UnitAjaxDetailController;
 use App\Http\Controllers\Products\Unit\Ajax\StoreController as UnitAjaxStoreController;
 use App\Http\Controllers\Products\Unit\Ajax\SaveController as UnitAjaxSaveController;
@@ -20,6 +22,13 @@ use App\Http\Controllers\Supplier\Ajax\StoreController as SupplierAjaxStoreContr
 use App\Http\Controllers\Supplier\Ajax\SaveController as SupplierAjaxSaveController;
 use App\Http\Controllers\Supplier\Ajax\DeleteController as SupplierAjaxDeleteController;
 use App\Http\Controllers\Supplier\IndexController as SupplierIndexController;
+
+use App\Http\Controllers\Customers\Ajax\DetailController as CustomersAjaxDetailController;
+use App\Http\Controllers\Customers\Ajax\StoreController as CustomersAjaxStoreController;
+use App\Http\Controllers\Customers\Ajax\SaveController as CustomersAjaxSaveController;
+use App\Http\Controllers\Customers\Ajax\DeleteController as CustomersAjaxDeleteController;
+use App\Http\Controllers\Customers\IndexController as CustomersIndexController;
+
 use App\Http\Controllers\Products\Products\ProductsController;
 use App\Http\Controllers\Products\StockOpname\StockOpnameController;
 use App\Http\Controllers\Products\StockOut\AddStockOutController;
@@ -121,18 +130,28 @@ Route::post('/kas/add', [AddKasController::class, 'addkas']);
 //Supplier -----------------------------------------------------------------------
 
 Route::get('/supplier', [SupplierIndexController::class, 'index'])->name('supplier');
+Route::get('/supplier/code', [SupplierIndexController::class, 'supplierCode'])->name('supplier.code');
 Route::get('/supplier/dataTable', [SupplierIndexController::class, 'loadDataTable'])->name('supplier.loadDataTable');
 
-Route::get('/ajax/{supplier}', [SupplierAjaxDetailController::class, 'get'])->name('supplier.detail');
-Route::post('/ajax', [SupplierAjaxStoreController::class, 'store'])->name('supplier.store');
-Route::put('/ajax/{supplier}', [SupplierAjaxSaveController::class, 'save'])->name('supplier.save');
-Route::delete('/ajax/{supplier}', [SupplierAjaxDeleteController::class, 'delete'])->name('supplier.delete');
+Route::get('/supplier/ajax/{supplier}', [SupplierAjaxDetailController::class, 'get'])->name('supplier.detail');
+Route::post('/supplier/ajax', [SupplierAjaxStoreController::class, 'store'])->name('supplier.store');
+Route::put('/supplier/ajax/{supplier}', [SupplierAjaxSaveController::class, 'save'])->name('supplier.save');
+Route::delete('/supplier/ajax/{supplier}', [SupplierAjaxDeleteController::class, 'delete'])->name('supplier.delete');
 
 //Customer -----------------------------------------------------------------------
 
-Route::get('/customers', [CustomersController::class, 'index'])->name('customer');
-Route::post('/products/add-customer', [CustomersController::class, 'store'])->name('customer.add');
-Route::delete('/customer/{id}', [CustomersController::class, 'destroy'])->name('customer.destroy');
+Route::get('/customer', [CustomersIndexController::class, 'index'])->name('customer');
+Route::get('/customer/code', [CustomersIndexController::class, 'customerCode'])->name('customer.code');
+Route::get('/customer/dataTable', [CustomersIndexController::class, 'loadDataTable'])->name('customer.loadDataTable');
+
+Route::get('/customer/ajax/{customer}', [CustomersAjaxDetailController::class, 'get'])->name('customer.detail');
+Route::post('/customer/ajax', [CustomersAjaxStoreController::class, 'store'])->name('customer.store');
+Route::put('/customer/ajax/{customer}', [CustomersAjaxSaveController::class, 'save'])->name('customer.save');
+Route::delete('/customer/ajax/{customer}', [CustomersAjaxDeleteController::class, 'delete'])->name('customer.delete');
+
+// Route::get('/customers', [CustomersController::class, 'index'])->name('customer');
+// Route::post('/products/add-customer', [CustomersController::class, 'store'])->name('customer.add');
+// Route::delete('/customer/{id}', [CustomersController::class, 'destroy'])->name('customer.destroy');
 
 //Reposrt -----------------------------------------------------------------------
 

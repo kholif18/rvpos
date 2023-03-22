@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Supplier;
+namespace App\Http\Controllers\Customers;
 
-use App\Models\Supplier;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\Customer;
 use Yajra\DataTables\Facades\DataTables;
 
 class IndexController extends Controller
@@ -18,34 +18,34 @@ class IndexController extends Controller
     public function index(): View
     {
         $data = [
-            'suppliers' => Supplier::get(),
+            'customers' => Customer::get(),
         ];
 
-        return view('supplier.suppliers', $data);
+        return view('customers.customers', $data);
     }
 
-    public function supplierCode()
+    public function customerCode()
     {
 
-        $check = DB::table('suppliers')->count();
+        $check = DB::table('customers')->count();
         if ($check == 0) {
             $number = 1;
         } else {
-            $lastNumber = Supplier::all()->last();
+            $lastNumber = Customer::all()->last();
             $number = (int)substr($lastNumber->code, -3) + 1;
         }
-        $noCode = 'SP' . sprintf('%03d', $number);
+        $noCode = 'CS' . sprintf('%03d', $number);
 
         return response()->json(['noCode' => $noCode]);
     }
 
     public function loadDataTable()
     {
-        $suppliers = Supplier::query();
+        $customer = Customer::query();
 
-        return DataTables::of($suppliers)
-            ->addColumn('action', function ($supplier) {
-                return view('supplier.button')->with('supplier', $supplier);
+        return DataTables::of($customer)
+            ->addColumn('action', function ($customer) {
+                return view('customers.button')->with('customers', $customer);
             })
             ->make(true);
     }
