@@ -1,10 +1,10 @@
-<div class="modal fade" id="modal-add-product">
+<div class="modal fade" id="modal-form-product">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <form action="{{ url('/products/add-product') }}" class="form-horizontal" method="post">
+            <form id="form-product" action="{{ route('products.products.ajax.store') }}" class="form-horizontal" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="modal-header">
-                    <h4 class="modal-title">Add New Product</h4>
+                    <h4 class="modal-title"></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -14,7 +14,7 @@
                         <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Product
                             Code</label>
                         <div class="col-sm-9">
-                            <input type="text" id="number" name="code" class="form-control form-control-sm" value="{{ old('number') ?? $product->number }}" required>
+                            <input type="text" id="code" name="code" class="form-control form-control-sm" value="{{ old('code') ?? $product->number }}" required>
                             {{-- <input type="text" class="form-control" id="number" name="number" value="{{ old('number') ?? $product->number }}" readonly> --}}
                         </div>
                     </div>

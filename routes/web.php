@@ -6,6 +6,12 @@ use App\Http\Controllers\Kas\AddKasController;
 use App\Http\Controllers\Kas\KasController;
 use App\Http\Controllers\Login\LoginController;
 
+use App\Http\Controllers\Products\Products\IndexController as ProductsIndexController;
+use App\Http\Controllers\Products\Products\Ajax\StoreController as ProductsAjaxStoreController;
+use App\Http\Controllers\Products\Products\Ajax\SaveController as ProductsAjaxSaveController;
+use App\Http\Controllers\Products\Products\Ajax\DetailController as ProductsAjaxDetailController;
+use App\Http\Controllers\Products\Products\Ajax\DeleteController as ProductsAjaxDeleteController;
+
 use App\Http\Controllers\Products\Category\Ajax\DetailController as CategoryAjaxDetailController;
 use App\Http\Controllers\Products\Category\Ajax\StoreController as CategoryAjaxStoreController;
 use App\Http\Controllers\Products\Category\Ajax\SaveController as CategoryAjaxSaveController;
@@ -84,15 +90,26 @@ Route::get('/purchases/list-purchases', [ListPurchasesController::class, 'index'
 
 //Products -----------------------------------------------------------------------
 
-Route::get('/products/products', [ProductsController::class, 'index'])->name('products');
-Route::post('/products/add-product', [ProductsController::class, 'store'])->name('product.add');
-Route::post('/products/show', [ProductsController::class, 'show'])->name('product.show');
-Route::delete('/products/product/{id}', [ProductsController::class, 'destroy'])->name('product.delete');
+// Route::get('/products/products', [ProductsController::class, 'index'])->name('products');
+// Route::post('/products/add-product', [ProductsController::class, 'store'])->name('product.add');
+// Route::post('/products/show', [ProductsController::class, 'show'])->name('product.show');
+// Route::delete('/products/product/{id}', [ProductsController::class, 'destroy'])->name('product.delete');
 
 Route::group([
     'prefix' => '/products',
     'as' => 'products.',
 ], function () {
+    Route::get('/products', [ProductsIndexController::class, 'index'])->name('products.index');
+    Route::group([
+        'prefix' => '/products',
+        'as' => 'products.ajax.',
+    ], function () {
+        Route::get('/ajax/{product}', [ProductsAjaxDetailController::class, 'get'])->name('detail');
+        Route::post('/ajax', [ProductsAjaxStoreController::class, 'store'])->name('store');
+        Route::put('/ajax/{product}', [ProductsAjaxSaveController::class, 'save'])->name('save');
+        Route::delete('/ajax/{product}', [ProductsAjaxDeleteController::class, 'delete'])->name('delete');
+    });
+
     Route::get('/category-unit', [CategoryIndexController::class, 'index'])->name('category-unit.index');
 
     Route::group([

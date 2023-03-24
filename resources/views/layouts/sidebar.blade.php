@@ -100,7 +100,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ url('/products/products') }}" class="nav-link {{ Request::is('products/products') ? 'active' : '' }}">
+                            <a href="{{ route('products.products.index') }}" class="nav-link {{ Request::is('products/products') ? 'active' : '' }}">
                                 <i class="nav-icon far fa-circle text-info"></i>
                                 <p>Products</p>
                             </a>

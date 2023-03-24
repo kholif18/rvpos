@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Validator;
 class SaveController extends Controller
 {
     /**
-     * Memperbarui data kategori kedalam database
+     * Memperbarui data customer kedalam database
      *
      * @param Customers $customers
      * @param Request $request

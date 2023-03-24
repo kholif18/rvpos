@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class DetailController extends Controller
 {
     /**
-     * Menampilkan data kategori dari database
+     * Menampilkan data customer dari database
      *
      * @param Customer $customer
      * @param Request $request

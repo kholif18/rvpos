@@ -17,10 +17,8 @@ class StoreController extends Controller
         $categories = Category::all();
         // ambil semua unit untuk menampilkan pada form
         $categories = Unit::all();
-        // buat objek product baru dengan nilai default
-        $product = new Product;
         // kirim objek product dan kategori ke view
-        return view('products.create', compact('product', 'categories'));
+        return view('products.products.products', compact('product', 'categories'));
     }
 
     public function store(Request $request): JsonResponse
@@ -46,7 +44,7 @@ class StoreController extends Controller
         $product->sale_price = $sale_price;
 
         // panggil method generateNumber() pada objek product
-        $product->generateNumber();
+        // $product->generateNumber();
 
         $product->save();
 

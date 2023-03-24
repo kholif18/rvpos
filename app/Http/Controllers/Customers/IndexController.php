@@ -11,7 +11,7 @@ use Yajra\DataTables\Facades\DataTables;
 class IndexController extends Controller
 {
     /**
-     * Menampilkan daftar kategori dan unit produk
+     * Menampilkan daftar customer
      *
      * @return View
      */
