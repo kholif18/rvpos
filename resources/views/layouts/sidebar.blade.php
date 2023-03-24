@@ -138,7 +138,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('customer') }}" class="nav-link {{ Request::is('customers') ? 'active' : '' }}">
+                    <a href="{{ route('customer') }}" class="nav-link {{ Request::is('customer') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-users"></i>
                         <p>Customers</p>
                     </a>
