@@ -51,4 +51,31 @@ class Product extends Model
     {
         return $this->belongsTo(Unit::class);
     }
+
+    //----------prefix code Product------------------
+
+    public function getLastNumber()
+    {
+        $lastProduct = $this->where('category_id', $this->category_id)
+            ->orderBy('number', 'desc')
+            ->first();
+        return $lastProduct ? $lastProduct->number : 0;
+    }
+
+    public function generateNumber()
+    {
+        $prefix = $this->category->prefix;
+        $lastNumber = $this->getLastNumber();
+        $newNumber = $lastNumber + 1;
+        return $prefix . '-' . sprintf('%04d', $newNumber);
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            $model->number = $model->generateNumber();
+        });
+    }
 }

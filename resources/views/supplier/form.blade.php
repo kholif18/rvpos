@@ -19,7 +19,7 @@
                         </div>
                         <div class="form-group row">
                             <label for="name" class="col-sm-3 col-form-label col-form-label-sm text-right">Supplier
-                                Name</label>
+                                Name *</label>
                             <div class="col-sm-9">
                                 <input type="text" id="name" name="name" class="form-control form-control-sm" value="{{ old('name') }}" placeholder="Nama Supplier" autofocus>
                                 <span class="text-danger text-sm error-text name_error"></span>

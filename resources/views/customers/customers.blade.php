@@ -38,7 +38,7 @@
                                     <th>email</th>
                                     <th>Address</th>
                                     <th>Status</th>
-                                    <th style="width: 120px">Member Disc.</th>
+                                    <th style="width: 120px">Disc.</th>
                                     <th style="width: 250px">Note</th>
                                     <th style="width: 100px">Actions</th>
                                 </tr>

@@ -14,7 +14,8 @@
                         <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Product
                             Code</label>
                         <div class="col-sm-9">
-                            <input type="text" name="code" class="form-control form-control-sm" required>
+                            <input type="text" id="number" name="code" class="form-control form-control-sm" value="{{ old('number') ?? $product->number }}" required>
+                            {{-- <input type="text" class="form-control" id="number" name="number" value="{{ old('number') ?? $product->number }}" readonly> --}}
                         </div>
                     </div>
                     <div class="form-group row">

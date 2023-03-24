@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Validator;
 class StoreController extends Controller
 {
     /**
-     * Menambahkan data kategori kedalam database
+     * Menambahkan data Customer kedalam database
      *
      * @param Request $request
      *
@@ -19,23 +19,6 @@ class StoreController extends Controller
      */
     public function store(Request $request): JsonResponse
     {
-        $rules = [
-            'name' => 'required',
-        ];
-
-        $messages = [
-            'name.required' => 'Kolom nama harus diisi',
-        ];
-
-        $validator = Validator::make($request->all(), $rules, $messages);
-
-        if ($validator->fails()) {
-            return response()->json([
-                'status'    =>  400,
-                'error'     =>  $validator->errors()->toArray(),
-            ]);
-        }
-
         $code = $request->input('code');
         $name = $request->input('name');
         $telp = $request->input('telp');
