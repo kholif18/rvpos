@@ -172,8 +172,8 @@ toggle between hiding and showing the dropdown content --}}
                 $(document).find('#form-product input[name="code"]').val('');
                 $(document).find('#form-product input[name="barcode"]').val('');
                 $(document).find('#form-product input[name="name"]').val('');
-                $(document).find('#form-product input[name="category_id"]').val('');
-                $(document).find('#form-product input[name="unit_id"]').val('');
+                $(document).find('#form-product select[name="category_id"]').val('1');
+                $(document).find('#form-product select[name="unit_id"]').val('1');
                 $(document).find('#form-product input[name="purchase_price"]').val('');
                 $(document).find('#form-product input[name="markup"]').val('');
                 $(document).find('#form-product input[name="sale_price"]').val('');
@@ -204,11 +204,15 @@ toggle between hiding and showing the dropdown content --}}
                             $(document).find('#form-product input[name="code"]').val(data.code);
                             $(document).find('#form-product input[name="barcode"]').val(data.barcode);
                             $(document).find('#form-product input[name="name"]').val(data.name);
-                            $(document).find('#form-product input[name="category_id"]').val(data.category_id);
-                            $(document).find('#form-product input[name="unit_id"]').val(data.unit_id);
+                            $(document).find('#form-product select[name="category_id"]').val(data.category_id);
+                            $(document).find('#form-product select[name="unit_id"]').val(data.unit_id);
                             $(document).find('#form-product input[name="purchase_price"]').val(data.purchase_price);
                             $(document).find('#form-product input[name="markup"]').val(data.markup);
                             $(document).find('#form-product input[name="sale_price"]').val(data.sale_price);
+
+                            // Set selected option pada select category
+                            // $(document).find('#form-product select[name="category_id"]').val(data.category_id).change();
+                            // $(document).find('#form-product select[name="unit_id"]').val(data.unit_id).change();
                         }
                     }
                 });

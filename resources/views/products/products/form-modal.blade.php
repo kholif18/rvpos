@@ -38,7 +38,11 @@
                             <div class="input-group input-group-sm">
                                 <select name="category_id" class="form-control" required>
                                     @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @if (old('category_id') == $category->id)
+                                            <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                                        @else
+                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                             </div>
@@ -50,7 +54,11 @@
                             <div class="input-group input-group-sm">
                                 <select name="unit_id" class="form-control" required>
                                     @foreach ($units as $unit)
-                                        <option value="{{ $unit->id }}">{{ $unit->name }}</option>
+                                        @if (old('unit_id') == $unit->id)
+                                            <option value="{{ $unit->id }}" selected>{{ $unit->name }}</option>
+                                        @else
+                                            <option value="{{ $unit->id }}">{{ $unit->name }}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                             </div>
@@ -104,88 +112,3 @@
     <!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
-{{-- modal edit --}}
-<div class="modal fade" id="modal-edit">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Edit Product</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="edit" id="edit">
-                    <div class="form-group row">
-                        <label for="barcode" class="col-sm-3 col-form-label col-form-label-sm text-right">Barcode</label>
-                        <div class="col-sm-9">
-                            <input type="text" name="barcode" class="form-control form-control-sm" value="0651454789546">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Product
-                            Name</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control form-control-sm" value="Kartas F4 70 Gsm">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Category</label>
-                        <div class="col-sm-9">
-                            <div class="input-group input-group-sm">
-                                <select name="jenis" class="form-control select2">
-                                    <option value="atk">ATK</option>
-                                    <option value="jasa">Jasa</option>
-                                    <option value="print">Print</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Unit</label>
-                        <div class="col-sm-9">
-                            <div class="input-group input-group-sm">
-                                <select name="jenis" class="form-control select2">
-                                    <option value="pkg">Pkg</option>
-                                    <option value="pcs">Pcs</option>
-                                    <option value="rim">Rim</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Cost
-                            Price</label>
-                        <div class="col-sm-9">
-                            <div class="input-group input-group-sm">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Rp </span>
-                                </div>
-                                <input type="text" class="form-control form-control-sm" value="52.000">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Selling
-                            Price</label>
-                        <div class="col-sm-9">
-                            <div class="input-group input-group-sm">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Rp </span>
-                                </div>
-                                <input type="text" class="form-control form-control-sm" value="56.000">
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer justify-content-between">
-                <button type="reset" class="btn btn-danger btn-sm" data-dismiss="modal"><i class="fas fa-trash"></i> Cancel</button>
-                <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-paper-plane"></i>
-                    Save</button>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>

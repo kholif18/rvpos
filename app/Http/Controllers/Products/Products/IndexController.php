@@ -19,12 +19,11 @@ class IndexController extends Controller
     public function index(): View
     {
         $data = [
-            'products' => Product::get(),
-        ];
-
-        return view('products.products.products', $data, [
+            'products' => Product::with('category', 'unit')->get(),
             'categories' => Category::get(),
             'units' => Unit::get()
-        ]);
+        ];
+
+        return view('products.products.products', $data);
     }
 }

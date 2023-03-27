@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Products\Products\Ajax;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
+use App\Models\Unit;
 
 class DetailController extends Controller
 {
@@ -17,8 +19,10 @@ class DetailController extends Controller
      *
      * @return JsonResponse
      */
+    // public function get($id)
     public function get(Product $product, Request $request): JsonResponse
     {
+
         $id = $product->id;
         $code = $product->code;
         $barcode = $product->barcode;

@@ -17,7 +17,7 @@ class SaveController extends Controller
      *
      * @return JsonResponse
      */
-    public function store(Product $product, Request $request): JsonResponse
+    public function save(Product $product, Request $request): JsonResponse
     {
 
         $code = $request->input('code');
