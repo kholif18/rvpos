@@ -14,4 +14,11 @@ class SalesController extends Controller
             'customers' => Customer::get(),
         ]);
     }
+
+    public function getNote(Request $request)
+    {
+        $customer = Customer::find($request->input('customer_id'));
+
+        return response()->json($customer->note);
+    }
 }

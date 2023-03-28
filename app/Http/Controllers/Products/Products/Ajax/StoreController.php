@@ -2,27 +2,19 @@
 
 namespace App\Http\Controllers\Products\Products\Ajax;
 
-use App\Models\Unit;
 use App\Models\Product;
-use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
+use Illuminate\Validation\Rule;
 
 class StoreController extends Controller
 {
-    public function create()
+    public function store(Request $request, $id): JsonResponse
     {
-        // ambil semua kategori untuk menampilkan pada form
-        $categories = Category::all();
-        // ambil semua unit untuk menampilkan pada form
-        $categories = Unit::all();
-        // kirim objek product dan kategori ke view
-        return view('products.products.products', compact('product', 'categories'));
-    }
-
-    public function store(Request $request): JsonResponse
-    {
+        $request->validate([
+            'name' => 'required|unique:products,name,' . $id,
+        ]);
 
         $code = $request->input('code');
         $barcode = $request->input('barcode');
@@ -44,13 +36,32 @@ class StoreController extends Controller
         $product->sale_price = $sale_price;
 
         // panggil method generateNumber() pada objek product
-        // $product->generateNumber();
+        $productNumber = $product->generateNumber();
 
         $product->save();
 
         return response()->json([
             'status'    => 'success',
             'message'   => 'Data Product Berhasil Disimpan',
+            'code'      => $productNumber
         ]);
     }
+
+    // public function checkName(Request $request)
+    // {
+    //     $name = $request->input('name');
+    //     $productId = $request->input('product_id');
+
+    //     $query = Product::where('name', $name);
+    //     if ($productId) {
+    //         $query->where('id', '<>', $productId);
+    //     }
+    //     $product = $query->first();
+
+    //     if ($product) {
+    //         return response()->json(false);
+    //     } else {
+    //         return response()->json(true);
+    //     }
+    // }
 }

@@ -14,7 +14,7 @@
                         <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Product
                             Code</label>
                         <div class="col-sm-9">
-                            <input type="text" id="code" name="code" class="form-control form-control-sm" value="{{ old('code') ?? $product->number }}" required>
+                            <input type="text" id="code" name="code" class="form-control form-control-sm" value="{{ old('code') ?? $product->number }}">
                             {{-- <input type="text" class="form-control" id="number" name="number" value="{{ old('number') ?? $product->number }}" readonly> --}}
                         </div>
                     </div>
@@ -28,7 +28,8 @@
                         <label class="col-sm-3 col-form-label col-form-label-sm text-right">Product Name</label>
                         <div class="col-sm-9">
                             <div class="input-group input-group-sm">
-                                <input type="text" name="name" class="form-control text-bold" required>
+                                <input type="text" name="name" class="form-control text-bold" value="{{ old('name') }}">
+                                <span class="text-danger text-sm error-text name_error"></span>
                             </div>
                         </div>
                     </div>
@@ -72,19 +73,21 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Rp </span>
                                 </div>
-                                <input type="text" name="purchase_price" class="form-control form-control-sm" required>
+                                <input type="text" name="purchase_price" class="form-control form-control-sm" value="{{ old('purchase_price') }}">
                             </div>
+                            <span class="text-danger text-sm error-text purchase_price_error"></span>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-sm-3 col-form-label col-form-label-sm text-right">Markup</label>
                         <div class="col-sm-9">
                             <div class="input-group input-group-sm">
-                                <input type="text" name="markup" class="form-control form-control-sm" required>
+                                <input type="text" name="markup" class="form-control form-control-sm" value="{{ old('markup') }}">
                                 <div class="input-group-append">
                                     <span class="input-group-text">%</span>
                                 </div>
                             </div>
+                            <span class="text-danger text-sm error-text markup_error"></span>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -95,8 +98,9 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Rp </span>
                                 </div>
-                                <input type="text" name="sale_price" class="form-control form-control-sm" required>
+                                <input type="text" name="sale_price" class="form-control form-control-sm" value="{{ old('sale_price') }}">
                             </div>
+                            <span class="text-danger text-sm error-text sale_price_error"></span>
                         </div>
                     </div>
                 </div>

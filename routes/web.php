@@ -73,6 +73,7 @@ Route::get('login', [LoginController::class, 'index']);
 Route::get('/', [DashboardController::class, 'index']);
 
 Route::get('/sales', [SalesController::class, 'index']);
+Route::get('/sales/customer-note', [SalesController::class, 'getNote'])->name('customer.note');
 
 // Transaction -----------------------------------------------------------------------
 
@@ -106,6 +107,7 @@ Route::group([
     ], function () {
         Route::get('/ajax/{product}', [ProductsAjaxDetailController::class, 'get'])->name('detail');
         Route::post('/ajax', [ProductsAjaxStoreController::class, 'store'])->name('store');
+        Route::post('/ajax/checkName', [ProductsAjaxStoreController::class, 'checkName'])->name('checkName');
         Route::put('/ajax/{product}', [ProductsAjaxSaveController::class, 'save'])->name('save');
         Route::delete('/ajax/{product}', [ProductsAjaxDeleteController::class, 'delete'])->name('delete');
     });

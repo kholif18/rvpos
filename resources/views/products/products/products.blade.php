@@ -111,6 +111,45 @@ toggle between hiding and showing the dropdown content --}}
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
         });
 
+        //------------------------------------------jquery validation---------------------------------
+        $('#form-product').validate({
+            rules: {
+                name: {
+                    required: true,
+                },
+                purchase_price: {
+                    required: true
+                },
+                markup: {
+                    required: true
+                },
+                sale_price: {
+                    required: true
+                },
+            },
+            messages: {
+                name: "Nama product harus diisi",
+                category_id: "Category belum dipilih",
+                unit_id: "Unit belum dipilih",
+                purchase_price: "Cost pembelian harus diisi",
+                markup: "Markup harus diisi",
+                sale_price: "Sale price harus diisi",
+            },
+            errorElement: 'span',
+            errorPlacement: function(error, element) {
+                error.addClass('invalid-feedback');
+                element.closest('.col-sm-9').append(error);
+            },
+            highlight: function(element, errorClass, validClass) {
+                $(element).addClass('is-invalid');
+            },
+            unhighlight: function(element, errorClass, validClass) {
+                $(element).removeClass('is-invalid');
+            }
+        });
+
+        //------------------------------------------pengelolaan tabel (add, edit dan delete)---------------------------------
+
         $(document).ready(function() {
             // Handle submit form (Tambah Product & Update Product)
             $(document).on('submit', '#form-product', function(event) {
@@ -178,6 +217,31 @@ toggle between hiding and showing the dropdown content --}}
                 $(document).find('#form-product input[name="markup"]').val('');
                 $(document).find('#form-product input[name="sale_price"]').val('');
 
+                $(document).on('input', '#form-product input[name="purchase_price"]', function() {
+                    var purchasePrice = parseFloat($(this).val());
+                    var markup = parseFloat($('#form-product input[name="markup"]').val());
+                    if (!isNaN(purchasePrice) && !isNaN(markup)) {
+                        var salePrice = purchasePrice + (purchasePrice * (markup / 100));
+                        $('#form-product input[name="sale_price"]').val(salePrice);
+                    }
+                });
+                $(document).on('input', '#form-product input[name="markup"]', function() {
+                    var markup = parseFloat($(this).val());
+                    var purchasePrice = parseFloat($('#form-product input[name="purchase_price"]').val());
+                    if (!isNaN(markup) && !isNaN(purchasePrice)) {
+                        var salePrice = purchasePrice + (purchasePrice * (markup / 100));
+                        $('#form-product input[name="sale_price"]').val(salePrice);
+                    }
+                });
+
+                $(document).on('input', '#form-product input[name="sale_price"]', function() {
+                    var salePrice = parseFloat($(this).val());
+                    var purchasePrice = parseFloat($('#form-product input[name="purchase_price"]').val());
+                    if (!isNaN(salePrice) && !isNaN(purchasePrice) && salePrice > purchasePrice) {
+                        var markup = ((salePrice - purchasePrice) / purchasePrice) * 100;
+                        $('#form-product input[name="markup"]').val(markup);
+                    }
+                });
                 // Show modal form
                 $('#modal-form-product').modal('show');
             });
@@ -209,11 +273,33 @@ toggle between hiding and showing the dropdown content --}}
                             $(document).find('#form-product input[name="purchase_price"]').val(data.purchase_price);
                             $(document).find('#form-product input[name="markup"]').val(data.markup);
                             $(document).find('#form-product input[name="sale_price"]').val(data.sale_price);
-
-                            // Set selected option pada select category
-                            // $(document).find('#form-product select[name="category_id"]').val(data.category_id).change();
-                            // $(document).find('#form-product select[name="unit_id"]').val(data.unit_id).change();
                         }
+                    }
+                });
+
+                $(document).on('input', '#form-product input[name="purchase_price"]', function() {
+                    var purchasePrice = parseFloat($(this).val());
+                    var markup = parseFloat($('#form-product input[name="markup"]').val());
+                    if (!isNaN(purchasePrice) && !isNaN(markup)) {
+                        var salePrice = purchasePrice + (purchasePrice * (markup / 100));
+                        $('#form-product input[name="sale_price"]').val(salePrice);
+                    }
+                });
+                $(document).on('input', '#form-product input[name="markup"]', function() {
+                    var markup = parseFloat($(this).val());
+                    var purchasePrice = parseFloat($('#form-product input[name="purchase_price"]').val());
+                    if (!isNaN(markup) && !isNaN(purchasePrice)) {
+                        var salePrice = purchasePrice + (purchasePrice * (markup / 100));
+                        $('#form-product input[name="sale_price"]').val(salePrice);
+                    }
+                });
+
+                $(document).on('input', '#form-product input[name="sale_price"]', function() {
+                    var salePrice = parseFloat($(this).val());
+                    var purchasePrice = parseFloat($('#form-product input[name="purchase_price"]').val());
+                    if (!isNaN(salePrice) && !isNaN(purchasePrice) && salePrice > purchasePrice) {
+                        var markup = ((salePrice - purchasePrice) / purchasePrice) * 100;
+                        $('#form-product input[name="markup"]').val(markup);
                     }
                 });
 

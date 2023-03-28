@@ -39,7 +39,7 @@
                             <label for="inputPassword3" class="col-sm-4 col-form-label col-form-label-sm">Customer</label>
                             <div class="col-sm-8">
                                 <div class="input-group input-group-sm">
-                                    <select name="customer" class="form-control select2" required>
+                                    <select id="customer" name="customer" class="form-control select2" required>
                                         @foreach ($customers as $customer)
                                             <option value="{{ $customer->id }}">{{ $customer->name }}</option>
                                         @endforeach
@@ -183,9 +183,7 @@
                         @endforeach --}}
                     </div>
                     <div class="mailbox-read-message">
-                        {{-- @foreach ($customers as $customer)
-                            <textarea cols="25" rows="3" style="border: none; resize: none; background: none" disabled>{{ $customer->note }}</textarea>
-                        @endforeach --}}
+                        <textarea id="note-textarea" cols="25" rows="3" style="border: none; resize: none; background: none" disabled></textarea>
                         <p>Sebagai Agent Undangan, memiliki diskon product undangan sebesar 10%</p>
                     </div>
                 </div>
@@ -338,35 +336,21 @@
                 "responsive": true,
             });
         });
-        $('.delete').click(function() {
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
+        // event listener untuk dropdown customer
+        $('#customer').on('change', function() {
+            // dapatkan id customer yang dipilih
+            var customerId = $(this).val();
+
+            // ambil data customer menggunakan ajax
+            $.ajax({
+                url: "{{ route('customer.note') }}" + customerId,
+                type: 'GET',
+                dataType: 'json',
+                success: function(response) {
+                    // isi textarea note dengan catatan customer yang ditemukan
+                    $('#note-textarea').val(response.note);
+                }
             });
         });
-        $('.cancel').click(function() {
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, cancel it!'
-            });
-        });
-        // error
-        //----------------------------
-        //         Swal.fire({
-        //   icon: 'error',
-        //   title: 'Oops...',
-        //   text: 'Something went wrong!',
-        //   footer: '<a href="">Why do I have this issue?</a>'
-        // })
     </script>
 @endpush
