@@ -116,6 +116,19 @@ toggle between hiding and showing the dropdown content --}}
             rules: {
                 name: {
                     required: true,
+                    remote: {
+                        url: "{{ route('products.products.ajax.checkName') }}",
+                        type: "post",
+                        data: {
+                            id: function() {
+                                return $("#id").val();
+                            },
+                            _token: "{{ csrf_token() }}",
+                            name: function() {
+                                return $("#name").val();
+                            }
+                        }
+                    }
                 },
                 purchase_price: {
                     required: true
@@ -128,7 +141,10 @@ toggle between hiding and showing the dropdown content --}}
                 },
             },
             messages: {
-                name: "Nama product harus diisi",
+                name: {
+                    required: "Nama product harus diisi",
+                    remote: "Nama product sudah digunakan"
+                },
                 category_id: "Category belum dipilih",
                 unit_id: "Unit belum dipilih",
                 purchase_price: "Cost pembelian harus diisi",
@@ -217,6 +233,34 @@ toggle between hiding and showing the dropdown content --}}
                 $(document).find('#form-product input[name="markup"]').val('');
                 $(document).find('#form-product input[name="sale_price"]').val('');
 
+                //--------------------------------------generate code------------------------------------------
+                // Update nilai kode produk ketika kategori produk dipilih
+                $(document).on('change', '#form-product select[name="category_id"]', function() {
+                    let categoryId = $(this).val();
+
+                    // Panggil method getLastNumber secara AJAX untuk mengambil nomor urut terakhir
+                    $.ajax({
+                        url: '{{ route('products.products.ajax.getLastNumber') }}',
+                        type: 'GET',
+                        data: {
+                            category_id: categoryId
+                        },
+                        success: function(lastNumber) {
+                            // Generate kode produk baru
+                            var prefix = $('#form-product select[name="category_id"] option:selected').data('prefix');
+                            let newNumber = parseInt(lastNumber) + 1;
+                            let code = prefix + '-' + ('0000' + newNumber).slice(-4);
+
+                            // Set nilai kode produk pada input field
+                            $('#form-product input[name="code"]').val(code);
+                        },
+                        error: function(xhr, textStatus, errorThrown) {
+                            console.log(xhr.responseText);
+                        }
+                    });
+                });
+
+                //---------------cost, markup, sale_price di hitung otomatis ketika memasukkan harga------------
                 $(document).on('input', '#form-product input[name="purchase_price"]', function() {
                     var purchasePrice = parseFloat($(this).val());
                     var markup = parseFloat($('#form-product input[name="markup"]').val());

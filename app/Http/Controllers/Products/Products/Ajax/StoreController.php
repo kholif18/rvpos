@@ -6,16 +6,12 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
-use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Validator;
 
 class StoreController extends Controller
 {
-    public function store(Request $request, $id): JsonResponse
+    public function store(Request $request): JsonResponse
     {
-        $request->validate([
-            'name' => 'required|unique:products,name,' . $id,
-        ]);
-
         $code = $request->input('code');
         $barcode = $request->input('barcode');
         $name = $request->input('name');
@@ -36,32 +32,40 @@ class StoreController extends Controller
         $product->sale_price = $sale_price;
 
         // panggil method generateNumber() pada objek product
-        $productNumber = $product->generateNumber();
+        // $productNumber = $product->generateNumber();
 
         $product->save();
 
         return response()->json([
             'status'    => 'success',
             'message'   => 'Data Product Berhasil Disimpan',
-            'code'      => $productNumber
+            // 'code'      => $productNumber
         ]);
     }
 
-    // public function checkName(Request $request)
-    // {
-    //     $name = $request->input('name');
-    //     $productId = $request->input('product_id');
+    public function checkName(Request $request)
+    {
+        $name = $request->input('name');
+        $productId = $request->input('id');
 
-    //     $query = Product::where('name', $name);
-    //     if ($productId) {
-    //         $query->where('id', '<>', $productId);
-    //     }
-    //     $product = $query->first();
+        $query = Product::where('name', $name);
+        if ($productId) {
+            $query->where('id', '<>', $productId);
+        }
+        $product = $query->first();
 
-    //     if ($product) {
-    //         return response()->json(false);
-    //     } else {
-    //         return response()->json(true);
-    //     }
-    // }
+        if ($product) {
+            return response()->json(false);
+        } else {
+            return response()->json(true);
+        }
+    }
+
+    public function getLastNumber(Request $request)
+    {
+        $categoryId = $request->input('category_id');
+        $product = new Product();
+        $lastNumber = $product->getLastNumber($categoryId);
+        return $lastNumber;
+    }
 }
