@@ -111,60 +111,12 @@ toggle between hiding and showing the dropdown content --}}
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
         });
 
-        //------------------------------------------jquery validation---------------------------------
-        $('#form-product').validate({
-            rules: {
-                name: {
-                    required: true,
-                    remote: {
-                        url: "{{ route('products.products.ajax.checkName') }}",
-                        type: "post",
-                        data: {
-                            id: function() {
-                                return $("#id").val();
-                            },
-                            _token: "{{ csrf_token() }}",
-                            name: function() {
-                                return $("#name").val();
-                            }
-                        }
-                    }
-                },
-                purchase_price: {
-                    required: true
-                },
-                markup: {
-                    required: true
-                },
-                sale_price: {
-                    required: true
-                },
-            },
-            messages: {
-                name: {
-                    required: "Nama product harus diisi",
-                    remote: "Nama product sudah digunakan"
-                },
-                category_id: "Category belum dipilih",
-                unit_id: "Unit belum dipilih",
-                purchase_price: "Cost pembelian harus diisi",
-                markup: "Markup harus diisi",
-                sale_price: "Sale price harus diisi",
-            },
-            errorElement: 'span',
-            errorPlacement: function(error, element) {
-                error.addClass('invalid-feedback');
-                element.closest('.col-sm-9').append(error);
-            },
-            highlight: function(element, errorClass, validClass) {
-                $(element).addClass('is-invalid');
-            },
-            unhighlight: function(element, errorClass, validClass) {
-                $(element).removeClass('is-invalid');
-            }
-        });
-
         //------------------------------------------pengelolaan tabel (add, edit dan delete)---------------------------------
+        // Temukan input yang akan dipvalidasi
+        const inputName = document.querySelector('input[name="name"]');
+        const inputPriceList = document.querySelector('input[name="price_list"]');
+        const inputMarkup = document.querySelector('input[name="markup"]');
+        const inputPurchasePrice = document.querySelector('input[name="purchase_price"]');
 
         $(document).ready(function() {
             // Handle submit form (Tambah Product & Update Product)
@@ -183,7 +135,11 @@ toggle between hiding and showing the dropdown content --}}
                     success: function(response) {
                         // Do something with the response data
                         console.log(response);
-                        if (response.status === 'success') {
+                        if (response.status == 400) {
+                            $.each(response.error, function(prefix, val) {
+                                $('#form-product').find('span.' + prefix + '_error').text(val[0]);
+                            });
+                        } else {
                             Swal.fire({
                                 title: response.message,
                                 icon: 'success',
@@ -216,6 +172,9 @@ toggle between hiding and showing the dropdown content --}}
             // Handle ketika user meng-klik tombol "Add Product"
             $(document).on('click', '.add-product', function(event) {
                 event.preventDefault();
+
+                // Menghapus pesan error saat meng-klik tombol "Add Product"
+                $('.error-text').empty();
 
                 // Set url action to add
                 const httpUrl = $(this).attr('data-url');
@@ -286,6 +245,14 @@ toggle between hiding and showing the dropdown content --}}
                         $('#form-product input[name="markup"]').val(markup);
                     }
                 });
+
+                // Menghapus pesan error saat field input diisi
+                $('input[name="name"]').on('focusout', function() {
+                    if ($(this).valid()) {
+                        $(this).siblings('.error-text').empty();
+                    }
+                });
+
                 // Show modal form
                 $('#modal-form-product').modal('show');
             });
@@ -293,6 +260,9 @@ toggle between hiding and showing the dropdown content --}}
             // Handle ketika user meng-klik tombol edit
             $(document).on('click', '.edit-product', function(event) {
                 event.preventDefault();
+
+                // Menghapus pesan error saat klik tombol edit
+                $('.error-text').empty();
 
                 // Set url action to edit
                 const httpUrl = $(this).attr('data-url');

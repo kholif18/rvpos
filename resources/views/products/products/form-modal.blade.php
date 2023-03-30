@@ -29,8 +29,8 @@
                         <div class="col-sm-9">
                             <div class="input-group input-group-sm">
                                 <input type="text" name="name" class="form-control text-bold" value="{{ old('name') }}">
-                                <span class="text-danger text-sm error-text name_error"></span>
                             </div>
+                            <span class="text-danger text-sm error-text name_error"></span>
                         </div>
                     </div>
                     <div class="form-group row">

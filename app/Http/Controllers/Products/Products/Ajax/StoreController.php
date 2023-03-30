@@ -12,6 +12,33 @@ class StoreController extends Controller
 {
     public function store(Request $request): JsonResponse
     {
+        $rules = [
+            'name' => 'required|unique:products',
+            'purchase_price' => 'required|numeric',
+            'markup' => 'required|numeric',
+            'sale_price' => 'required|numeric',
+        ];
+
+        $messages = [
+            'name.required' => 'Nama Product harus diisi',
+            'name.unique' => 'Nama Product telah digunakan',
+            'purchase_price.required' => 'Cost harus diisi',
+            'purchase_price.numeric' => 'Cost harus berupa nomor',
+            'markup.required' => 'Markup harus diisi',
+            'markup.numeric' => 'Markup harus berupa nomor',
+            'sale_price.required' => 'Sale Price harus diisi',
+            'sale_price.numeric' => 'Sale Price harus berupa nomor',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status'    =>  400,
+                'error'     =>  $validator->errors()->toArray(),
+            ]);
+        }
+
         $code = $request->input('code');
         $barcode = $request->input('barcode');
         $name = $request->input('name');
