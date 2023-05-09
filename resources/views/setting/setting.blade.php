@@ -41,7 +41,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" style="width: 30px"><i class="fas fa-landmark"></i></span>
                             </div>
-                            <input type="text" name="name" autofocus class="form-control form-control-sm" value="Ravaa Studio">
+                            <input type="text" name="company_name" autofocus class="form-control form-control-sm" value="Ravaa Studio">
                         </div>
                     </div>
                     <div class="form-group">
@@ -59,7 +59,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" style="width: 30px"><i class="fas fa-mobile-alt"></i></span>
                             </div>
-                            <input type="text" name="telp" class="form-control form-control-sm" value="0822-3337-7661">
+                            <input type="text" name="phone" class="form-control form-control-sm" value="0822-3337-7661">
                         </div>
                     </div>
                     <div class="form-group form-group-sm">
@@ -86,7 +86,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" style="width: 30px"><i class="fas fa-globe"></i></span>
                             </div>
-                            <input type="text" name="web" class="form-control form-control-sm" value="ravaastudio.wordpress.com">
+                            <input type="text" name="website" class="form-control form-control-sm" value="ravaastudio.wordpress.com">
                         </div>
                     </div>
                     <div class="form-group text-center align-items-center justify-content-center">

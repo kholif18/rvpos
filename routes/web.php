@@ -72,7 +72,7 @@ Route::get('login', [LoginController::class, 'index']);
 
 Route::get('/', [DashboardController::class, 'index']);
 
-Route::get('/sales', [SalesController::class, 'index']);
+Route::get('/sales', [SalesController::class, 'index'])->name('sales');
 Route::get('/sales/customer-note', [SalesController::class, 'getNote'])->name('customer.note');
 
 // Transaction -----------------------------------------------------------------------

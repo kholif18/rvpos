@@ -26,7 +26,7 @@
                 <div class="icon">
                     <i class="fas fa-shopping-bag"></i>
                 </div>
-                <a href="{{ url('sales') }}" class="small-box-footer">POS <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('sales') }}" class="small-box-footer">POS <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -41,7 +41,7 @@
                     {{-- <i class="ion ion-stats-bars"></i> --}}
                     <i class="fas fa-archive"></i>
                 </div>
-                <a href="{{ url('/products/products') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('products.products.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -55,7 +55,7 @@
                 <div class="icon">
                     <i class="fas fa-users"></i>
                 </div>
-                <a href="{{ url('customers') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('customer') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -69,7 +69,7 @@
                 <div class="icon">
                     <i class="fas fa-truck-loading"></i>
                 </div>
-                <a href="{{ url('/supplier') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('supplier') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->

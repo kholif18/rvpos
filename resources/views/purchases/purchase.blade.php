@@ -34,7 +34,7 @@
                                     </div>
                                     <input type="text" required class="form-control" value="Citra Stationary">
                                     <span class="input-group-append">
-                                        <button type="button" class="btn btn-info btn-flat" data-toggle="modal" data-target="#modal-add-supplier"><i class="fas fa-plus-circle"></i></button>
+                                        <button type="button" class="btn btn-info btn-flat" data-toggle="modal" data-target="#supplierModal"><i class="fas fa-plus-circle"></i></button>
                                     </span>
                                 </div>
                             </div>
@@ -108,7 +108,7 @@
                 <div class="form-group row">
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12"></div>
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                        <button type="submit" class="btn btn-block btn-success btn-sm" data-toggle="modal" data-target="#modal-add-product"><i class="fas fa-plus-circle"></i> Add New Product</button>
+                        <button type="submit" class="btn btn-block btn-success btn-sm" data-toggle="modal" data-target="#modal-form-product"><i class="fas fa-plus-circle"></i> Add New Product</button>
                     </div>
                 </div>
             </div>
@@ -306,10 +306,10 @@
     </div>
 
     {{-- modal Add Supplier --}}
-    @include('supplier.addsupplierform')
+    @include('supplier.form')
 
     {{-- Modal add product --}}
-    @include('products.products._modal-add-product')
+    @include('products.products.form-modal')
 @endsection
 
 
