@@ -19,11 +19,9 @@ class StoreController extends Controller
     public function store(Request $request): JsonResponse
     {
         $name = $request->input('name');
-        $prefix = $request->input('prefix');
 
         $category = new Category();
         $category->name = $name;
-        $category->prefix = $prefix;
         $category->save();
 
         return response()->json([

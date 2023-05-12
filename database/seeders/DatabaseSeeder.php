@@ -27,17 +27,14 @@ class DatabaseSeeder extends Seeder
 
         Category::create([
             'name' => 'PRINT',
-            'prefix' => 'PR'
         ]);
 
         Category::create([
             'name' => 'ATK',
-            'prefix' => 'AT'
         ]);
 
         Category::create([
             'name' => 'Ice Cream',
-            'prefix' => 'IC'
         ]);
 
         Unit::create([

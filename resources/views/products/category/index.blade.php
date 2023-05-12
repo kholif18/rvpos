@@ -41,7 +41,6 @@
                                         <tr>
                                             <th style="width: 60px">No.</th>
                                             <th>Categories</th>
-                                            <th>Prefix</th>
                                             <th style="width: 130px">Actions</th>
                                         </tr>
                                     </thead>
@@ -56,9 +55,6 @@
                                                 </td>
                                                 <td>
                                                     {{ $category->name }}
-                                                </td>
-                                                <td>
-                                                    {{ $category->prefix }}
                                                 </td>
                                                 <td>
                                                     <div class="row">
@@ -225,7 +221,6 @@
 
                 // Reset form input from previous
                 $(document).find('#form-category input[name="name"]').val('');
-                $(document).find('#form-category input[name="prefix"]').val('');
 
                 // Show modal form
                 $('#modal-form-category').modal('show');
@@ -251,7 +246,6 @@
                         if (response.status === 'success') {
                             const data = response.data;
                             $(document).find('#form-category input[name="name"]').val(data.name);
-                            $(document).find('#form-category input[name="prefix"]').val(data.prefix);
                         }
                     }
                 });

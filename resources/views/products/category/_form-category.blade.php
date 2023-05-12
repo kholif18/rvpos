@@ -17,12 +17,6 @@
                             <input name="name" type="text" class="form-control" required>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-form-label col-form-label-sm text-sm-right">Category Prefix</label>
-                        <div class="input-group input-group-sm">
-                            <input name="prefix" type="text" class="form-control" required>
-                        </div>
-                    </div>
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button id="reset-form" type="button" class="btn btn-default btn-sm" data-dismiss="modal">

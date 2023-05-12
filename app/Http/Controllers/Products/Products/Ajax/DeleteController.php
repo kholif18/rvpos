@@ -19,6 +19,7 @@ class DeleteController extends Controller
      */
     public function delete(Product $product, Request $request): JsonResponse
     {
+        // 
         $product->delete();
 
         return response()->json([

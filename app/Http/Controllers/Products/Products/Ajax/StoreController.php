@@ -13,6 +13,7 @@ class StoreController extends Controller
     public function store(Request $request): JsonResponse
     {
         $rules = [
+            'code' => 'required|unique:products',
             'name' => 'required|unique:products',
             'purchase_price' => 'required|numeric',
             'markup' => 'required|numeric',
@@ -20,6 +21,8 @@ class StoreController extends Controller
         ];
 
         $messages = [
+            'code.required' => 'Code Product harus diisi',
+            'code.unique' => 'Code Product telah digunakan',
             'name.required' => 'Nama Product harus diisi',
             'name.unique' => 'Nama Product telah digunakan',
             'purchase_price.required' => 'Cost harus diisi',
@@ -86,13 +89,5 @@ class StoreController extends Controller
         } else {
             return response()->json(true);
         }
-    }
-
-    public function getLastNumber(Request $request)
-    {
-        $categoryId = $request->input('category_id');
-        $product = new Product();
-        $lastNumber = $product->getLastNumber($categoryId);
-        return $lastNumber;
     }
 }

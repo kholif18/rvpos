@@ -53,7 +53,7 @@
                                         <td>{{ $product->code }}</td>
                                         <td>{{ $product->barcode }}</td>
                                         <td>{{ $product->name }}</td>
-                                        <td>{{ $product->category->name }}</td>
+                                        <td>{{ $product->category->name ?? '-' }}</td>
                                         <td>{{ $product->unit->name }}</td>
                                         <td>{{ $product->purchase_price }}</td>
                                         <td>{{ $product->sale_price }}</td>
@@ -101,10 +101,13 @@ toggle between hiding and showing the dropdown content --}}
     <script>
         $(function() {
             $("#example1").DataTable({
-                "paging": false,
+                "paging": true,
+                "pageLength": 10,
+                "lengthMenu": [10, 25, 50, 75, 100],
                 "ordering": true,
-                "info": false,
+                "info": true,
                 "responsive": true,
+                "searching": true,
                 "lengthChange": false,
                 "autoWidth": false,
                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
@@ -113,6 +116,7 @@ toggle between hiding and showing the dropdown content --}}
 
         //------------------------------------------pengelolaan tabel (add, edit dan delete)---------------------------------
         // Temukan input yang akan dipvalidasi
+        const inputCode = document.querySelector('input[name="code"]');
         const inputName = document.querySelector('input[name="name"]');
         const inputPriceList = document.querySelector('input[name="price_list"]');
         const inputMarkup = document.querySelector('input[name="markup"]');
@@ -183,7 +187,7 @@ toggle between hiding and showing the dropdown content --}}
                 $('#modal-form-product .modal-title').text('Add Product');
 
                 // Reset form input from previous
-                $(document).find('#form-product input[name="code"]').val('');
+                $(document).find('#form-product input[name="code"]').val('').prop('readonly', false);
                 $(document).find('#form-product input[name="barcode"]').val('');
                 $(document).find('#form-product input[name="name"]').val('');
                 $(document).find('#form-product select[name="category_id"]').val('1');
@@ -191,33 +195,6 @@ toggle between hiding and showing the dropdown content --}}
                 $(document).find('#form-product input[name="purchase_price"]').val('');
                 $(document).find('#form-product input[name="markup"]').val('');
                 $(document).find('#form-product input[name="sale_price"]').val('');
-
-                //--------------------------------------generate code------------------------------------------
-                // Update nilai kode produk ketika kategori produk dipilih
-                $(document).on('change', '#form-product select[name="category_id"]', function() {
-                    let categoryId = $(this).val();
-
-                    // Panggil method getLastNumber secara AJAX untuk mengambil nomor urut terakhir
-                    $.ajax({
-                        url: '{{ route('products.products.ajax.getLastNumber') }}',
-                        type: 'GET',
-                        data: {
-                            category_id: categoryId
-                        },
-                        success: function(lastNumber) {
-                            // Generate kode produk baru
-                            var prefix = $('#form-product select[name="category_id"] option:selected').data('prefix');
-                            let newNumber = parseInt(lastNumber) + 1;
-                            let code = prefix + '-' + ('0000' + newNumber).slice(-4);
-
-                            // Set nilai kode produk pada input field
-                            $('#form-product input[name="code"]').val(code);
-                        },
-                        error: function(xhr, textStatus, errorThrown) {
-                            console.log(xhr.responseText);
-                        }
-                    });
-                });
 
                 //---------------cost, markup, sale_price di hitung otomatis ketika memasukkan harga------------
                 $(document).on('input', '#form-product input[name="purchase_price"]', function() {
@@ -246,11 +223,8 @@ toggle between hiding and showing the dropdown content --}}
                     }
                 });
 
-                // Menghapus pesan error saat field input diisi
-                $('input[name="name"]').on('focusout', function() {
-                    if ($(this).valid()) {
-                        $(this).siblings('.error-text').empty();
-                    }
+                $(document).on('submit', '#form-product', function() {
+                    $('.error-text').empty();
                 });
 
                 // Show modal form
@@ -279,7 +253,7 @@ toggle between hiding and showing the dropdown content --}}
                         console.log(response);
                         if (response.status === 'success') {
                             const data = response.data;
-                            $(document).find('#form-product input[name="code"]').val(data.code);
+                            $(document).find('#form-product input[name="code"]').val(data.code).prop('readonly', true);
                             $(document).find('#form-product input[name="barcode"]').val(data.barcode);
                             $(document).find('#form-product input[name="name"]').val(data.name);
                             $(document).find('#form-product select[name="category_id"]').val(data.category_id);
